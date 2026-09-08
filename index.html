@@ -79,6 +79,11 @@
       border-radius: 9999px !important;
     }
 
+    html {
+      overflow-x: hidden;
+      scroll-behavior: smooth;
+    }
+
     body {
       background-color: #FAF9F7;
       color: #111111;
@@ -386,7 +391,7 @@
           <span class="font-mono text-[10px] sm:text-xs text-primary uppercase tracking-widest">[ NOVA LABS // PROJECTION ENGINE 4.2 ]</span>
         </div>
         <div class="hidden sm:flex items-center gap-6 font-mono text-[10px] sm:text-xs text-[#444748] uppercase tracking-widest pointer-events-auto">
-          <span>GRID REF: 44.98° N / 93.26° W</span>
+          <span>GRID REF: [37.7749° N, 122.4194° W] (DEMO)</span>
           <span>STATUS: <strong class="text-primary">UNWRITTEN</strong></span>
           <span class="text-[#536600] font-bold">CURATED BENCHMARK DATA (DEMO)</span>
         </div>
@@ -714,7 +719,7 @@
         </div>
 
         <div class="mt-4 text-right font-mono text-[10px] text-[#747878] uppercase">
-          *All compensation & demand figures represent simulated concept telemetry.
+          *DEMO DATA — All compensation & demand figures represent simulated conceptual benchmark data.
         </div>
       </div>
     </section>
@@ -1190,9 +1195,9 @@
               </div>
             </div>
 
-            <div class="pt-4 mt-4 flex items-center justify-between font-mono text-xs text-primary border-t border-hairline">
-              <span class="text-[#444748]">LIVE EXPORT: PDF/LATEX</span>
-              <button class="tool-demo-btn inline-flex items-center gap-1 hover:text-[#536600]" data-tool="resume">
+            <div class="pt-4 mt-4 border-t border-hairline">
+              <button class="tool-demo-btn w-full flex items-center justify-between font-mono text-xs text-primary hover:text-[#536600] group/btn transition-colors text-left cursor-pointer" data-tool="resume" aria-label="Launch Resume Studio">
+                <span class="text-[#444748] group-hover/btn:text-primary transition-colors font-bold uppercase">LIVE EXPORT: PDF/LATEX</span>
                 <span class="material-symbols-outlined text-[18px]">arrow_outward</span>
               </button>
             </div>
@@ -1232,9 +1237,9 @@
               </div>
             </div>
 
-            <div class="pt-4 mt-4 flex items-center justify-between font-mono text-xs text-primary border-t border-hairline">
-              <span class="text-[#444748]">SPEECH-TO-EVAL READY</span>
-              <button class="tool-demo-btn inline-flex items-center gap-1 hover:text-[#536600]" data-tool="interview">
+            <div class="pt-4 mt-4 border-t border-hairline">
+              <button class="tool-demo-btn w-full flex items-center justify-between font-mono text-xs text-primary hover:text-[#536600] group/btn transition-colors text-left cursor-pointer" data-tool="interview" aria-label="Launch Technical Interview Lab">
+                <span class="text-[#444748] group-hover/btn:text-primary transition-colors font-bold uppercase">SPEECH-TO-EVAL READY</span>
                 <span class="material-symbols-outlined text-[18px]">arrow_outward</span>
               </button>
             </div>
@@ -1267,9 +1272,9 @@
               </div>
             </div>
 
-            <div class="pt-4 mt-4 flex items-center justify-between font-mono text-xs text-primary border-t border-hairline">
-              <span class="text-[#444748]">EXPLORE CLUSTERS</span>
-              <button class="tool-demo-btn inline-flex items-center gap-1 hover:text-[#536600]" data-tool="skillmap">
+            <div class="pt-4 mt-4 border-t border-hairline">
+              <button class="tool-demo-btn w-full flex items-center justify-between font-mono text-xs text-primary hover:text-[#536600] group/btn transition-colors text-left cursor-pointer" data-tool="skillmap" aria-label="Launch Interactive Skill Topology Map">
+                <span class="text-[#444748] group-hover/btn:text-primary transition-colors font-bold uppercase">EXPLORE CLUSTERS</span>
                 <span class="material-symbols-outlined text-[18px]">arrow_outward</span>
               </button>
             </div>
@@ -1301,9 +1306,9 @@
               </div>
             </div>
 
-            <div class="pt-4 mt-4 flex items-center justify-between font-mono text-xs text-primary border-t border-hairline">
-              <span class="text-[#444748]">LAUNCH ATLAS</span>
-              <button class="tool-demo-btn inline-flex items-center gap-1 hover:text-[#536600]" data-tool="explorer">
+            <div class="pt-4 mt-4 border-t border-hairline">
+              <button class="tool-demo-btn w-full flex items-center justify-between font-mono text-xs text-primary hover:text-[#536600] group/btn transition-colors text-left cursor-pointer" data-tool="explorer" aria-label="Launch Career Progression Atlas">
+                <span class="text-[#444748] group-hover/btn:text-primary transition-colors font-bold uppercase">LAUNCH ATLAS</span>
                 <span class="material-symbols-outlined text-[18px]">arrow_outward</span>
               </button>
             </div>
@@ -1334,9 +1339,9 @@
               </div>
             </div>
 
-            <div class="pt-4 mt-4 flex items-center justify-between font-mono text-xs text-primary border-t border-hairline">
-              <span class="text-[#444748]">GET OPEN BLUEPRINT</span>
-              <button class="tool-demo-btn inline-flex items-center gap-1 hover:text-[#536600]" data-tool="project">
+            <div class="pt-4 mt-4 border-t border-hairline">
+              <button class="tool-demo-btn w-full flex items-center justify-between font-mono text-xs text-primary hover:text-[#536600] group/btn transition-colors text-left cursor-pointer" data-tool="project" aria-label="Launch Project Blueprint Generator">
+                <span class="text-[#444748] group-hover/btn:text-primary transition-colors font-bold uppercase">GET OPEN BLUEPRINT</span>
                 <span class="material-symbols-outlined text-[18px]">arrow_outward</span>
               </button>
             </div>
@@ -1367,9 +1372,9 @@
               </div>
             </div>
 
-            <div class="pt-4 mt-4 flex items-center justify-between font-mono text-xs text-primary border-t border-hairline">
-              <span class="text-[#444748]">VIEW CURATED POSITIONS</span>
-              <button class="tool-demo-btn inline-flex items-center gap-1 hover:text-[#536600]" data-tool="opportunity">
+            <div class="pt-4 mt-4 border-t border-hairline">
+              <button class="tool-demo-btn w-full flex items-center justify-between font-mono text-xs text-primary hover:text-[#536600] group/btn transition-colors text-left cursor-pointer" data-tool="opportunity" aria-label="Launch Curated Opportunity Finder">
+                <span class="text-[#444748] group-hover/btn:text-primary transition-colors font-bold uppercase">VIEW CURATED POSITIONS</span>
                 <span class="material-symbols-outlined text-[18px]">arrow_outward</span>
               </button>
             </div>
@@ -1412,8 +1417,9 @@
           </div>
           <div class="md:col-span-4 flex md:justify-end">
             <div class="p-4 bg-white/5 border border-white/20 text-white font-mono text-xs uppercase tracking-wider space-y-1">
-              <div class="text-[#D4FF00] font-bold">14,280+ DEPLOYED ARTIFACTS</div>
-              <div class="text-[#858383]">Built by students worldwide in 2024-2025.*</div>
+              <span class="text-[10px] text-[#D4FF00] tracking-widest block font-bold">[ DEMO TELEMETRY // CONCEPTUAL ]</span>
+              <div class="text-[#D4FF00] font-bold text-sm">14,280+ DEPLOYED ARTIFACTS</div>
+              <div class="text-[#858383] text-[11px]">Simulated benchmark target for student builder cohorts.*</div>
             </div>
           </div>
         </div>
@@ -1647,11 +1653,11 @@
             </div>
             <div class="flex justify-between">
               <span>EST CLOCK</span>
-              <span class="text-primary font-semibold" id="est-time">--:--:-- EST</span>
+              <span class="text-primary font-semibold" id="est-time">18:42:07 EST</span>
             </div>
             <div class="flex justify-between">
               <span>GMT CLOCK</span>
-              <span class="text-primary font-semibold" id="gmt-time">--:--:-- GMT</span>
+              <span class="text-primary font-semibold" id="gmt-time">22:42:07 GMT</span>
             </div>
           </div>
         </div>
@@ -1661,7 +1667,7 @@
       <!-- Bottom Copyright & Framework Links -->
       <div class="pt-8 flex flex-col md:flex-row items-start md:items-center justify-between gap-4 font-mono text-xs text-[#444748]">
         <div class="flex flex-wrap items-center gap-2">
-          <span>© 2025 NOVA LABS INC. ARCHITECTED FOR NEXT-GEN BUILDERS.</span>
+          <span>© 2026 NOVA — CONCEPT PROJECT. ARCHITECTED FOR NEXT-GEN BUILDERS.</span>
           <span class="hidden md:inline text-primary">•</span>
           <span>ALL RIGHTS RESERVED.</span>
         </div>
@@ -2758,6 +2764,14 @@
     </div>
   </div>
 
+  <!-- Global High-Contrast Editorial Toast Notification -->
+  <div id="global-toast" class="fixed bottom-6 right-6 z-[9999] pointer-events-none transition-all duration-300 opacity-0 translate-y-4 max-w-md" role="status" aria-live="polite">
+    <div class="bg-primary text-white border-2 border-[#D4FF00] p-4 shadow-hard-lg font-mono text-xs flex items-start gap-3">
+      <span class="w-2 h-2 rounded-full bg-[#D4FF00] mt-1 shrink-0 animate-pulse"></span>
+      <div id="global-toast-msg" class="leading-relaxed uppercase"></div>
+    </div>
+  </div>
+
   <!-- Modal: Generic Information / Policy Modal -->
   <div id="info-modal" class="fixed inset-0 z-50 bg-[#111111]/70 backdrop-blur-sm hidden items-center justify-center p-4" role="dialog" aria-modal="true" aria-labelledby="info-modal-title">
     <div class="bg-[#FAF9F7] border-2 border-primary w-full max-w-lg p-6 sm:p-8 shadow-hard-lg relative">
@@ -2766,9 +2780,9 @@
       </button>
       <div class="font-mono text-xs text-[#536600] uppercase font-bold mb-1" id="info-modal-tag">[ ARCHIVAL BRIEF ]</div>
       <h3 id="info-modal-title" class="font-display text-2xl uppercase text-primary font-extrabold mb-3">Manifesto &amp; Framework</h3>
-      <p class="text-sm text-[#444748] leading-relaxed mb-6" id="info-modal-body">
+      <div class="text-sm text-[#444748] leading-relaxed mb-6" id="info-modal-body">
         NOVA is an open career discovery platform designed to replace passive roadmaps with tangible building reps. All telemetry metrics, salaries, and stats are simulated demo data.
-      </p>
+      </div>
       <button onclick="window.closeModals()" class="w-full py-2.5 bg-primary text-white font-mono text-xs uppercase font-bold hover:bg-[#D4FF00] hover:text-primary cursor-pointer">
         Acknowledge
       </button>
@@ -4066,9 +4080,21 @@
       window.openCareerDossier(c.key);
     });
 
-    document.getElementById('disc-save-profile-btn')?.addEventListener('click', () => {
+    document.getElementById('disc-save-profile-btn')?.addEventListener('click', (e) => {
       setTargetCareer(c.key);
-      alert(`✓ Saved "${c.title}" as your primary target career in your profile!`);
+      if (window.showToast) {
+        window.showToast(`✓ TARGET CAREER SAVED // Set "${c.title.toUpperCase()}" as primary trajectory.`);
+      }
+      const btn = e.currentTarget;
+      if (btn) {
+        const orig = btn.textContent;
+        btn.textContent = `✓ SAVED [${c.title.toUpperCase()}]`;
+        btn.classList.add('bg-[#D4FF00]', 'text-primary');
+        setTimeout(() => {
+          btn.textContent = orig;
+          btn.classList.remove('bg-[#D4FF00]', 'text-primary');
+        }, 2500);
+      }
     });
 
     document.getElementById('disc-print-blueprint-btn')?.addEventListener('click', () => {
@@ -4454,7 +4480,18 @@ ${resInputs.edu?.value || ''}
     interviewEvaluateBtn.addEventListener('click', () => {
       const text = (interviewAnswerInput ? interviewAnswerInput.value : '').toLowerCase();
       if (!text || text.length < 10) {
-        alert('Please formulate a substantive response before running the evaluation protocol.');
+        if (window.showToast) {
+          window.showToast('⚠ INPUT VALIDATION // Provide substantive response (min 10 chars) before evaluation.');
+        }
+        if (interviewFeedback) {
+          interviewFeedback.classList.remove('hidden');
+          interviewFeedback.innerHTML = `
+            <div class="p-4 bg-red-50 border-2 border-red-500 font-mono text-xs text-red-700 space-y-1">
+              <div class="font-bold uppercase tracking-wider">[ INPUT VALIDATION PROTOCOL ERROR ]</div>
+              <div>Please formulate a substantive technical response (minimum 10 characters) before running the real-time keyword parser.</div>
+            </div>
+          `;
+        }
         return;
       }
 
@@ -4877,7 +4914,31 @@ ${resInputs.edu?.value || ''}
       `;
 
       card.querySelector('.opp-apply-btn')?.addEventListener('click', () => {
-        alert(`[ PROTOTYPE / DEMO SPEC ]\\n\\nOpportunity: ${opp.title}\\nOrganization: ${opp.org}\\nCompensation: ${opp.comp}\\n\\nTo apply in production, candidate must submit 1 GitHub repository with automated test suite and a verified ATS spec sheet from Resume Studio.`);
+        if (window.showInfoModal) {
+          window.showInfoModal(
+            '[ APPLICATION PROTOCOL // PARTNER SPEC ]',
+            opp.title,
+            `<div class="space-y-4 font-mono text-xs">
+              <div class="p-3 bg-[#EFEFED] border border-primary/20 space-y-1.5">
+                <div class="flex justify-between"><span class="text-[#747878] uppercase">Organization:</span> <strong class="text-primary font-bold">${opp.org}</strong></div>
+                <div class="flex justify-between"><span class="text-[#747878] uppercase">Location:</span> <strong class="text-primary">${opp.loc}</strong></div>
+                <div class="flex justify-between"><span class="text-[#747878] uppercase">Compensation:</span> <strong class="text-[#536600] font-bold">${opp.comp} (DEMO)</strong></div>
+                <div class="flex justify-between"><span class="text-[#747878] uppercase">Employment Type:</span> <strong class="text-primary font-semibold">${opp.type}</strong></div>
+              </div>
+              <div>
+                <div class="font-bold text-primary mb-1.5 uppercase tracking-wider">[ CANDIDATE DISPATCH REQUIREMENTS ]</div>
+                <ol class="list-decimal pl-4 space-y-1.5 text-[#444748]">
+                  <li>Attach 1 public GitHub repository demonstrating verified test coverage and architecture documentation.</li>
+                  <li>Compile and attach an ATS-verified LaTeX/PDF artifact generated from <span class="font-bold text-primary">Artifact 01 (Resume Studio)</span>.</li>
+                  <li>Complete the NOVA technical evaluation matrix in <span class="font-bold text-primary">Artifact 02 (Interview Lab)</span>.</li>
+                </ol>
+              </div>
+              <div class="p-2.5 bg-[#D4FF00]/15 border border-[#D4FF00] text-[11px] text-[#444748] leading-relaxed">
+                *DEMO TELEMETRY — Direct corporate dispatch endpoints connect during seasonal recruitment cycles. All compensation and headcount metrics represent simulated conceptual benchmark data.
+              </div>
+            </div>`
+          );
+        }
       });
 
       grid.appendChild(card);
@@ -5030,7 +5091,9 @@ ${resInputs.edu?.value || ''}
       closeProfileDrawer();
       renderSkillGapEvaluator('systems');
       renderRoadmapTracker('systems');
-      alert('✓ NOVA Profile Reset Complete. All local state has been purged and restored to clean defaults.');
+      if (window.showToast) {
+        window.showToast('✓ NOVA PROFILE PURGED // All local state has been restored to default baseline.');
+      }
     });
   }
 
@@ -5080,8 +5143,34 @@ ${resInputs.edu?.value || ''}
   }
 
   // =========================================================================
-  // 17. GLOBAL MODAL CONTROLLERS & ACCESSIBILITY
+  // 17. GLOBAL MODAL CONTROLLERS, TOAST NOTIFICATIONS & ACCESSIBILITY
   // =========================================================================
+  window.showToast = function(message, duration = 3200) {
+    const toast = document.getElementById('global-toast');
+    const msg = document.getElementById('global-toast-msg');
+    if (!toast || !msg) return;
+    msg.textContent = message;
+    toast.classList.remove('opacity-0', 'translate-y-4', 'pointer-events-none');
+    toast.classList.add('opacity-100', 'translate-y-0');
+    clearTimeout(window.__toastTimeout);
+    window.__toastTimeout = setTimeout(() => {
+      toast.classList.add('opacity-0', 'translate-y-4', 'pointer-events-none');
+      toast.classList.remove('opacity-100', 'translate-y-0');
+    }, duration);
+  };
+
+  window.showInfoModal = function(tag, title, contentHtml) {
+    const tagEl = document.getElementById('info-modal-tag');
+    const titleEl = document.getElementById('info-modal-title');
+    const bodyEl = document.getElementById('info-modal-body');
+    if (tagEl && titleEl && bodyEl) {
+      tagEl.textContent = tag;
+      titleEl.textContent = title;
+      bodyEl.innerHTML = contentHtml;
+    }
+    window.openModal('info-modal');
+  };
+
   window.openModal = function(modalId) {
     const modal = document.getElementById(modalId);
     if (modal) {
