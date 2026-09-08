@@ -1,0 +1,1448 @@
+<!DOCTYPE html>
+
+<html class="scroll-smooth" lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&amp;family=Space+Grotesk:wght@400;500;600;700&amp;family=Syne:wght@600;700;800&amp;display=swap" rel="stylesheet"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}a,button{cursor:pointer;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = {
+    darkMode: "class",
+    theme: {
+      extend: {
+        "colors": {
+          "surface-container-high": "#e9e8e6",
+          "on-background": "#1a1c1b",
+          "on-tertiary-container": "#5879ff",
+          "error-container": "#ffdad6",
+          "on-primary-container": "#858383",
+          "background": "#faf9f7",
+          "surface-variant": "#e3e2e0",
+          "secondary-fixed": "#caf300",
+          "secondary-container": "#c7ef00",
+          "surface-bright": "#faf9f7",
+          "on-tertiary": "#ffffff",
+          "primary-fixed": "#e5e2e1",
+          "inverse-on-surface": "#f1f1ef",
+          "surface-container-lowest": "#ffffff",
+          "on-surface": "#1a1c1b",
+          "secondary": "#536600",
+          "surface-container": "#efeeec",
+          "on-secondary": "#ffffff",
+          "on-error-container": "#93000a",
+          "surface-tint": "#5f5e5e",
+          "on-error": "#ffffff",
+          "outline-variant": "#c4c7c7",
+          "surface": "#faf9f7",
+          "on-primary-fixed": "#1c1b1b",
+          "error": "#ba1a1a",
+          "inverse-primary": "#c8c6c5",
+          "outline": "#747878",
+          "tertiary-fixed": "#dde1ff",
+          "inverse-surface": "#2f3130",
+          "secondary-fixed-dim": "#b0d500",
+          "primary-container": "#1c1b1b",
+          "on-tertiary-fixed-variant": "#0036bc",
+          "surface-container-low": "#f4f3f1",
+          "on-tertiary-fixed": "#001355",
+          "primary-fixed-dim": "#c8c6c5",
+          "tertiary-container": "#001355",
+          "on-secondary-fixed-variant": "#3e4c00",
+          "on-secondary-fixed": "#171e00",
+          "surface-container-highest": "#e3e2e0",
+          "on-primary": "#ffffff",
+          "on-surface-variant": "#444748",
+          "on-secondary-container": "#576a00",
+          "primary": "#000000",
+          "on-primary-fixed-variant": "#474646",
+          "surface-dim": "#dadad8",
+          "tertiary": "#000000",
+          "tertiary-fixed-dim": "#b8c4ff"
+        },
+        "borderRadius": {
+          "DEFAULT": "0.25rem",
+          "lg": "0.5rem",
+          "xl": "0.75rem",
+          "full": "9999px"
+        },
+        "spacing": {
+          "grid-margin-mobile": "1.25rem",
+          "space-4xl": "6rem",
+          "space-3xl": "4.5rem",
+          "space-2xs": "0.25rem",
+          "space-xs": "0.5rem",
+          "space-md": "1rem",
+          "space-sm": "0.75rem",
+          "gutter-tablet": "1.5rem",
+          "space-3xs": "0.125rem",
+          "space-xl": "2rem",
+          "space-5xl": "9rem",
+          "grid-margin-desktop": "4rem",
+          "gutter-desktop": "2rem",
+          "grid-margin-tablet": "2rem",
+          "space-2xl": "3rem",
+          "gutter-mobile": "1rem",
+          "space-lg": "1.5rem"
+        },
+        "fontFamily": {
+          "body-xl": [
+            "Space Grotesk"
+          ],
+          "headline-sm": [
+            "Syne"
+          ],
+          "label-md": [
+            "JetBrains Mono"
+          ],
+          "label-sm": [
+            "JetBrains Mono"
+          ],
+          "display-xl": [
+            "Syne"
+          ],
+          "headline-lg": [
+            "Syne"
+          ],
+          "headline-md": [
+            "Syne"
+          ],
+          "display-lg-mobile": [
+            "Syne"
+          ],
+          "display-lg": [
+            "Syne"
+          ],
+          "body-sm": [
+            "Space Grotesk"
+          ],
+          "body-md": [
+            "Space Grotesk"
+          ],
+          "display-xl-mobile": [
+            "Syne"
+          ],
+          "label-lg": [
+            "JetBrains Mono"
+          ],
+          "headline-lg-mobile": [
+            "Syne"
+          ],
+          "body-lg": [
+            "Space Grotesk"
+          ]
+        },
+        "fontSize": {
+          "body-xl": [
+            "20px",
+            {
+              "lineHeight": "30px",
+              "letterSpacing": "-0.01em",
+              "fontWeight": "400"
+            }
+          ],
+          "headline-sm": [
+            "22px",
+            {
+              "lineHeight": "28px",
+              "letterSpacing": "0em",
+              "fontWeight": "600"
+            }
+          ],
+          "label-md": [
+            "11px",
+            {
+              "lineHeight": "14px",
+              "letterSpacing": "0.08em",
+              "fontWeight": "500"
+            }
+          ],
+          "label-sm": [
+            "9px",
+            {
+              "lineHeight": "12px",
+              "letterSpacing": "0.12em",
+              "fontWeight": "600"
+            }
+          ],
+          "display-xl": [
+            "96px",
+            {
+              "lineHeight": "96px",
+              "letterSpacing": "-0.04em",
+              "fontWeight": "800"
+            }
+          ],
+          "headline-lg": [
+            "40px",
+            {
+              "lineHeight": "46px",
+              "letterSpacing": "-0.02em",
+              "fontWeight": "700"
+            }
+          ],
+          "headline-md": [
+            "28px",
+            {
+              "lineHeight": "34px",
+              "letterSpacing": "-0.01em",
+              "fontWeight": "600"
+            }
+          ],
+          "display-lg-mobile": [
+            "36px",
+            {
+              "lineHeight": "40px",
+              "letterSpacing": "-0.02em",
+              "fontWeight": "700"
+            }
+          ],
+          "display-lg": [
+            "64px",
+            {
+              "lineHeight": "68px",
+              "letterSpacing": "-0.03em",
+              "fontWeight": "700"
+            }
+          ],
+          "body-sm": [
+            "13px",
+            {
+              "lineHeight": "18px",
+              "letterSpacing": "0em",
+              "fontWeight": "400"
+            }
+          ],
+          "body-md": [
+            "15px",
+            {
+              "lineHeight": "22px",
+              "letterSpacing": "0em",
+              "fontWeight": "400"
+            }
+          ],
+          "display-xl-mobile": [
+            "48px",
+            {
+              "lineHeight": "52px",
+              "letterSpacing": "-0.03em",
+              "fontWeight": "800"
+            }
+          ],
+          "label-lg": [
+            "13px",
+            {
+              "lineHeight": "16px",
+              "letterSpacing": "0.04em",
+              "fontWeight": "500"
+            }
+          ],
+          "headline-lg-mobile": [
+            "28px",
+            {
+              "lineHeight": "34px",
+              "letterSpacing": "-0.01em",
+              "fontWeight": "700"
+            }
+          ],
+          "body-lg": [
+            "17px",
+            {
+              "lineHeight": "26px",
+              "letterSpacing": "-0.01em",
+              "fontWeight": "400"
+            }
+          ]
+        }
+      },
+    },
+  }</script></head><body class="bg-background font-body-md text-on-surface antialiased selection:bg-secondary-fixed selection:text-on-secondary-fixed"><div class="fixed top-0 left-0 w-3 h-3 bg-primary rounded-full pointer-events-none z-50 mix-blend-difference transition-transform duration-75 ease-out -translate-x-1/2 -translate-y-1/2 hidden md:block" id="custom-cursor"></div><header class="fixed top-0 left-0 w-full z-40 bg-surface/85 backdrop-blur-xl shadow-[0_1px_8px_rgba(0,0,0,0.04)]"><div class="h-20 max-w-7xl mx-auto px-grid-margin-mobile md:px-grid-margin-tablet lg:px-grid-margin-desktop flex items-center justify-between gap-gutter-desktop"><div class="flex items-center gap-space-md"><a class="font-headline-md text-headline-md tracking-tighter uppercase text-primary transition-opacity hover:opacity-80" data-path="discover" href="#">NOVA</a><div class="hidden sm:flex items-center gap-space-2xs px-space-xs py-space-3xs bg-surface-container-high rounded-full"><span class="w-1.5 h-1.5 rounded-full bg-secondary-container animate-pulse"></span><span class="font-label-sm text-label-sm text-on-surface-variant uppercase">[37.7749° N, 122.4194° W]</span></div></div><nav class="hidden lg:flex items-center gap-space-xl" data-active-classes="text-primary font-bold after:scale-x-100"><a aria-current="page" class="relative py-space-2xs uppercase tracking-wider transition-colors after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-full after:h-[1.5px] after:bg-primary after:transition-transform after:duration-200 after:origin-left text-primary font-bold after:scale-x-100" data-path="discover" href="#">Discover</a><a class="relative py-space-2xs font-label-lg text-label-lg uppercase tracking-wider text-on-surface-variant hover:text-on-surface transition-colors after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-full after:h-[1.5px] after:bg-primary after:scale-x-0 hover:after:scale-x-100 after:transition-transform after:duration-200 after:origin-left" data-path="paths" href="#">Paths</a><a class="relative py-space-2xs font-label-lg text-label-lg uppercase tracking-wider text-on-surface-variant hover:text-on-surface transition-colors after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-full after:h-[1.5px] after:bg-primary after:scale-x-0 hover:after:scale-x-100 after:transition-transform after:duration-200 after:origin-left" data-path="tools" href="#">Tools</a><a class="relative py-space-2xs font-label-lg text-label-lg uppercase tracking-wider text-on-surface-variant hover:text-on-surface transition-colors after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-full after:h-[1.5px] after:bg-primary after:scale-x-0 hover:after:scale-x-100 after:transition-transform after:duration-200 after:origin-left" data-path="stories" href="#">Stories</a><a class="relative py-space-2xs font-label-lg text-label-lg uppercase tracking-wider text-on-surface-variant hover:text-on-surface transition-colors after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-full after:h-[1.5px] after:bg-primary after:scale-x-0 hover:after:scale-x-100 after:transition-transform after:duration-200 after:origin-left" data-path="about" href="#">About</a></nav><div class="flex items-center gap-space-md"><a class="inline-flex items-center justify-center px-space-lg py-space-sm rounded-full bg-secondary-container hover:bg-secondary-fixed text-on-secondary-fixed font-label-lg text-label-lg uppercase transition-all duration-200 hover:-translate-y-0.5 active:translate-y-0 shadow-[0_2px_12px_rgba(199,239,0,0.35)]" data-path="start-exploring" href="#">Start Exploring →</a><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div></div></div></header><main class="w-full pt-20 bg-background min-h-screen"><div class="flex flex-col w-full selection:bg-secondary-fixed selection:text-on-secondary-fixed overflow-hidden">
+<!-- ========================================================================= -->
+<!-- 01. HERO SECTION: UNWRITTEN + DYNAMIC CONSTELLATION ATLAS               -->
+<!-- ========================================================================= -->
+<section class="relative w-full min-h-[92vh] flex flex-col justify-between px-grid-margin-mobile md:px-grid-margin-tablet lg:px-grid-margin-desktop pt-space-xl pb-space-3xl overflow-hidden">
+<!-- Interactive Canvas Constellation Background -->
+<div class="absolute inset-0 z-0 pointer-events-auto opacity-70">
+<canvas class="w-full h-full block" id="hero-constellation-canvas"></canvas>
+</div>
+<!-- Top Metadata / Dossier Overline -->
+<div class="relative z-10 flex flex-wrap items-center justify-between gap-space-sm pt-space-xs pointer-events-none">
+<div class="flex items-center gap-space-xs bg-surface-container-high/90 px-space-sm py-space-3xs rounded-full shadow-sm">
+<span class="w-2 h-2 rounded-full bg-secondary-container animate-pulse"></span>
+<span class="font-label-sm text-label-sm text-on-surface uppercase tracking-widest">[ NOVA LABS // PROJECTION ENGINE 4.2 ]</span>
+</div>
+<div class="hidden sm:flex items-center gap-space-lg font-label-sm text-label-sm text-on-surface-variant uppercase tracking-widest">
+<span>GRID REF: 44.98° N / 93.26° W</span>
+<span>STATUS: UNWRITTEN</span>
+<span class="text-secondary font-bold">LIVE TELEMETRY ACTIVE</span>
+</div>
+</div>
+<!-- Monumental Typography -->
+<div class="relative z-10 max-w-7xl my-auto pt-space-2xl pb-space-xl pointer-events-none">
+<div class="space-y-0 select-none">
+<p class="font-label-md text-label-md uppercase tracking-[0.25em] text-on-surface-variant mb-space-xs pointer-events-auto">
+          [ MANIFESTO INDEX: ZERO ]
+        </p>
+<h1 class="font-display-xl text-[54px] sm:text-[76px] md:text-[110px] lg:text-[132px] leading-[0.88] tracking-[-0.05em] text-primary uppercase font-extrabold flex flex-col">
+<span>YOUR FUTURE</span>
+<span class="text-surface-tint/30 hover:text-primary transition-colors duration-500">IS STILL</span>
+<span class="relative inline-block w-fit text-primary underline decoration-secondary-container decoration-[14px] md:decoration-[22px] underline-offset-[-2px] md:underline-offset-[-6px]">
+            UNWRITTEN.
+          </span>
+</h1>
+</div>
+<!-- Grid Meta Deck + Action Suite -->
+<div class="mt-space-xl grid grid-cols-1 md:grid-cols-12 gap-space-lg items-end pointer-events-auto">
+<div class="md:col-span-6 lg:col-span-5">
+<p class="font-body-xl text-body-lg md:text-body-xl text-on-surface-variant max-w-xl font-normal leading-relaxed">
+            Explore what you’re good at. Discover where it can take you. Build the tangible proof-of-work to get there.
+          </p>
+<div class="mt-space-xs flex items-center gap-space-sm font-label-sm text-label-sm text-on-surface-variant">
+<span class="w-1.5 h-1.5 rounded-full bg-secondary"></span>
+<span>8 CONNECTED DOMAINS</span>
+<span>•</span>
+<span>REAL-TIME TRAJECTORIES</span>
+</div>
+</div>
+<div class="md:col-span-6 lg:col-span-7 flex flex-wrap items-center md:justify-end gap-space-md">
+<button class="px-space-xl py-space-md bg-secondary-container hover:bg-secondary-fixed text-on-secondary-fixed font-label-lg text-label-lg uppercase tracking-wider rounded-none shadow-[4px_4px_0px_#000000] hover:-translate-x-0.5 hover:-translate-y-0.5 active:translate-x-0 active:translate-y-0 transition-all flex items-center gap-space-xs" id="hero-primary-cta">
+<span>Start Exploring</span>
+<span class="material-symbols-outlined text-[18px]">arrow_forward</span>
+</button>
+<button class="px-space-lg py-space-md bg-surface-container hover:bg-surface-container-high text-on-surface font-label-lg text-label-lg uppercase tracking-wider rounded-none shadow-[2px_2px_0px_rgba(0,0,0,0.15)] flex items-center gap-space-xs group transition-all" id="hero-interactive-modal-toggle">
+<span class="material-symbols-outlined text-secondary text-[20px] group-hover:scale-110 transition-transform">play_circle</span>
+<span>See How It Works</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant ml-space-xs">[01:28]</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Bottom Interactive Node Bar -->
+<div class="relative z-10 bg-surface-container-low/90 backdrop-blur-md p-space-sm rounded-none shadow-sm flex flex-wrap items-center justify-between gap-space-md">
+<div class="flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-on-surface-variant text-[18px]">hub</span>
+<span class="font-label-sm text-label-sm text-on-surface uppercase">CONSTELLATION NODES:</span>
+</div>
+<div class="flex flex-wrap gap-space-2xs text-on-surface">
+<button class="node-filter-btn px-space-xs py-space-3xs font-label-sm text-label-sm uppercase bg-surface-container-high hover:bg-secondary-container hover:text-on-secondary-fixed transition-colors" data-node="tech">Tech</button>
+<button class="node-filter-btn px-space-xs py-space-3xs font-label-sm text-label-sm uppercase bg-surface-container-high hover:bg-secondary-container hover:text-on-secondary-fixed transition-colors" data-node="design">Design</button>
+<button class="node-filter-btn px-space-xs py-space-3xs font-label-sm text-label-sm uppercase bg-surface-container-high hover:bg-secondary-container hover:text-on-secondary-fixed transition-colors" data-node="cyber">Cybersecurity</button>
+<button class="node-filter-btn px-space-xs py-space-3xs font-label-sm text-label-sm uppercase bg-surface-container-high hover:bg-secondary-container hover:text-on-secondary-fixed transition-colors" data-node="ai">AI / Research</button>
+<button class="node-filter-btn px-space-xs py-space-3xs font-label-sm text-label-sm uppercase bg-surface-container-high hover:bg-secondary-container hover:text-on-secondary-fixed transition-colors" data-node="product">Product</button>
+<button class="node-filter-btn px-space-xs py-space-3xs font-label-sm text-label-sm uppercase bg-surface-container-high hover:bg-secondary-container hover:text-on-secondary-fixed transition-colors" data-node="business">Business</button>
+</div>
+<div class="font-label-sm text-label-sm text-secondary font-semibold uppercase" id="constellation-active-readout">
+        Hover nodes or space to route vectors
+      </div>
+</div>
+</section>
+<!-- ========================================================================= -->
+<!-- 02. 'WHERE COULD YOU GO?' HORIZONTAL DYNAMIC PANELS                     -->
+<!-- ========================================================================= -->
+<section class="w-full bg-surface-container-lowest py-space-4xl px-grid-margin-mobile md:px-grid-margin-tablet lg:px-grid-margin-desktop">
+<div class="max-w-7xl mx-auto">
+<div class="flex flex-col lg:flex-row lg:items-end justify-between gap-space-lg mb-space-2xl">
+<div>
+<span class="font-label-sm text-label-sm uppercase tracking-[0.2em] text-on-surface-variant">[ DISPATCH 02 // SECTOR DIRECTORY ]</span>
+<h2 class="font-display-lg text-display-lg-mobile md:text-display-lg uppercase tracking-tight text-primary leading-none mt-space-2xs">
+            WHERE<br/>COULD<br/>YOU GO?
+          </h2>
+</div>
+<div class="max-w-md">
+<p class="font-body-md text-body-md text-on-surface-variant mb-space-sm">
+            Five primary kinetic tracks. Expand any sector to inspect median trajectory salaries, technical primitives, and architectural roles.
+          </p>
+<div class="flex items-center gap-space-xs font-label-sm text-label-sm text-on-surface">
+<span class="w-2 h-2 rounded-full bg-secondary animate-ping"></span>
+<span>HOVER OR TAP PANELS TO EXPAND SECTOR DOSSIER</span>
+</div>
+</div>
+</div>
+<!-- Accordion / Visual Strip Panels -->
+<div class="grid grid-cols-1 lg:grid-cols-5 gap-space-xs min-h-[580px]" id="sector-panels">
+<!-- Panel 01: BUILD -->
+<div class="sector-card group relative bg-surface-container p-space-lg flex flex-col justify-between transition-all duration-500 overflow-hidden shadow-sm cursor-pointer lg:hover:col-span-2" data-sector="build">
+<div class="relative z-10">
+<div class="flex items-center justify-between mb-space-md">
+<span class="font-label-md text-label-md uppercase tracking-wider text-on-surface-variant font-bold">[ 01 ]</span>
+<span class="px-space-xs py-space-3xs bg-primary text-on-primary font-label-sm text-label-sm uppercase">DEV / INFRA</span>
+</div>
+<h3 class="font-headline-lg text-headline-lg uppercase text-primary tracking-tighter group-hover:text-secondary transition-colors">
+              BUILD
+            </h3>
+<p class="font-label-md text-label-md text-on-surface-variant uppercase tracking-wider mt-space-2xs">
+              Software // Engineering // Cloud
+            </p>
+</div>
+<!-- Mid Graphic SVG Architecture Preview -->
+<div class="relative z-10 my-space-md bg-surface-container-high/60 p-space-md rounded-none">
+<div class="flex items-center justify-between text-on-surface-variant font-label-sm text-label-sm mb-space-xs">
+<span>STACK TOPOLOGY</span>
+<span>v2.8</span>
+</div>
+<svg class="w-full h-16 text-primary" fill="none" viewbox="0 0 240 60">
+<path d="M10 50 L50 20 L110 40 L170 10 L230 35" stroke="currentColor" stroke-dasharray="3 3" stroke-width="2"></path>
+<circle cx="50" cy="20" fill="currentColor" r="4"></circle>
+<circle cx="110" cy="40" fill="currentColor" r="4"></circle>
+<circle class="text-secondary" cx="170" cy="10" fill="currentColor" r="5"></circle>
+<circle cx="230" cy="35" fill="currentColor" r="4"></circle>
+</svg>
+<div class="text-on-surface font-label-sm text-label-sm flex justify-between pt-space-2xs">
+<span>Rust / Distributed</span>
+<span class="text-secondary font-bold">+38% YoY</span>
+</div>
+</div>
+<div class="relative z-10">
+<div class="space-y-space-2xs pb-space-sm text-on-surface">
+<div class="font-label-sm text-label-sm text-on-surface-variant uppercase">TARGET ROLES:</div>
+<div class="font-body-md text-body-md font-medium text-primary">Systems Architect • Core Infra Eng • Kernel Hacker</div>
+</div>
+<div class="pt-space-sm flex items-center justify-between bg-surface-container-highest/80 px-space-sm py-space-xs">
+<span class="font-label-sm text-label-sm text-on-surface-variant">COMPENSATION BAND</span>
+<span class="font-label-md text-label-md font-bold text-primary">$138K — $245K</span>
+</div>
+</div>
+</div>
+<!-- Panel 02: CREATE -->
+<div class="sector-card group relative bg-surface-container-low p-space-lg flex flex-col justify-between transition-all duration-500 overflow-hidden shadow-sm cursor-pointer lg:hover:col-span-2" data-sector="create">
+<div class="relative z-10">
+<div class="flex items-center justify-between mb-space-md">
+<span class="font-label-md text-label-md uppercase tracking-wider text-on-surface-variant font-bold">[ 02 ]</span>
+<span class="px-space-xs py-space-3xs bg-secondary-container text-on-secondary-fixed font-label-sm text-label-sm uppercase font-bold">AVANT-GARDE</span>
+</div>
+<h3 class="font-headline-lg text-headline-lg uppercase text-primary tracking-tighter group-hover:text-secondary transition-colors">
+              CREATE
+            </h3>
+<p class="font-label-md text-label-md text-on-surface-variant uppercase tracking-wider mt-space-2xs">
+              Design // Content // Product
+            </p>
+</div>
+<div class="relative z-10 my-space-md bg-surface-container-high/60 p-space-md">
+<div class="flex items-center justify-between text-on-surface-variant font-label-sm text-label-sm mb-space-xs">
+<span>DESIGN SPEC</span>
+<span>FIGMA / WEBGL</span>
+</div>
+<div class="grid grid-cols-3 gap-space-2xs h-16 items-end">
+<div class="h-10 bg-primary/20 hover:bg-secondary-container transition-colors"></div>
+<div class="h-16 bg-primary"></div>
+<div class="h-7 bg-secondary-container"></div>
+</div>
+<div class="text-on-surface font-label-sm text-label-sm flex justify-between pt-space-2xs">
+<span>Spatial UX &amp; Motion</span>
+<span class="text-secondary font-bold">High Demand</span>
+</div>
+</div>
+<div class="relative z-10">
+<div class="space-y-space-2xs pb-space-sm text-on-surface">
+<div class="font-label-sm text-label-sm text-on-surface-variant uppercase">TARGET ROLES:</div>
+<div class="font-body-md text-body-md font-medium text-primary">Creative Technologist • Design Engineer • Brand Architect</div>
+</div>
+<div class="pt-space-sm flex items-center justify-between bg-surface-container-highest/80 px-space-sm py-space-xs">
+<span class="font-label-sm text-label-sm text-on-surface-variant">COMPENSATION BAND</span>
+<span class="font-label-md text-label-md font-bold text-primary">$120K — $210K</span>
+</div>
+</div>
+</div>
+<!-- Panel 03: DISCOVER -->
+<div class="sector-card group relative bg-surface-container p-space-lg flex flex-col justify-between transition-all duration-500 overflow-hidden shadow-sm cursor-pointer lg:hover:col-span-2" data-sector="discover">
+<div class="relative z-10">
+<div class="flex items-center justify-between mb-space-md">
+<span class="font-label-md text-label-md uppercase tracking-wider text-on-surface-variant font-bold">[ 03 ]</span>
+<span class="px-space-xs py-space-3xs bg-primary text-on-primary font-label-sm text-label-sm uppercase">AI / QUANT</span>
+</div>
+<h3 class="font-headline-lg text-headline-lg uppercase text-primary tracking-tighter group-hover:text-secondary transition-colors">
+              DISCOVER
+            </h3>
+<p class="font-label-md text-label-md text-on-surface-variant uppercase tracking-wider mt-space-2xs">
+              Research // Data // AI Science
+            </p>
+</div>
+<div class="relative z-10 my-space-md bg-surface-container-high/60 p-space-md">
+<div class="flex items-center justify-between text-on-surface-variant font-label-sm text-label-sm mb-space-xs">
+<span>QUANTUM TENSOR</span>
+<span>99.4% F1</span>
+</div>
+<svg class="w-full h-16 text-primary" viewbox="0 0 200 60">
+<line stroke="#c4c7c7" stroke-width="1" x1="0" x2="200" y1="30" y2="30"></line>
+<path d="M0 30 Q 50 5 100 30 T 200 30" fill="none" stroke="currentColor" stroke-width="2.5"></path>
+<circle cx="100" cy="30" fill="#c7ef00" r="4"></circle>
+</svg>
+<div class="text-on-surface font-label-sm text-label-sm flex justify-between pt-space-2xs">
+<span>Foundation Models</span>
+<span class="text-secondary font-bold">+52% YoY</span>
+</div>
+</div>
+<div class="relative z-10">
+<div class="space-y-space-2xs pb-space-sm text-on-surface">
+<div class="font-label-sm text-label-sm text-on-surface-variant uppercase">TARGET ROLES:</div>
+<div class="font-body-md text-body-md font-medium text-primary">AI Research Fellow • Neural Evaluator • Data Cartographer</div>
+</div>
+<div class="pt-space-sm flex items-center justify-between bg-surface-container-highest/80 px-space-sm py-space-xs">
+<span class="font-label-sm text-label-sm text-on-surface-variant">COMPENSATION BAND</span>
+<span class="font-label-md text-label-md font-bold text-primary">$155K — $280K</span>
+</div>
+</div>
+</div>
+<!-- Panel 04: PROTECT -->
+<div class="sector-card group relative bg-surface-container-low p-space-lg flex flex-col justify-between transition-all duration-500 overflow-hidden shadow-sm cursor-pointer lg:hover:col-span-2" data-sector="protect">
+<div class="relative z-10">
+<div class="flex items-center justify-between mb-space-md">
+<span class="font-label-md text-label-md uppercase tracking-wider text-on-surface-variant font-bold">[ 04 ]</span>
+<span class="px-space-xs py-space-3xs bg-primary text-on-primary font-label-sm text-label-sm uppercase">DEFENSE</span>
+</div>
+<h3 class="font-headline-lg text-headline-lg uppercase text-primary tracking-tighter group-hover:text-secondary transition-colors">
+              PROTECT
+            </h3>
+<p class="font-label-md text-label-md text-on-surface-variant uppercase tracking-wider mt-space-2xs">
+              Cybersecurity // Zero Trust
+            </p>
+</div>
+<div class="relative z-10 my-space-md bg-surface-container-high/60 p-space-md font-label-sm text-label-sm">
+<div class="flex justify-between text-on-surface-variant">
+<span>CRYPTO PROTOCOL</span>
+<span>SHA-512</span>
+</div>
+<div class="py-space-2xs tracking-widest text-primary font-mono text-[10px] break-all leading-tight">
+              0x8F9C21..E599B23F<br/>VERIFIED_ATTESTATION
+            </div>
+<div class="text-on-surface flex justify-between pt-space-2xs">
+<span>AppSec &amp; Red Team</span>
+<span class="text-secondary font-bold">Critical Supply</span>
+</div>
+</div>
+<div class="relative z-10">
+<div class="space-y-space-2xs pb-space-sm text-on-surface">
+<div class="font-label-sm text-label-sm text-on-surface-variant uppercase">TARGET ROLES:</div>
+<div class="font-body-md text-body-md font-medium text-primary">Offensive Security Eng • Cloud Sec Architect • Cryptographer</div>
+</div>
+<div class="pt-space-sm flex items-center justify-between bg-surface-container-highest/80 px-space-sm py-space-xs">
+<span class="font-label-sm text-label-sm text-on-surface-variant">COMPENSATION BAND</span>
+<span class="font-label-md text-label-md font-bold text-primary">$142K — $230K</span>
+</div>
+</div>
+</div>
+<!-- Panel 05: LEAD -->
+<div class="sector-card group relative bg-surface-container p-space-lg flex flex-col justify-between transition-all duration-500 overflow-hidden shadow-sm cursor-pointer lg:hover:col-span-2" data-sector="lead">
+<div class="relative z-10">
+<div class="flex items-center justify-between mb-space-md">
+<span class="font-label-md text-label-md uppercase tracking-wider text-on-surface-variant font-bold">[ 05 ]</span>
+<span class="px-space-xs py-space-3xs bg-primary text-on-primary font-label-sm text-label-sm uppercase">STRATEGY</span>
+</div>
+<h3 class="font-headline-lg text-headline-lg uppercase text-primary tracking-tighter group-hover:text-secondary transition-colors">
+              LEAD
+            </h3>
+<p class="font-label-md text-label-md text-on-surface-variant uppercase tracking-wider mt-space-2xs">
+              Business // Product Strategy
+            </p>
+</div>
+<div class="relative z-10 my-space-md bg-surface-container-high/60 p-space-md">
+<div class="flex items-center justify-between text-on-surface-variant font-label-sm text-label-sm mb-space-xs">
+<span>MARKET TRAJECTORY</span>
+<span>SERIES A-C</span>
+</div>
+<div class="flex items-end gap-space-2xs h-16">
+<div class="w-1/4 h-6 bg-surface-dim"></div>
+<div class="w-1/4 h-10 bg-primary/40"></div>
+<div class="w-1/4 h-12 bg-primary"></div>
+<div class="w-1/4 h-16 bg-secondary-container"></div>
+</div>
+<div class="text-on-surface font-label-sm text-label-sm flex justify-between pt-space-2xs">
+<span>Venture Builder</span>
+<span class="text-secondary font-bold">+29% YoY</span>
+</div>
+</div>
+<div class="relative z-10">
+<div class="space-y-space-2xs pb-space-sm text-on-surface">
+<div class="font-label-sm text-label-sm text-on-surface-variant uppercase">TARGET ROLES:</div>
+<div class="font-body-md text-body-md font-medium text-primary">Venture Operator • Technical Product Lead • Growth Principal</div>
+</div>
+<div class="pt-space-sm flex items-center justify-between bg-surface-container-highest/80 px-space-sm py-space-xs">
+<span class="font-label-sm text-label-sm text-on-surface-variant">COMPENSATION BAND</span>
+<span class="font-label-md text-label-md font-bold text-primary">$130K — $225K</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- ========================================================================= -->
+<!-- 03. 'START WITH YOU' PROFILE SYNTHESIZER                                -->
+<!-- ========================================================================= -->
+<section class="w-full bg-surface-container-low py-space-5xl px-grid-margin-mobile md:px-grid-margin-tablet lg:px-grid-margin-desktop">
+<div class="max-w-7xl mx-auto">
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-space-2xl items-start">
+<!-- Left: Interactive Tag Synthesis Cloud -->
+<div class="lg:col-span-7">
+<span class="font-label-sm text-label-sm uppercase tracking-[0.25em] text-on-surface-variant">[ SYNTHESIZER PROTOCOL // MATRIX 03 ]</span>
+<h2 class="font-headline-lg text-headline-lg uppercase text-primary tracking-tight mt-space-2xs mb-space-sm">
+            START WITH YOU.
+          </h2>
+<p class="font-body-lg text-body-lg text-on-surface-variant mb-space-xl max-w-xl">
+            Your interests. Your skills. Your curiosity. Your starting point. Tap tags to inject dynamic weights into the projection vector.
+          </p>
+<div class="p-space-lg bg-surface-container-lowest rounded-none shadow-sm space-y-space-md">
+<div class="flex items-center justify-between">
+<span class="font-label-sm text-label-sm uppercase tracking-widest text-on-surface-variant">INTEREST &amp; SKILL CLOUD (MAGNETIC)</span>
+<button class="font-label-sm text-label-sm text-on-surface-variant hover:text-primary underline" id="reset-synthesizer-btn">Clear Selection</button>
+</div>
+<!-- Magnetic Pills Cloud -->
+<div class="flex flex-wrap gap-space-xs pt-space-xs" id="synthesizer-cloud">
+<button class="synth-pill px-space-md py-space-xs font-label-md text-label-md uppercase bg-surface-container hover:bg-secondary-container hover:text-on-secondary-fixed transition-all active:scale-95" data-val="Python" data-vector="tech,ai">
+                + Python
+              </button>
+<button class="synth-pill px-space-md py-space-xs font-label-md text-label-md uppercase bg-secondary-container text-on-secondary-fixed font-bold transition-all active:scale-95" data-val="Visual Design" data-vector="design">
+                ✓ Visual Design
+              </button>
+<button class="synth-pill px-space-md py-space-xs font-label-md text-label-md uppercase bg-surface-container hover:bg-secondary-container hover:text-on-secondary-fixed transition-all active:scale-95" data-val="Writing" data-vector="create,business">
+                + Writing
+              </button>
+<button class="synth-pill px-space-md py-space-xs font-label-md text-label-md uppercase bg-secondary-container text-on-secondary-fixed font-bold transition-all active:scale-95" data-val="Problem Solving" data-vector="tech,discover">
+                ✓ Problem Solving
+              </button>
+<button class="synth-pill px-space-md py-space-xs font-label-md text-label-md uppercase bg-surface-container hover:bg-secondary-container hover:text-on-secondary-fixed transition-all active:scale-95" data-val="Distributed Systems" data-vector="tech,protect">
+                + Distributed Systems
+              </button>
+<button class="synth-pill px-space-md py-space-xs font-label-md text-label-md uppercase bg-surface-container hover:bg-secondary-container hover:text-on-secondary-fixed transition-all active:scale-95" data-val="Creative Direction" data-vector="design,create">
+                + Creative Direction
+              </button>
+<button class="synth-pill px-space-md py-space-xs font-label-md text-label-md uppercase bg-surface-container hover:bg-secondary-container hover:text-on-secondary-fixed transition-all active:scale-95" data-val="Cryptography" data-vector="protect,tech">
+                + Cryptography
+              </button>
+<button class="synth-pill px-space-md py-space-xs font-label-md text-label-md uppercase bg-surface-container hover:bg-secondary-container hover:text-on-secondary-fixed transition-all active:scale-95" data-val="Behavioral Economics" data-vector="business,discover">
+                + Behavioral Economics
+              </button>
+<button class="synth-pill px-space-md py-space-xs font-label-md text-label-md uppercase bg-secondary-container text-on-secondary-fixed font-bold transition-all active:scale-95" data-val="Curiosity" data-vector="all">
+                ✓ Curiosity
+              </button>
+<button class="synth-pill px-space-md py-space-xs font-label-md text-label-md uppercase bg-surface-container hover:bg-secondary-container hover:text-on-secondary-fixed transition-all active:scale-95" data-val="Product Strategy" data-vector="business,product">
+                + Product Strategy
+              </button>
+<button class="synth-pill px-space-md py-space-xs font-label-md text-label-md uppercase bg-surface-container hover:bg-secondary-container hover:text-on-secondary-fixed transition-all active:scale-95" data-val="Machine Learning" data-vector="ai,discover">
+                + Machine Learning
+              </button>
+<button class="synth-pill px-space-md py-space-xs font-label-md text-label-md uppercase bg-surface-container hover:bg-secondary-container hover:text-on-secondary-fixed transition-all active:scale-95" data-val="Architecture" data-vector="tech,design">
+                + Architecture
+              </button>
+</div>
+<div class="pt-space-md flex items-center justify-between font-label-sm text-label-sm text-on-surface-variant">
+<span>ACTIVE SYNTHESIS COVARIANCE: 3 NODES SELECTED</span>
+<span class="text-secondary font-bold">LATENCY: 0.4ms</span>
+</div>
+</div>
+</div>
+<!-- Right: Live Real-Time Trajectory Matrix -->
+<div class="lg:col-span-5 bg-primary text-on-primary p-space-xl shadow-[6px_6px_0px_#caf300]">
+<div class="flex items-center justify-between pb-space-md">
+<span class="font-label-sm text-label-sm text-secondary-fixed uppercase tracking-widest">[ PROJECTION RESULTS ]</span>
+<span class="material-symbols-outlined text-secondary-fixed text-[20px]">bolt</span>
+</div>
+<h3 class="font-headline-md text-headline-md uppercase text-on-primary tracking-tight mb-space-sm">
+            TRAJECTORY MATRIX
+          </h3>
+<p class="font-body-sm text-body-sm text-on-primary-container mb-space-lg">
+            Calculated affinities matching selected interest seeds to enterprise roles and creative studios:
+          </p>
+<!-- Match Bars -->
+<div class="space-y-space-md">
+<!-- Role 1 -->
+<div class="space-y-space-3xs">
+<div class="flex justify-between font-label-md text-label-md uppercase">
+<span class="text-on-primary font-bold">01. Creative Technologist</span>
+<span class="text-secondary-fixed font-bold" id="match-score-1">94% MATCH</span>
+</div>
+<div class="w-full h-2 bg-on-primary/20 overflow-hidden">
+<div class="h-full bg-secondary-fixed transition-all duration-700" id="match-bar-1" style="width: 94%;"></div>
+</div>
+<p class="font-body-sm text-body-sm text-on-primary-container pt-space-3xs">
+                Blends physical UX, creative coding, and brand installation frameworks.
+              </p>
+</div>
+<!-- Role 2 -->
+<div class="space-y-space-3xs">
+<div class="flex justify-between font-label-md text-label-md uppercase">
+<span class="text-on-primary font-bold">02. Systems Design Engineer</span>
+<span class="text-secondary-fixed font-bold" id="match-score-2">88% MATCH</span>
+</div>
+<div class="w-full h-2 bg-on-primary/20 overflow-hidden">
+<div class="h-full bg-secondary-fixed transition-all duration-700" id="match-bar-2" style="width: 88%;"></div>
+</div>
+<p class="font-body-sm text-body-sm text-on-primary-container pt-space-3xs">
+                Translates high-level system logic into tangible digital products.
+              </p>
+</div>
+<!-- Role 3 -->
+<div class="space-y-space-3xs">
+<div class="flex justify-between font-label-md text-label-md uppercase">
+<span class="text-on-primary font-bold">03. Behavioral Product Lead</span>
+<span class="text-secondary-fixed font-bold" id="match-score-3">79% MATCH</span>
+</div>
+<div class="w-full h-2 bg-on-primary/20 overflow-hidden">
+<div class="h-full bg-secondary-fixed transition-all duration-700" id="match-bar-3" style="width: 79%;"></div>
+</div>
+<p class="font-body-sm text-body-sm text-on-primary-container pt-space-3xs">
+                Applies decision architecture to high-scale user onboarding ecosystems.
+              </p>
+</div>
+</div>
+<div class="mt-space-xl pt-space-md">
+<button class="w-full py-space-md bg-secondary-fixed hover:bg-secondary-fixed-dim text-on-secondary-fixed font-label-lg text-label-lg uppercase tracking-wider font-bold transition-all shadow-md flex items-center justify-center gap-space-xs">
+<span>Build My Direction</span>
+<span class="material-symbols-outlined text-[18px]">arrow_forward</span>
+</button>
+<div class="text-center mt-space-xs font-label-sm text-label-sm text-on-primary-container">
+              No account required. Synthesis generates offline artifact immediately.
+            </div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- ========================================================================= -->
+<!-- 04. THE JOURNEY TIMELINE: 'ONE STEP BECOMES A DIRECTION'                 -->
+<!-- ========================================================================= -->
+<section class="w-full bg-surface-container-lowest py-space-4xl px-grid-margin-mobile md:px-grid-margin-tablet lg:px-grid-margin-desktop">
+<div class="max-w-7xl mx-auto">
+<div class="flex flex-col md:flex-row md:items-end justify-between mb-space-2xl gap-space-md">
+<div>
+<span class="font-label-sm text-label-sm uppercase tracking-[0.25em] text-on-surface-variant">[ FLUID PROGRESSION // CHRONOLOGY ]</span>
+<h2 class="font-display-lg text-display-lg-mobile md:text-display-lg uppercase tracking-tight text-primary leading-none mt-space-2xs">
+            ONE STEP<br/>BECOMES A DIRECTION.
+          </h2>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant max-w-sm">
+          A non-linear blueprint for going from scattered curiosity to definitive industry credibility. Select any stage to inspect practical deliverables.
+        </p>
+</div>
+<!-- Stepped Horizontal Grid / Progress Track -->
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-6 gap-space-sm relative">
+<!-- Step 01: DISCOVER -->
+<div class="journey-node group bg-surface-container p-space-md rounded-none shadow-sm hover:shadow-md hover:bg-surface-container-high transition-all cursor-pointer" data-step="1">
+<div class="font-label-sm text-label-sm text-on-surface-variant font-bold mb-space-xs">[ 01 ]</div>
+<h3 class="font-headline-sm text-headline-sm uppercase text-primary group-hover:text-secondary transition-colors">
+            DISCOVER
+          </h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-space-xs">
+            Understand what actually interests you without dogma or external pressure.
+          </p>
+<div class="mt-space-md pt-space-xs bg-surface-container-highest/80 p-space-xs font-label-sm text-label-sm text-on-surface">
+            ARTIFACT:
+            <span class="block font-semibold text-primary">Interest Topology Map</span>
+</div>
+</div>
+<!-- Step 02: LEARN -->
+<div class="journey-node group bg-surface-container p-space-md rounded-none shadow-sm hover:shadow-md hover:bg-surface-container-high transition-all cursor-pointer" data-step="2">
+<div class="font-label-sm text-label-sm text-on-surface-variant font-bold mb-space-xs">[ 02 ]</div>
+<h3 class="font-headline-sm text-headline-sm uppercase text-primary group-hover:text-secondary transition-colors">
+            LEARN
+          </h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-space-xs">
+            Build the precise high-leverage skills your target role demands.
+          </p>
+<div class="mt-space-md pt-space-xs bg-surface-container-highest/80 p-space-xs font-label-sm text-label-sm text-on-surface">
+            ARTIFACT:
+            <span class="block font-semibold text-primary">Target Curriculum Syllabus</span>
+</div>
+</div>
+<!-- Step 03: BUILD -->
+<div class="journey-node group bg-secondary-container text-on-secondary-fixed p-space-md rounded-none shadow-md hover:shadow-lg transition-all cursor-pointer" data-step="3">
+<div class="font-label-sm text-label-sm uppercase font-bold mb-space-xs">[ 03 CURRENT ]</div>
+<h3 class="font-headline-sm text-headline-sm uppercase tracking-tight">
+            BUILD
+          </h3>
+<p class="font-body-sm text-body-sm mt-space-xs">
+            Turn theoretical knowledge into real, shipping open-source products.
+          </p>
+<div class="mt-space-md pt-space-xs bg-primary text-on-primary p-space-xs font-label-sm text-label-sm">
+            ARTIFACT:
+            <span class="block font-semibold text-secondary-fixed">Production GitHub Repos</span>
+</div>
+</div>
+<!-- Step 04: PRACTICE -->
+<div class="journey-node group bg-surface-container p-space-md rounded-none shadow-sm hover:shadow-md hover:bg-surface-container-high transition-all cursor-pointer" data-step="4">
+<div class="font-label-sm text-label-sm text-on-surface-variant font-bold mb-space-xs">[ 04 ]</div>
+<h3 class="font-headline-sm text-headline-sm uppercase text-primary group-hover:text-secondary transition-colors">
+            PRACTICE
+          </h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-space-xs">
+            Prepare for interviews, real-world whiteboard runs, and dynamic drills.
+          </p>
+<div class="mt-space-md pt-space-xs bg-surface-container-highest/80 p-space-xs font-label-sm text-label-sm text-on-surface">
+            ARTIFACT:
+            <span class="block font-semibold text-primary">Simulated Incident Audits</span>
+</div>
+</div>
+<!-- Step 05: APPLY -->
+<div class="journey-node group bg-surface-container p-space-md rounded-none shadow-sm hover:shadow-md hover:bg-surface-container-high transition-all cursor-pointer" data-step="5">
+<div class="font-label-sm text-label-sm text-on-surface-variant font-bold mb-space-xs">[ 05 ]</div>
+<h3 class="font-headline-sm text-headline-sm uppercase text-primary group-hover:text-secondary transition-colors">
+            APPLY
+          </h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-space-xs">
+            Find bespoke opportunities that match your verified direction.
+          </p>
+<div class="mt-space-md pt-space-xs bg-surface-container-highest/80 p-space-xs font-label-sm text-label-sm text-on-surface">
+            ARTIFACT:
+            <span class="block font-semibold text-primary">Curated Studio Rolodex</span>
+</div>
+</div>
+<!-- Step 06: GROW -->
+<div class="journey-node group bg-surface-container p-space-md rounded-none shadow-sm hover:shadow-md hover:bg-surface-container-high transition-all cursor-pointer" data-step="6">
+<div class="font-label-sm text-label-sm text-on-surface-variant font-bold mb-space-xs">[ 06 ]</div>
+<h3 class="font-headline-sm text-headline-sm uppercase text-primary group-hover:text-secondary transition-colors">
+            GROW
+          </h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-space-xs">
+            Keep evolving. Expand scope, mentor upcoming fellows, architect teams.
+          </p>
+<div class="mt-space-md pt-space-xs bg-surface-container-highest/80 p-space-xs font-label-sm text-label-sm text-on-surface">
+            ARTIFACT:
+            <span class="block font-semibold text-primary">Long-Term Legacy Vault</span>
+</div>
+</div>
+</div>
+<!-- Live Interactive Stage Detail Viewer -->
+<div class="mt-space-lg p-space-lg bg-surface-container-low shadow-sm flex flex-col md:flex-row items-start md:items-center justify-between gap-space-md" id="step-detail-box">
+<div class="flex items-center gap-space-md">
+<span class="material-symbols-outlined text-secondary text-[28px]">terminal</span>
+<div>
+<div class="font-label-sm text-label-sm uppercase text-on-surface-variant">[ ACTIVE INSPECTOR: STAGE 03 // BUILD ]</div>
+<div class="font-body-md text-body-md font-bold text-primary">Deliverable: Deploy 1 full-stack zero-dependency application with automated CI/CD pipeline.</div>
+</div>
+</div>
+<div class="flex items-center gap-space-sm">
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase">EST. TIME: 4-6 WEEKS</span>
+<button class="px-space-md py-space-xs bg-primary text-on-primary font-label-sm text-label-sm uppercase hover:bg-secondary hover:text-on-secondary transition-colors">View Rubric</button>
+</div>
+</div>
+</div>
+</section>
+<!-- ========================================================================= -->
+<!-- 05. TOOLS FOR THE JOURNEY (DIGITAL ARTIFACT PREVIEWS)                   -->
+<!-- ========================================================================= -->
+<section class="w-full bg-surface-container py-space-5xl px-grid-margin-mobile md:px-grid-margin-tablet lg:px-grid-margin-desktop">
+<div class="max-w-7xl mx-auto">
+<div class="flex flex-col md:flex-row md:items-end justify-between gap-space-md mb-space-2xl">
+<div>
+<span class="font-label-sm text-label-sm uppercase tracking-[0.25em] text-on-surface-variant">[ SYSTEM TOOLS // OPERATIONAL ARTIFACTS ]</span>
+<h2 class="font-headline-lg text-headline-lg uppercase tracking-tight text-primary mt-space-2xs">
+            TOOLS FOR THE JOURNEY
+          </h2>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant max-w-md">
+          Tactile, high-craft instruments engineered to replace fragmented spreadsheets, resume generators, and dead-end job boards.
+        </p>
+</div>
+<!-- 6 High-Craft Digital Artifact Previews -->
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-space-lg">
+<!-- Artifact 1: Resume Studio -->
+<div class="artifact-card bg-surface-container-lowest p-space-lg shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300 flex flex-col justify-between">
+<div>
+<div class="flex items-center justify-between pb-space-sm mb-space-sm">
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase">[ ARTIFACT 01 ]</span>
+<span class="px-space-xs py-space-3xs bg-surface-container text-primary font-label-sm text-label-sm uppercase">SYNTAX ENGINE</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm uppercase text-primary mb-space-2xs">Resume Studio</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant mb-space-md">
+              High-typography markdown doc studio with ATS parsing heuristics and proof-of-work embedding.
+            </p>
+<!-- Tactile Interactive Code / Document Simulation -->
+<div class="bg-primary text-on-primary p-space-sm font-label-sm text-label-sm rounded-none space-y-space-2xs">
+<div class="flex justify-between text-on-primary-container">
+<span>spec_sheet.typ</span>
+<span class="text-secondary-fixed">Score: 98/100</span>
+</div>
+<p class="text-secondary-fixed font-mono text-[11px] leading-tight">#show heading: set text(font: "Syne")</p>
+<p class="text-on-primary-container font-mono text-[11px] leading-tight">- Built low-latency broker in Rust (8M ops/sec)</p>
+<p class="text-on-primary-container font-mono text-[11px] leading-tight">- Spearheaded zero-trust auth microservices</p>
+</div>
+</div>
+<div class="pt-space-md flex items-center justify-between font-label-sm text-label-sm text-on-surface">
+<span>LIVE EXPORT: PDF/LATEX</span>
+<span class="material-symbols-outlined text-secondary text-[20px]">arrow_outward</span>
+</div>
+</div>
+<!-- Artifact 2: Interview Lab -->
+<div class="artifact-card bg-surface-container-lowest p-space-lg shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300 flex flex-col justify-between">
+<div>
+<div class="flex items-center justify-between pb-space-sm mb-space-sm">
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase">[ ARTIFACT 02 ]</span>
+<span class="px-space-xs py-space-3xs bg-secondary-container text-on-secondary-fixed font-label-sm text-label-sm uppercase font-bold">LIVE AUDIO</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm uppercase text-primary mb-space-2xs">Interview Lab</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant mb-space-md">
+              Dynamic audio waveform dialogue simulator giving real-time feedback on architecture answers.
+            </p>
+<!-- Audio Waveform Simulation -->
+<div class="bg-surface-container p-space-sm">
+<div class="flex items-center justify-between text-on-surface-variant font-label-sm text-label-sm mb-space-xs">
+<span>AUDIO SPECTRUM</span>
+<span class="text-secondary font-bold">CONFIDENCE: 92%</span>
+</div>
+<div class="flex items-center justify-between gap-1 h-12 py-1">
+<span class="w-1.5 h-4 bg-primary animate-pulse"></span>
+<span class="w-1.5 h-8 bg-secondary"></span>
+<span class="w-1.5 h-12 bg-primary"></span>
+<span class="w-1.5 h-7 bg-primary"></span>
+<span class="w-1.5 h-10 bg-secondary"></span>
+<span class="w-1.5 h-6 bg-primary"></span>
+<span class="w-1.5 h-11 bg-primary"></span>
+<span class="w-1.5 h-5 bg-secondary"></span>
+<span class="w-1.5 h-9 bg-primary"></span>
+<span class="w-1.5 h-3 bg-primary"></span>
+</div>
+<div class="font-label-sm text-label-sm text-on-surface-variant pt-space-2xs truncate">
+                Prompt: "Explain CAP theorem trade-offs in distributed caches."
+              </div>
+</div>
+</div>
+<div class="pt-space-md flex items-center justify-between font-label-sm text-label-sm text-on-surface">
+<span>MIC READY // SPEECH-TO-EVAL</span>
+<span class="material-symbols-outlined text-secondary text-[20px]">arrow_outward</span>
+</div>
+</div>
+<!-- Artifact 3: Skill Map -->
+<div class="artifact-card bg-surface-container-lowest p-space-lg shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300 flex flex-col justify-between">
+<div>
+<div class="flex items-center justify-between pb-space-sm mb-space-sm">
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase">[ ARTIFACT 03 ]</span>
+<span class="px-space-xs py-space-3xs bg-surface-container text-primary font-label-sm text-label-sm uppercase">TOPOLOGICAL</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm uppercase text-primary mb-space-2xs">Skill Map</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant mb-space-md">
+              Adjacent capability clustering. Uncovers lateral steps from design into engineering.
+            </p>
+<!-- Radar / Vector Map Mock -->
+<div class="bg-surface-container-low p-space-sm flex items-center justify-center relative h-28">
+<svg class="w-24 h-24 text-primary" viewbox="0 0 100 100">
+<polygon fill="none" points="50,10 90,40 75,85 25,85 10,40" stroke="#747878" stroke-width="1"></polygon>
+<polygon fill="#caf300" fill-opacity="0.35" points="50,22 80,45 68,78 32,78 20,45" stroke="#536600" stroke-width="1.5"></polygon>
+<circle cx="50" cy="22" fill="#121214" r="3"></circle>
+<circle cx="80" cy="45" fill="#121214" r="3"></circle>
+<circle cx="68" cy="78" fill="#121214" r="3"></circle>
+</svg>
+<div class="absolute bottom-1 right-2 font-label-sm text-label-sm text-on-surface-variant">
+                5 Vertices Synced
+              </div>
+</div>
+</div>
+<div class="pt-space-md flex items-center justify-between font-label-sm text-label-sm text-on-surface">
+<span>EXPLORE CLUSTERS</span>
+<span class="material-symbols-outlined text-secondary text-[20px]">arrow_outward</span>
+</div>
+</div>
+<!-- Artifact 4: Career Explorer -->
+<div class="artifact-card bg-surface-container-lowest p-space-lg shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300 flex flex-col justify-between">
+<div>
+<div class="flex items-center justify-between pb-space-sm mb-space-sm">
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase">[ ARTIFACT 04 ]</span>
+<span class="px-space-xs py-space-3xs bg-surface-container text-primary font-label-sm text-label-sm uppercase">DATA PIPELINE</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm uppercase text-primary mb-space-2xs">Career Explorer</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant mb-space-md">
+              Topological branch analyzer showing role progression, compensation, and startup velocity.
+            </p>
+<div class="bg-surface-container p-space-sm space-y-space-2xs font-label-sm text-label-sm">
+<div class="flex items-center justify-between">
+<span class="font-semibold text-primary">Junior Frontend</span>
+<span class="text-on-surface-variant">Year 0-1</span>
+</div>
+<div class="text-secondary pl-space-xs">↓ Branch: WebGL / Creative Eng</div>
+<div class="flex items-center justify-between font-semibold text-primary">
+<span>Principal Creative Dev</span>
+<span class="text-secondary font-bold">$195k</span>
+</div>
+</div>
+</div>
+<div class="pt-space-md flex items-center justify-between font-label-sm text-label-sm text-on-surface">
+<span>LAUNCH ATLAS</span>
+<span class="material-symbols-outlined text-secondary text-[20px]">arrow_outward</span>
+</div>
+</div>
+<!-- Artifact 5: Project Builder -->
+<div class="artifact-card bg-surface-container-lowest p-space-lg shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300 flex flex-col justify-between">
+<div>
+<div class="flex items-center justify-between pb-space-sm mb-space-sm">
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase">[ ARTIFACT 05 ]</span>
+<span class="px-space-xs py-space-3xs bg-surface-container text-primary font-label-sm text-label-sm uppercase">SPRINTS</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm uppercase text-primary mb-space-2xs">Project Builder</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant mb-space-md">
+              Tangible project sprint kits with production schemas, Figma tokens, and automated tests.
+            </p>
+<div class="bg-primary text-on-primary p-space-sm space-y-space-3xs font-label-sm text-label-sm">
+<div class="flex items-center justify-between text-secondary-fixed">
+<span>SPRINT: ZERO-KNOWLEDGE VOTER</span>
+<span>KIT #44</span>
+</div>
+<div class="text-on-primary-container">Includes: Circom circuits + Next.js UI</div>
+<div class="w-full bg-surface-container-high/30 h-1.5 mt-space-xs">
+<div class="bg-secondary-fixed h-full w-2/3"></div>
+</div>
+</div>
+</div>
+<div class="pt-space-md flex items-center justify-between font-label-sm text-label-sm text-on-surface">
+<span>GET OPEN BLUEPRINT</span>
+<span class="material-symbols-outlined text-secondary text-[20px]">arrow_outward</span>
+</div>
+</div>
+<!-- Artifact 6: Opportunity Finder -->
+<div class="artifact-card bg-surface-container-lowest p-space-lg shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300 flex flex-col justify-between">
+<div>
+<div class="flex items-center justify-between pb-space-sm mb-space-sm">
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase">[ ARTIFACT 06 ]</span>
+<span class="px-space-xs py-space-3xs bg-secondary-container text-on-secondary-fixed font-label-sm text-label-sm uppercase font-bold">CURATED FEED</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm uppercase text-primary mb-space-2xs">Opportunity Finder</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant mb-space-md">
+              Real-time feed of vetted residencies, early-stage apprenticeships, and grants.
+            </p>
+<div class="bg-surface-container p-space-sm space-y-space-xs font-label-sm text-label-sm">
+<div class="flex items-center justify-between">
+<span class="font-bold text-primary">Spatial Computing Residency</span>
+<span class="text-secondary font-bold">$12k Grant</span>
+</div>
+<div class="flex items-center justify-between text-on-surface-variant">
+<span>San Francisco, CA</span>
+<span>Closes in 4d</span>
+</div>
+</div>
+</div>
+<div class="pt-space-md flex items-center justify-between font-label-sm text-label-sm text-on-surface">
+<span>VIEW CURATED JOBS (48)</span>
+<span class="material-symbols-outlined text-secondary text-[20px]">arrow_outward</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- ========================================================================= -->
+<!-- 06. MONUMENTAL STATEMENT CAMPAIGN                                       -->
+<!-- ========================================================================= -->
+<section class="w-full bg-primary text-on-primary py-space-5xl px-grid-margin-mobile md:px-grid-margin-tablet lg:px-grid-margin-desktop relative overflow-hidden select-none">
+<div class="absolute -right-20 top-1/2 -translate-y-1/2 w-96 h-96 rounded-full bg-secondary-container/10 blur-3xl pointer-events-none"></div>
+<div class="max-w-7xl mx-auto relative z-10 py-space-2xl">
+<div class="font-label-sm text-label-sm uppercase tracking-[0.3em] text-secondary-fixed mb-space-md">
+        [ SYSTEM DICTUM // EXHIBITION MOMENT 06 ]
+      </div>
+<div class="space-y-space-xs">
+<h2 class="font-display-xl text-[44px] sm:text-[68px] md:text-[104px] lg:text-[124px] leading-[0.88] tracking-[-0.04em] uppercase font-extrabold text-on-primary/40 transition-all duration-700 hover:text-on-primary">
+          STOP<br/>CHASING<br/>EVERYTHING.
+        </h2>
+<div class="pt-space-lg">
+<h2 class="font-display-xl text-[44px] sm:text-[68px] md:text-[104px] lg:text-[124px] leading-[0.88] tracking-[-0.04em] uppercase font-extrabold text-secondary-fixed flex flex-col">
+<span>START BUILDING</span>
+<span class="text-on-primary underline decoration-secondary-fixed decoration-[12px] md:decoration-[20px] underline-offset-4">
+              SOMETHING.
+            </span>
+</h2>
+</div>
+</div>
+<div class="mt-space-3xl grid grid-cols-1 md:grid-cols-12 gap-space-lg items-center pt-space-lg">
+<div class="md:col-span-8">
+<p class="font-body-xl text-body-lg md:text-body-xl text-on-primary-container max-w-2xl font-light">
+            Career confidence is not produced by consuming more roadmaps. It is forged through tangible reps, compiled code, finished canvases, and real deployment.
+          </p>
+</div>
+<div class="md:col-span-4 flex md:justify-end">
+<div class="p-space-md bg-surface-container-high/10 text-on-primary font-label-md text-label-md uppercase tracking-wider space-y-space-3xs">
+<div class="text-secondary-fixed font-bold">14,280+ DEPLOYED ARTIFACTS</div>
+<div class="text-on-primary-container">Built by students worldwide in 2024-2025.</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- ========================================================================= -->
+<!-- 07. STUDENT STORIES / COMMUNITY                                         -->
+<!-- ========================================================================= -->
+<section class="w-full bg-surface-container-low py-space-5xl px-grid-margin-mobile md:px-grid-margin-tablet lg:px-grid-margin-desktop">
+<div class="max-w-7xl mx-auto">
+<div class="flex flex-col md:flex-row md:items-end justify-between gap-space-md mb-space-2xl">
+<div>
+<span class="font-label-sm text-label-sm uppercase tracking-[0.25em] text-on-surface-variant">[ PROOF-OF-PROCESS // FIELD STORIES ]</span>
+<h2 class="font-display-lg text-display-lg-mobile md:text-display-lg uppercase tracking-tight text-primary leading-none mt-space-2xs">
+            PEOPLE ARE<br/>FIGURING IT OUT.
+          </h2>
+</div>
+<div class="max-w-sm">
+<p class="font-body-md text-body-md text-on-surface-variant">
+            Unvarnished portraits of students who broke through career paralysis by creating concrete artifacts with NOVA.
+          </p>
+</div>
+</div>
+<!-- 3 High-Impact Magazine Spread Stories -->
+<div class="grid grid-cols-1 md:grid-cols-3 gap-space-xl">
+<!-- Story 1: Arjun -->
+<div class="group bg-surface-container-lowest flex flex-col justify-between shadow-sm hover:shadow-xl transition-all duration-300">
+<div>
+<div class="relative w-full aspect-[4/3] overflow-hidden bg-surface-container">
+<img alt="Arjun software engineering apprentice working at code terminal" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 grayscale group-hover:grayscale-0" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCxr1GA_eVLMtsSPK_kjt_3d7kTBB-4yqwDQ8NCdubw4KsN6RSM8lge6TDzGPnYZ66EbDceW6Sb9dU-Wj2nPR_OlBLkU03rF34ZNQQYMQXx53psc3d14e7jLrPu0LHpbGG8mj90V5J1oPOzdI9KQ1cS9b-BFOflIjh91D0KmP03S3UgEe442wG7FokjLNScdaL63u-vmDfgtPDAugfsJIUi00_Aqj55b4kIBvQFEw2Fs9joU1LAXvpF"/>
+<div class="absolute top-space-xs left-space-xs bg-primary text-on-primary px-space-xs py-space-3xs font-label-sm text-label-sm uppercase font-bold">
+                01 // SOFTWARE
+              </div>
+</div>
+<div class="p-space-lg">
+<div class="flex items-center justify-between font-label-sm text-label-sm text-on-surface-variant mb-space-2xs">
+<span>ARJUN SHARMA</span>
+<span>8-WEEK SPRINT</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm uppercase text-primary mb-space-xs">
+                Computer Science
+              </h3>
+<p class="font-body-md text-body-md text-on-surface-variant leading-relaxed">
+                “Started with zero clarity on what framework to learn. Followed the Systems Track and built his first production-ready full-stack database engine in 8 weeks.”
+              </p>
+</div>
+</div>
+<div class="p-space-lg pt-0 flex items-center justify-between font-label-sm text-label-sm text-primary">
+<span class="font-semibold uppercase text-secondary">Now: Distributed Systems Intern</span>
+<span class="material-symbols-outlined text-[18px]">north_east</span>
+</div>
+</div>
+<!-- Story 2: Meera -->
+<div class="group bg-surface-container-lowest flex flex-col justify-between shadow-sm hover:shadow-xl transition-all duration-300">
+<div>
+<div class="relative w-full aspect-[4/3] overflow-hidden bg-surface-container">
+<img alt="Meera product design fellow examining transparent prototype" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 grayscale group-hover:grayscale-0" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC8p_3Upg7KM1C2_eIMD0msywddBmgtjMOsiJLYtios8RRhGJHXNv7Rk_cA2V8SNLf_fMaRWu-Wrbt3xPc3UHM5Qt9Ths97-FnNhEZ9bF1v4vutz_zevvw5YODO_2slp2-8t4Tv7RntJGG5mk0NCe8JazrCl1iJxS84by0TqPWnj_6jdl7oILX6VcuslzJXTcJFLR4NeoiGJ4okP9bOuuJ4mJ2TVPG5p7uyr5spnZSK2QmAjWr2G_fD"/>
+<div class="absolute top-space-xs left-space-xs bg-secondary-container text-on-secondary-fixed px-space-xs py-space-3xs font-label-sm text-label-sm uppercase font-bold">
+                02 // DESIGN
+              </div>
+</div>
+<div class="p-space-lg">
+<div class="flex items-center justify-between font-label-sm text-label-sm text-on-surface-variant mb-space-2xs">
+<span>MEERA PATEL</span>
+<span>12-WEEK SPRINT</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm uppercase text-primary mb-space-xs">
+                Product &amp; Spatial UI
+              </h3>
+<p class="font-body-md text-body-md text-on-surface-variant leading-relaxed">
+                “Turned latent fascination with spatial typography into an avant-garde product design portfolio that received immediate inbound studio offers.”
+              </p>
+</div>
+</div>
+<div class="p-space-lg pt-0 flex items-center justify-between font-label-sm text-label-sm text-primary">
+<span class="font-semibold uppercase text-secondary">Now: Studio Design Resident</span>
+<span class="material-symbols-outlined text-[18px]">north_east</span>
+</div>
+</div>
+<!-- Story 3: Kabir -->
+<div class="group bg-surface-container-lowest flex flex-col justify-between shadow-sm hover:shadow-xl transition-all duration-300">
+<div>
+<div class="relative w-full aspect-[4/3] overflow-hidden bg-surface-container">
+<img alt="Kabir cybersecurity researcher inspecting hardware cryptographic nodes" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 grayscale group-hover:grayscale-0" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCgK9zDeFAGV_Zl9YEAmrkzcU8mNd8MJGLstANMCtuqdsuBXmdR-tzatqDneQODZdOHDza5OalfiDrEjAvVI4Bisq0sZuln2cQcAVZf5DjMK3zHjn8CqDHXGFE4R1zsOLO-WCZJpT-ufIZs5eGvuNMrvd1E8r0dTDFdOLqOcyrhIT1EL2ScMImgCyOFsVz0p8D9sbDlrqLqEt5AHgWesrSQNdMaHqZh_mtHYK1IL8YMXK007QOqY5U-"/>
+<div class="absolute top-space-xs left-space-xs bg-primary text-on-primary px-space-xs py-space-3xs font-label-sm text-label-sm uppercase font-bold">
+                03 // CYBERSECURITY
+              </div>
+</div>
+<div class="p-space-lg">
+<div class="flex items-center justify-between font-label-sm text-label-sm text-on-surface-variant mb-space-2xs">
+<span>KABIR MEHTA</span>
+<span>6-WEEK SPRINT</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm uppercase text-primary mb-space-xs">
+                Offensive Security
+              </h3>
+<p class="font-body-md text-body-md text-on-surface-variant leading-relaxed">
+                “Started with basic networking fundamentals. Synthesized a simulated penetration testing sandbox that led directly to a funded research grant.”
+              </p>
+</div>
+</div>
+<div class="p-space-lg pt-0 flex items-center justify-between font-label-sm text-label-sm text-primary">
+<span class="font-semibold uppercase text-secondary">Now: Security Research Fellow</span>
+<span class="material-symbols-outlined text-[18px]">north_east</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- ========================================================================= -->
+<!-- 08. FINAL MEMORABLE CTA                                                 -->
+<!-- ========================================================================= -->
+<section class="w-full bg-surface-container-lowest py-space-5xl px-grid-margin-mobile md:px-grid-margin-tablet lg:px-grid-margin-desktop text-center">
+<div class="max-w-5xl mx-auto flex flex-col items-center">
+<span class="font-label-sm text-label-sm uppercase tracking-[0.3em] text-on-surface-variant mb-space-md">
+        [ SYSTEM PROMPT // CHAPTER FINALE ]
+      </span>
+<h2 class="font-display-xl text-[48px] sm:text-[76px] md:text-[108px] lg:text-[120px] uppercase font-extrabold text-primary leading-[0.9] tracking-[-0.04em] mb-space-xl">
+        SO…<br/>
+        WHAT ARE YOU<br/>
+        BUILDING NEXT?
+      </h2>
+<p class="font-body-xl text-body-lg md:text-body-xl text-on-surface-variant max-w-xl mb-space-2xl">
+        Your next chapter starts with one definitive decision. No prerequisites. No gatekeeping. Just pure curiosity.
+      </p>
+<div class="relative group">
+<button class="px-space-3xl py-space-lg bg-primary hover:bg-secondary-container text-on-primary hover:text-on-secondary-fixed font-headline-sm text-headline-sm uppercase tracking-tight shadow-[8px_8px_0px_#caf300] hover:-translate-x-1 hover:-translate-y-1 transition-all duration-200 flex items-center gap-space-md" id="final-magnetic-cta">
+<span>ENTER NOVA</span>
+<span class="material-symbols-outlined text-[28px]">arrow_forward</span>
+</button>
+</div>
+<div class="mt-space-xl flex flex-wrap justify-center items-center gap-space-md font-label-sm text-label-sm text-on-surface-variant uppercase">
+<span class="flex items-center gap-space-2xs">
+<span class="w-2 h-2 rounded-full bg-secondary-container"></span>
+          FREE ACCESS FOR STUDENTS
+        </span>
+<span>•</span>
+<span>NO CREDIT CARD</span>
+<span>•</span>
+<span>INSTANT ARTIFACT EXPORT</span>
+</div>
+</div>
+</section>
+</div>
+<!-- Inline Interactive Script for Canvas Constellation & Synthesizer -->
+<script>
+(function() {
+  // --- 1. HERO CANVAS CONSTELLATION INTERACTIVITY ---
+  const canvas = document.getElementById('hero-constellation-canvas');
+  if (canvas) {
+    const ctx = canvas.getContext('2d');
+    let width = (canvas.width = canvas.parentElement.offsetWidth);
+    let height = (canvas.height = canvas.parentElement.offsetHeight);
+
+    const handleResize = () => {
+      if (!canvas.parentElement) return;
+      width = canvas.width = canvas.parentElement.offsetWidth;
+      height = canvas.height = canvas.parentElement.offsetHeight;
+    };
+    window.addEventListener('resize', handleResize);
+
+    const domainNodes = [
+      { name: 'Technology', x: 0.2, y: 0.3, vx: 0.15, vy: 0.1, category: 'tech', color: '#1a1c1b' },
+      { name: 'Design', x: 0.45, y: 0.22, vx: -0.12, vy: 0.14, category: 'design', color: '#536600' },
+      { name: 'Business', x: 0.82, y: 0.35, vx: 0.08, vy: -0.1, category: 'business', color: '#1a1c1b' },
+      { name: 'Cybersecurity', x: 0.18, y: 0.72, vx: -0.1, vy: -0.12, category: 'cyber', color: '#0036bc' },
+      { name: 'AI Science', x: 0.38, y: 0.55, vx: 0.14, vy: -0.09, category: 'ai', color: '#536600' },
+      { name: 'Product', x: 0.62, y: 0.48, vx: -0.15, vy: 0.08, category: 'product', color: '#1a1c1b' },
+      { name: 'Research', x: 0.78, y: 0.68, vx: 0.12, vy: 0.12, category: 'ai', color: '#0036bc' },
+      { name: 'Creative Code', x: 0.52, y: 0.82, vx: -0.09, vy: -0.15, category: 'creative', color: '#536600' }
+    ];
+
+    let mouse = { x: -1000, y: -1000, isHovering: false };
+    const canvasContainer = canvas.parentElement;
+
+    canvasContainer.addEventListener('mousemove', (e) => {
+      const rect = canvas.getBoundingClientRect();
+      mouse.x = e.clientX - rect.left;
+      mouse.y = e.clientY - rect.top;
+      mouse.isHovering = true;
+    });
+
+    canvasContainer.addEventListener('mouseleave', () => {
+      mouse.x = -1000;
+      mouse.y = -1000;
+      mouse.isHovering = false;
+    });
+
+    function renderConstellation() {
+      ctx.clearRect(0, 0, width, height);
+
+      // Draw vector lines between nearby nodes
+      for (let i = 0; i < domainNodes.length; i++) {
+        for (let j = i + 1; j < domainNodes.length; j++) {
+          const n1 = domainNodes[i];
+          const n2 = domainNodes[j];
+          const x1 = n1.x * width;
+          const y1 = n1.y * height;
+          const x2 = n2.x * width;
+          const y2 = n2.y * height;
+
+          const dist = Math.hypot(x2 - x1, y2 - y1);
+          if (dist < 320) {
+            ctx.beginPath();
+            ctx.moveTo(x1, y1);
+            ctx.lineTo(x2, y2);
+            ctx.strokeStyle = '#e3e2e0';
+            ctx.lineWidth = 1;
+            ctx.stroke();
+
+            // Highlight vector if near mouse
+            const midX = (x1 + x2) / 2;
+            const midY = (y1 + y2) / 2;
+            const mouseDist = Math.hypot(mouse.x - midX, mouse.y - midY);
+            if (mouseDist < 120) {
+              ctx.beginPath();
+              ctx.moveTo(x1, y1);
+              ctx.lineTo(x2, y2);
+              ctx.strokeStyle = '#c7ef00';
+              ctx.lineWidth = 2;
+              ctx.stroke();
+            }
+          }
+        }
+      }
+
+      // Update & Render nodes
+      domainNodes.forEach((node) => {
+        node.x += node.vx * 0.001;
+        node.y += node.vy * 0.001;
+        if (node.x < 0.1 || node.x > 0.9) node.vx *= -1;
+        if (node.y < 0.15 || node.y > 0.85) node.vy *= -1;
+
+        const px = node.x * width;
+        const py = node.y * height;
+        const mouseDist = Math.hypot(mouse.x - px, mouse.y - py);
+        const isNear = mouseDist < 100;
+
+        // Outer pulse circle
+        ctx.beginPath();
+        ctx.arc(px, py, isNear ? 16 : 8, 0, Math.PI * 2);
+        ctx.fillStyle = isNear ? 'rgba(199, 239, 0, 0.45)' : 'rgba(233, 232, 230, 0.6)';
+        ctx.fill();
+
+        // Node center
+        ctx.beginPath();
+        ctx.arc(px, py, isNear ? 6 : 4, 0, Math.PI * 2);
+        ctx.fillStyle = isNear ? '#536600' : '#1a1c1b';
+        ctx.fill();
+
+        // Node label
+        ctx.font = isNear ? '600 12px "JetBrains Mono"' : '500 10px "JetBrains Mono"';
+        ctx.fillStyle = isNear ? '#1a1c1b' : '#747878';
+        ctx.fillText(node.name.toUpperCase(), px + 12, py + 4);
+      });
+
+      requestAnimationFrame(renderConstellation);
+    }
+    renderConstellation();
+
+    // Node filter buttons in bottom bar
+    const readout = document.getElementById('constellation-active-readout');
+    document.querySelectorAll('.node-filter-btn').forEach((btn) => {
+      btn.addEventListener('mouseenter', () => {
+        const cat = btn.getAttribute('data-node');
+        if (readout) readout.textContent = 'FOCUS VECTOR ACTIVE: [' + cat.toUpperCase() + ' CLUSTER]';
+      });
+      btn.addEventListener('mouseleave', () => {
+        if (readout) readout.textContent = 'Hover nodes or space to route vectors';
+      });
+    });
+  }
+
+  // --- 2. START WITH YOU PROFILE SYNTHESIZER ---
+  const synthPills = document.querySelectorAll('.synth-pill');
+  const match1 = document.getElementById('match-score-1');
+  const bar1 = document.getElementById('match-bar-1');
+  const match2 = document.getElementById('match-score-2');
+  const bar2 = document.getElementById('match-bar-2');
+  const match3 = document.getElementById('match-score-3');
+  const bar3 = document.getElementById('match-bar-3');
+  const resetBtn = document.getElementById('reset-synthesizer-btn');
+
+  function calculateTrajectory() {
+    const activeCount = document.querySelectorAll('.synth-pill.active-pill').length;
+    let base1 = 70 + (activeCount * 6);
+    let base2 = 62 + (activeCount * 7);
+    let base3 = 55 + (activeCount * 8);
+
+    if (base1 > 98) base1 = 98;
+    if (base2 > 94) base2 = 94;
+    if (base3 > 91) base3 = 91;
+
+    if (match1 && bar1) {
+      match1.textContent = base1 + '% MATCH';
+      bar1.style.width = base1 + '%';
+    }
+    if (match2 && bar2) {
+      match2.textContent = base2 + '% MATCH';
+      bar2.style.width = base2 + '%';
+    }
+    if (match3 && bar3) {
+      match3.textContent = base3 + '% MATCH';
+      bar3.style.width = base3 + '%';
+    }
+  }
+
+  synthPills.forEach((pill) => {
+    // Initial active states from markups
+    if (pill.textContent.includes('✓')) {
+      pill.classList.add('active-pill');
+    }
+
+    pill.addEventListener('click', () => {
+      const isSelected = pill.classList.contains('active-pill');
+      const text = pill.getAttribute('data-val') || '';
+
+      if (isSelected) {
+        pill.classList.remove('active-pill', 'bg-secondary-container', 'text-on-secondary-fixed', 'font-bold');
+        pill.classList.add('bg-surface-container');
+        pill.textContent = '+ ' + text;
+      } else {
+        pill.classList.add('active-pill', 'bg-secondary-container', 'text-on-secondary-fixed', 'font-bold');
+        pill.classList.remove('bg-surface-container');
+        pill.textContent = '✓ ' + text;
+      }
+      calculateTrajectory();
+    });
+  });
+
+  if (resetBtn) {
+    resetBtn.addEventListener('click', () => {
+      synthPills.forEach((pill) => {
+        const text = pill.getAttribute('data-val') || '';
+        pill.classList.remove('active-pill', 'bg-secondary-container', 'text-on-secondary-fixed', 'font-bold');
+        pill.classList.add('bg-surface-container');
+        pill.textContent = '+ ' + text;
+      });
+      calculateTrajectory();
+    });
+  }
+
+  // --- 3. TIMELINE NODE INTERACTION ---
+  const stepNodes = document.querySelectorAll('.journey-node');
+  const detailBox = document.getElementById('step-detail-box');
+  const stageDetails = {
+    '1': {
+      label: '[ ACTIVE INSPECTOR: STAGE 01 // DISCOVER ]',
+      desc: 'Deliverable: Interest Topology Map mapping 12 latent skill curiosities into market niches.',
+      time: 'EST. TIME: 1 WEEK'
+    },
+    '2': {
+      label: '[ ACTIVE INSPECTOR: STAGE 02 // LEARN ]',
+      desc: 'Deliverable: Curated 4-part modular syllabus tailored to zero-fluff industry tools.',
+      time: 'EST. TIME: 3-4 WEEKS'
+    },
+    '3': {
+      label: '[ ACTIVE INSPECTOR: STAGE 03 // BUILD ]',
+      desc: 'Deliverable: Deploy 1 full-stack zero-dependency application with automated CI/CD pipeline.',
+      time: 'EST. TIME: 4-6 WEEKS'
+    },
+    '4': {
+      label: '[ ACTIVE INSPECTOR: STAGE 04 // PRACTICE ]',
+      desc: 'Deliverable: Run 10 system design whiteboards and live technical stress tests in Interview Lab.',
+      time: 'EST. TIME: 2 WEEKS'
+    },
+    '5': {
+      label: '[ ACTIVE INSPECTOR: STAGE 05 // APPLY ]',
+      desc: 'Deliverable: Direct application to 5 verified residency or fellowship studio openings.',
+      time: 'EST. TIME: 2-3 WEEKS'
+    },
+    '6': {
+      label: '[ ACTIVE INSPECTOR: STAGE 06 // GROW ]',
+      desc: 'Deliverable: Open-source repository architecture and mentorship of incoming NOVA cohorts.',
+      time: 'ONGOING'
+    }
+  };
+
+  stepNodes.forEach((node) => {
+    node.addEventListener('click', () => {
+      const step = node.getAttribute('data-step');
+      const data = stageDetails[step];
+      if (data && detailBox) {
+        detailBox.querySelector('.font-label-sm').textContent = data.label;
+        detailBox.querySelector('.font-body-md').textContent = data.desc;
+        detailBox.querySelector('.flex.items-center.gap-space-sm span').textContent = data.time;
+      }
+    });
+  });
+
+  // --- 4. MAGNETIC CTA FEEL ---
+  const magneticBtn = document.getElementById('final-magnetic-cta');
+  if (magneticBtn) {
+    magneticBtn.addEventListener('mousemove', (e) => {
+      const rect = magneticBtn.getBoundingClientRect();
+      const x = e.clientX - rect.left - rect.width / 2;
+      const y = e.clientY - rect.top - rect.height / 2;
+      magneticBtn.style.transform = `translate(${x * 0.18}px, ${y * 0.18}px)`;
+    });
+    magneticBtn.addEventListener('mouseleave', () => {
+      magneticBtn.style.transform = 'translate(0px, 0px)';
+    });
+  }
+})();
+</script></main><footer class="w-full bg-surface-container-lowest"><div class="max-w-7xl mx-auto px-grid-margin-mobile md:px-grid-margin-tablet lg:px-grid-margin-desktop pt-space-4xl pb-space-2xl"><div class="mb-space-3xl"><p class="font-label-sm text-label-sm uppercase tracking-widest text-on-surface-variant mb-space-sm">[ SYSTEM DECLARATION // VOL. 01 ]</p><h2 class="font-display-lg text-display-lg-mobile md:text-display-lg text-primary tracking-tighter uppercase max-w-5xl leading-none select-none">Built for people figuring things out.</h2></div><div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-gutter-desktop py-space-2xl"><div class="flex flex-col gap-space-sm"><span class="font-label-md text-label-md uppercase tracking-wider text-on-surface-variant">[ Index 01 ] Universe</span><a class="font-body-md text-body-md text-on-surface hover:text-primary transition-colors" data-path="discover" href="#">Career Atlas</a><a class="font-body-md text-body-md text-on-surface hover:text-primary transition-colors" data-path="paths" href="#">Dynamic Roadmaps</a><a class="font-body-md text-body-md text-on-surface hover:text-primary transition-colors" data-path="paths" href="#">Builder Tracks</a><a class="font-body-md text-body-md text-on-surface hover:text-primary transition-colors" data-path="discover" href="#">Apprenticeships</a></div><div class="flex flex-col gap-space-sm"><span class="font-label-md text-label-md uppercase tracking-wider text-on-surface-variant">[ Index 02 ] Artifacts</span><a class="font-body-md text-body-md text-on-surface hover:text-primary transition-colors" data-path="tools" href="#">Stack Decoders</a><a class="font-body-md text-body-md text-on-surface hover:text-primary transition-colors" data-path="tools" href="#">Trajectory Engine</a><a class="font-body-md text-body-md text-on-surface hover:text-primary transition-colors" data-path="tools" href="#">Proof-of-Work Logs</a><a class="font-body-md text-body-md text-on-surface hover:text-primary transition-colors" data-path="tools" href="#">Design Brief Vault</a></div><div class="flex flex-col gap-space-sm"><span class="font-label-md text-label-md uppercase tracking-wider text-on-surface-variant">[ Index 03 ] Editorial</span><a class="font-body-md text-body-md text-on-surface hover:text-primary transition-colors" data-path="stories" href="#">Builder Monologues</a><a class="font-body-md text-body-md text-on-surface hover:text-primary transition-colors" data-path="stories" href="#">First Deployments</a><a class="font-body-md text-body-md text-on-surface hover:text-primary transition-colors" data-path="stories" href="#">Studio Dialogues</a><a class="font-body-md text-body-md text-on-surface hover:text-primary transition-colors" data-path="stories" href="#">Field Dispatches</a></div><div class="flex flex-col gap-space-sm"><span class="font-label-md text-label-md uppercase tracking-wider text-on-surface-variant">[ Index 04 ] Institution</span><a class="font-body-md text-body-md text-on-surface hover:text-primary transition-colors" data-path="about" href="#">Core Manifesto</a><a class="font-body-md text-body-md text-on-surface hover:text-primary transition-colors" data-path="about" href="#">Fellowship &amp; Grants</a><a class="font-body-md text-body-md text-on-surface hover:text-primary transition-colors" data-path="about" href="#">Institutional Collabs</a><a class="font-body-md text-body-md text-on-surface hover:text-primary transition-colors" data-path="about" href="#">Press Archives</a></div><div class="col-span-2 md:col-span-4 lg:col-span-1 flex flex-col gap-space-md p-space-md bg-surface-container rounded-xl"><span class="font-label-md text-label-md uppercase text-on-surface-variant">System Telemetry</span><div class="flex items-center gap-space-xs"><span class="w-2 h-2 rounded-full bg-secondary-container animate-ping"></span><span class="font-label-sm text-label-sm text-on-surface uppercase">Engine Status: Operational</span></div><div class="flex flex-col gap-space-3xs font-label-sm text-label-sm text-on-surface-variant"><div class="flex justify-between"><span>LATENCY</span><span class="text-on-surface">14ms</span></div><div class="flex justify-between"><span>EST CLOCK</span><span class="text-on-surface" id="est-time">12:44:02 EST</span></div><div class="flex justify-between"><span>GMT CLOCK</span><span class="text-on-surface" id="gmt-time">17:44:02 GMT</span></div></div></div></div><div class="pt-space-xl flex flex-col md:flex-row items-start md:items-center justify-between gap-space-md"><div class="flex flex-wrap items-center gap-space-md"><span class="font-label-sm text-label-sm text-on-surface-variant uppercase">© 2025 NOVA LABS INC. ARCHITECTED FOR NEXT-GEN BUILDERS.</span><span class="hidden md:inline text-outline-variant">•</span><span class="font-label-sm text-label-sm text-on-surface-variant uppercase">ALL RIGHTS RESERVED.</span></div><div class="flex items-center gap-space-lg"><a class="font-label-sm text-label-sm text-on-surface-variant hover:text-on-surface uppercase transition-colors" href="#">Privacy Framework</a><a class="font-label-sm text-label-sm text-on-surface-variant hover:text-on-surface uppercase transition-colors" href="#">Terms of Protocol</a><a class="font-label-sm text-label-sm text-on-surface-variant hover:text-on-surface uppercase transition-colors" href="#">Security Attestation</a></div></div></div></footer><script>const cursor = document.getElementById('custom-cursor');if(cursor){window.addEventListener('mousemove',(e)=>{cursor.style.left=e.clientX+'px';cursor.style.top=e.clientY+'px';});}function updateTime(){const now=new Date();const est=document.getElementById('est-time');const gmt=document.getElementById('gmt-time');if(est&&gmt){est.textContent=now.toLocaleTimeString('en-US',{timeZone:'America/New_York',hour12:false})+' EST';gmt.textContent=now.toLocaleTimeString('en-US',{timeZone:'UTC',hour12:false})+' GMT';}}setInterval(updateTime,1000);updateTime();</script></body></html>

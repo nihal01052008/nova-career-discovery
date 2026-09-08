@@ -1,0 +1,2408 @@
+<!DOCTYPE html>
+<html class="scroll-smooth" lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1.0, maximum-scale=5.0" name="viewport"/>
+  <meta name="description" content="NOVA — A career discovery platform for students and ambitious builders. Discover your direction, build proof-of-work, and unlock opportunities."/>
+  <meta name="theme-color" content="#FAF9F7"/>
+  <title>NOVA — Your Future Is Still Unwritten</title>
+
+  <!-- Typography: Syne (Display), Space Grotesk (Body), JetBrains Mono (Metadata) -->
+  <link href="https://fonts.googleapis.com" rel="preconnect"/>
+  <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&family=Syne:wght@600;700;800&display=swap" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            "surface": "#FAF9F7",
+            "surface-dim": "#DADAD8",
+            "surface-bright": "#FAF9F7",
+            "surface-container-lowest": "#FFFFFF",
+            "surface-container-low": "#F4F2ED",
+            "surface-container": "#EFEEEC",
+            "surface-container-high": "#E9E8E6",
+            "surface-container-highest": "#E3E2E0",
+            "on-surface": "#111111",
+            "on-surface-variant": "#444748",
+            "outline": "#747878",
+            "outline-variant": "#C4C7C7",
+            "primary": "#111111",
+            "on-primary": "#FFFFFF",
+            "primary-container": "#1C1B1B",
+            "on-primary-container": "#858383",
+            "secondary": "#536600",
+            "on-secondary": "#FFFFFF",
+            "secondary-container": "#D4FF00",
+            "secondary-fixed": "#CAF300",
+            "on-secondary-fixed": "#111111",
+            "tertiary": "#254EDB",
+            "tertiary-container": "#001355",
+            "on-tertiary-container": "#5879FF",
+            "background": "#FAF9F7",
+            "surface-tint": "#5F5E5E"
+          },
+          fontFamily: {
+            "display": ["Syne", "sans-serif"],
+            "headline": ["Syne", "sans-serif"],
+            "body": ["Space Grotesk", "sans-serif"],
+            "mono": ["JetBrains Mono", "monospace"]
+          },
+          spacing: {
+            "grid-margin-desktop": "4rem",
+            "grid-margin-tablet": "2rem",
+            "grid-margin-mobile": "1.25rem",
+            "gutter-desktop": "2rem",
+            "gutter-tablet": "1.5rem",
+            "gutter-mobile": "1rem"
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    /* Strict Zero-Radius Editorial Architecture */
+    *, *::before, *::after {
+      border-radius: 0px;
+      box-sizing: border-box;
+    }
+
+    /* Permitted intentional circular glyphs & telemetry beacons per DESIGN.md */
+    .rounded-full {
+      border-radius: 9999px !important;
+    }
+
+    body {
+      background-color: #FAF9F7;
+      color: #111111;
+      font-family: 'Space Grotesk', sans-serif;
+      overflow-x: hidden;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+
+    /* Selection Colors */
+    ::selection {
+      background-color: #D4FF00;
+      color: #111111;
+    }
+
+    /* Scrollbar */
+    ::-webkit-scrollbar {
+      width: 6px;
+      height: 6px;
+    }
+    ::-webkit-scrollbar-track {
+      background: #FAF9F7;
+      border-left: 1px solid rgba(17, 17, 17, 0.1);
+    }
+    ::-webkit-scrollbar-thumb {
+      background: #111111;
+    }
+    ::-webkit-scrollbar-thumb:hover {
+      background: #D4FF00;
+    }
+
+    /* Hard Shadows */
+    .shadow-hard-sm {
+      box-shadow: 2px 2px 0px #111111;
+    }
+    .shadow-hard-md {
+      box-shadow: 4px 4px 0px #111111;
+    }
+    .shadow-hard-lg {
+      box-shadow: 6px 6px 0px #111111;
+    }
+    .shadow-hard-lime-md {
+      box-shadow: 4px 4px 0px #D4FF00;
+    }
+    .shadow-hard-lime-lg {
+      box-shadow: 6px 6px 0px #D4FF00;
+    }
+    .shadow-hard-lime-xl {
+      box-shadow: 8px 8px 0px #D4FF00;
+    }
+
+    /* Editorial Hairline Borders */
+    .border-hairline {
+      border: 1px solid rgba(17, 17, 17, 0.15);
+    }
+    .border-hairline-t {
+      border-top: 1px solid rgba(17, 17, 17, 0.15);
+    }
+    .border-hairline-b {
+      border-bottom: 1px solid rgba(17, 17, 17, 0.15);
+    }
+    .border-hairline-l {
+      border-left: 1px solid rgba(17, 17, 17, 0.15);
+    }
+    .border-hairline-r {
+      border-right: 1px solid rgba(17, 17, 17, 0.15);
+    }
+
+    /* Desktop Custom Cursor */
+    #custom-cursor {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 10px;
+      height: 10px;
+      border-radius: 9999px !important;
+      background: #111111;
+      pointer-events: none;
+      z-index: 9999;
+      mix-blend-mode: difference;
+      transform: translate(-50%, -50%);
+      transition: width 0.18s cubic-bezier(0.16, 1, 0.3, 1), 
+                  height 0.18s cubic-bezier(0.16, 1, 0.3, 1), 
+                  transform 0.05s ease-out;
+      display: none;
+    }
+    @media (pointer: fine) {
+      #custom-cursor {
+        display: block;
+      }
+    }
+    #custom-cursor.hovering {
+      width: 32px;
+      height: 32px;
+      border-radius: 9999px !important;
+      background: #D4FF00;
+      mix-blend-mode: difference;
+    }
+
+    /* Career Direction Panels Transitions */
+    .sector-panel {
+      transition: flex 0.45s cubic-bezier(0.16, 1, 0.3, 1), 
+                  background-color 0.3s ease,
+                  border-color 0.3s ease;
+    }
+
+    /* Equalizer Pulse Animation */
+    @keyframes eq-pulse {
+      0%, 100% { height: 16%; }
+      50% { height: 95%; }
+    }
+    .eq-bar {
+      animation: eq-pulse 1.2s ease-in-out infinite alternate;
+    }
+    .eq-bar:nth-child(2) { animation-delay: 0.15s; }
+    .eq-bar:nth-child(3) { animation-delay: 0.4s; }
+    .eq-bar:nth-child(4) { animation-delay: 0.25s; }
+    .eq-bar:nth-child(5) { animation-delay: 0.5s; }
+    .eq-bar:nth-child(6) { animation-delay: 0.1s; }
+    .eq-bar:nth-child(7) { animation-delay: 0.35s; }
+    .eq-bar:nth-child(8) { animation-delay: 0.6s; }
+
+    /* Accessibility: Prefers Reduced Motion */
+    @media (prefers-reduced-motion: reduce) {
+      *, ::before, ::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+      }
+      .eq-bar {
+        animation: none !important;
+      }
+    }
+  </style>
+</head>
+
+<body class="selection:bg-secondary-container selection:text-primary">
+
+  <!-- Desktop Minimal Precision Cursor -->
+  <div id="custom-cursor" aria-hidden="true"></div>
+
+  <!-- ========================================================================= -->
+  <!-- 01. NAVIGATION HEADER                                                     -->
+  <!-- ========================================================================= -->
+  <header class="fixed top-0 left-0 w-full z-40 bg-[#FAF9F7]/90 backdrop-blur-md border-b border-[#111111]/15 transition-all duration-200" id="main-header">
+    <div class="max-w-7xl mx-auto h-20 px-5 sm:px-8 lg:px-12 flex items-center justify-between gap-4">
+      
+      <!-- Brand & Telemetry Coordinates -->
+      <div class="flex items-center gap-4">
+        <a href="#" class="font-display font-extrabold text-2xl sm:text-3xl tracking-tighter uppercase text-primary transition-opacity hover:opacity-80">
+          NOVA
+        </a>
+        <div class="hidden sm:flex items-center gap-1.5 px-3 py-1 bg-[#E9E8E6] rounded-full border border-[#111111]/15">
+          <span class="w-1.5 h-1.5 rounded-full bg-[#D4FF00] animate-pulse"></span>
+          <span class="font-mono text-[10px] tracking-widest text-[#444748] uppercase">[37.7749° N, 122.4194° W]</span>
+        </div>
+      </div>
+
+      <!-- Desktop Editorial Nav Links (ScrollSpy Active) -->
+      <nav class="hidden lg:flex items-center gap-8 font-mono text-xs uppercase tracking-wider" id="desktop-nav" aria-label="Main Navigation">
+        <a href="#discover" class="nav-item relative py-1 text-primary font-bold transition-colors after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-full after:h-[2px] after:bg-primary after:scale-x-100 after:transition-transform after:origin-left" data-target="discover">
+          Discover
+        </a>
+        <a href="#paths" class="nav-item relative py-1 text-[#444748] hover:text-primary font-medium transition-colors after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-full after:h-[2px] after:bg-primary after:scale-x-0 hover:after:scale-x-100 after:transition-transform after:origin-left" data-target="paths">
+          Paths
+        </a>
+        <a href="#tools" class="nav-item relative py-1 text-[#444748] hover:text-primary font-medium transition-colors after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-full after:h-[2px] after:bg-primary after:scale-x-0 hover:after:scale-x-100 after:transition-transform after:origin-left" data-target="tools">
+          Tools
+        </a>
+        <a href="#stories" class="nav-item relative py-1 text-[#444748] hover:text-primary font-medium transition-colors after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-full after:h-[2px] after:bg-primary after:scale-x-0 hover:after:scale-x-100 after:transition-transform after:origin-left" data-target="stories">
+          Stories
+        </a>
+        <a href="#about" class="nav-item relative py-1 text-[#444748] hover:text-primary font-medium transition-colors after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-full after:h-[2px] after:bg-primary after:scale-x-0 hover:after:scale-x-100 after:transition-transform after:origin-left" data-target="about">
+          About
+        </a>
+      </nav>
+
+      <!-- Action Suite & Mobile Trigger -->
+      <div class="flex items-center gap-3">
+        <button id="nav-cta-btn" class="px-5 py-2.5 bg-[#D4FF00] hover:bg-[#CAF300] text-primary font-mono text-xs font-bold uppercase tracking-wider border border-primary shadow-hard-sm transition-transform duration-150 hover:-translate-x-0.5 hover:-translate-y-0.5 active:translate-x-0 active:translate-y-0">
+          Start Exploring →
+        </button>
+
+        <button id="profile-indicator-btn" aria-label="System Identity" class="w-8 h-8 rounded-full bg-primary text-white flex items-center justify-center hover:bg-[#D4FF00] hover:text-primary transition-colors">
+          <span class="material-symbols-outlined text-[18px]">person</span>
+        </button>
+
+        <!-- Mobile Menu Toggle Button -->
+        <button id="mobile-menu-btn" aria-label="Toggle Navigation Menu" aria-expanded="false" class="lg:hidden w-9 h-9 bg-[#E9E8E6] border border-primary flex items-center justify-center hover:bg-primary hover:text-white transition-colors">
+          <span class="material-symbols-outlined text-[20px]" id="menu-icon">menu</span>
+        </button>
+      </div>
+
+    </div>
+  </header>
+
+  <!-- Mobile Fullscreen Architectural Menu Drawer -->
+  <div id="mobile-drawer" class="fixed inset-0 z-30 bg-[#FAF9F7] pt-24 px-6 pb-8 flex flex-col justify-between transform -translate-y-full transition-transform duration-300 ease-out border-b-2 border-primary lg:hidden" aria-hidden="true">
+    <div>
+      <div class="font-mono text-[11px] text-[#444748] uppercase tracking-widest pb-4 border-b border-[#111111]/15 mb-6">
+        [ NOVA // MAIN NAVIGATION INDEX ]
+      </div>
+      <nav class="flex flex-col space-y-4 font-display text-3xl font-extrabold uppercase tracking-tight">
+        <a href="#discover" class="mobile-nav-link text-primary hover:text-[#536600] flex items-center justify-between py-2 border-b border-[#111111]/10">
+          <span>01 // Discover</span>
+          <span class="font-mono text-xs text-[#747878]">↗</span>
+        </a>
+        <a href="#paths" class="mobile-nav-link text-primary hover:text-[#536600] flex items-center justify-between py-2 border-b border-[#111111]/10">
+          <span>02 // Paths</span>
+          <span class="font-mono text-xs text-[#747878]">↗</span>
+        </a>
+        <a href="#tools" class="mobile-nav-link text-primary hover:text-[#536600] flex items-center justify-between py-2 border-b border-[#111111]/10">
+          <span>03 // Tools</span>
+          <span class="font-mono text-xs text-[#747878]">↗</span>
+        </a>
+        <a href="#stories" class="mobile-nav-link text-primary hover:text-[#536600] flex items-center justify-between py-2 border-b border-[#111111]/10">
+          <span>04 // Stories</span>
+          <span class="font-mono text-xs text-[#747878]">↗</span>
+        </a>
+        <a href="#about" class="mobile-nav-link text-primary hover:text-[#536600] flex items-center justify-between py-2 border-b border-[#111111]/10">
+          <span>05 // About</span>
+          <span class="font-mono text-xs text-[#747878]">↗</span>
+        </a>
+      </nav>
+    </div>
+
+    <div class="pt-6 border-t border-[#111111]/15 space-y-4">
+      <div class="font-mono text-[10px] text-[#444748] uppercase tracking-widest flex items-center justify-between">
+        <span>STATUS: UNWRITTEN</span>
+        <span class="text-[#536600] font-bold">TELEMETRY ACTIVE</span>
+      </div>
+      <button class="mobile-launch-btn w-full py-3 bg-[#D4FF00] text-primary font-mono text-xs font-bold uppercase tracking-wider border border-primary shadow-hard-sm">
+        Launch Trajectory Engine →
+      </button>
+    </div>
+  </div>
+
+  <main class="w-full pt-20">
+
+    <!-- ========================================================================= -->
+    <!-- 02. HERO SECTION: UNWRITTEN + INTERACTIVE CONSTELLATION ATLAS            -->
+    <!-- ========================================================================= -->
+    <section id="discover" class="relative w-full min-h-[92vh] flex flex-col justify-between px-5 sm:px-8 lg:px-12 pt-8 pb-12 overflow-hidden border-b border-hairline">
+      
+      <!-- Interactive Constellation Canvas (Paused when scrolled out of view) -->
+      <div class="absolute inset-0 z-0 pointer-events-auto opacity-75" id="canvas-container">
+        <canvas class="w-full h-full block" id="hero-constellation-canvas"></canvas>
+      </div>
+
+      <!-- Top Metadata Header -->
+      <div class="relative z-10 max-w-7xl mx-auto w-full flex flex-wrap items-center justify-between gap-3 pt-2 pointer-events-none">
+        <div class="flex items-center gap-2 bg-[#E9E8E6]/90 px-3 py-1 rounded-full border border-[#111111]/15 pointer-events-auto shadow-sm">
+          <span class="w-2 h-2 rounded-full bg-[#D4FF00] animate-pulse"></span>
+          <span class="font-mono text-[10px] sm:text-xs text-primary uppercase tracking-widest">[ NOVA LABS // PROJECTION ENGINE 4.2 ]</span>
+        </div>
+        <div class="hidden sm:flex items-center gap-6 font-mono text-[10px] sm:text-xs text-[#444748] uppercase tracking-widest pointer-events-auto">
+          <span>GRID REF: 44.98° N / 93.26° W</span>
+          <span>STATUS: <strong class="text-primary">UNWRITTEN</strong></span>
+          <span class="text-[#536600] font-bold">LIVE TELEMETRY ACTIVE</span>
+        </div>
+      </div>
+
+      <!-- Monumental Editorial Typography -->
+      <div class="relative z-10 max-w-7xl mx-auto w-full my-auto pt-10 pb-8 pointer-events-none">
+        <div class="select-none">
+          <p class="font-mono text-xs uppercase tracking-[0.25em] text-[#444748] mb-3 pointer-events-auto">
+            [ MANIFESTO INDEX: ZERO ]
+          </p>
+          <h1 class="font-display text-[52px] sm:text-[76px] md:text-[110px] lg:text-[132px] leading-[0.88] tracking-[-0.05em] text-primary uppercase font-extrabold flex flex-col pointer-events-auto">
+            <span>YOUR FUTURE</span>
+            <span class="text-[#747878]/35 transition-colors duration-300 hover:text-primary">IS STILL</span>
+            <span class="relative inline-block w-fit text-primary underline decoration-[#D4FF00] decoration-[14px] md:decoration-[22px] underline-offset-[-2px] md:underline-offset-[-6px]">
+              UNWRITTEN.
+            </span>
+          </h1>
+        </div>
+
+        <!-- Narrative Deck & Action Suite -->
+        <div class="mt-8 grid grid-cols-1 md:grid-cols-12 gap-6 items-end pointer-events-auto">
+          <div class="md:col-span-6 lg:col-span-5">
+            <p class="text-lg sm:text-xl text-[#444748] max-w-xl font-normal leading-relaxed">
+              Explore what you’re good at. Discover where it can take you. Build the tangible proof-of-work to get there.
+            </p>
+            <div class="mt-3 flex items-center gap-3 font-mono text-xs text-[#747878]">
+              <span class="w-1.5 h-1.5 bg-[#536600]"></span>
+              <span>8 CONNECTED DOMAINS</span>
+              <span>•</span>
+              <span>REAL-TIME TRAJECTORIES</span>
+            </div>
+          </div>
+
+          <div class="md:col-span-6 lg:col-span-7 flex flex-wrap items-center md:justify-end gap-4">
+            <button id="hero-start-btn" class="px-7 py-3.5 bg-[#D4FF00] hover:bg-[#CAF300] text-primary font-mono text-xs uppercase tracking-wider font-bold border border-primary shadow-hard-md hover:-translate-x-0.5 hover:-translate-y-0.5 active:translate-x-0 active:translate-y-0 transition-all flex items-center gap-2">
+              <span>Start Exploring</span>
+              <span class="material-symbols-outlined text-[18px]">arrow_forward</span>
+            </button>
+            <button id="hero-how-it-works-btn" class="px-5 py-3.5 bg-[#EFEEEC] hover:bg-[#E9E8E6] text-primary font-mono text-xs uppercase tracking-wider font-semibold border border-primary shadow-hard-sm flex items-center gap-2 transition-all">
+              <span class="material-symbols-outlined text-[#536600] text-[20px]">play_circle</span>
+              <span>See How It Works</span>
+              <span class="font-mono text-[10px] text-[#747878] ml-1">[01:28]</span>
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Bottom Interactive Node Bar -->
+      <div class="relative z-10 max-w-7xl mx-auto w-full bg-[#F4F2ED]/95 backdrop-blur-md p-3 border border-primary flex flex-wrap items-center justify-between gap-3">
+        <div class="flex items-center gap-2">
+          <span class="material-symbols-outlined text-[#444748] text-[18px]">hub</span>
+          <span class="font-mono text-xs text-primary font-bold uppercase tracking-wider">CONSTELLATION NODES:</span>
+        </div>
+        <div class="flex flex-wrap gap-1.5" id="node-filter-container">
+          <button class="node-btn px-2.5 py-1 font-mono text-[11px] uppercase bg-[#E9E8E6] hover:bg-[#D4FF00] text-primary border border-transparent hover:border-primary transition-colors" data-domain="tech">Tech</button>
+          <button class="node-btn px-2.5 py-1 font-mono text-[11px] uppercase bg-[#E9E8E6] hover:bg-[#D4FF00] text-primary border border-transparent hover:border-primary transition-colors" data-domain="design">Design</button>
+          <button class="node-btn px-2.5 py-1 font-mono text-[11px] uppercase bg-[#E9E8E6] hover:bg-[#D4FF00] text-primary border border-transparent hover:border-primary transition-colors" data-domain="cyber">Cybersecurity</button>
+          <button class="node-btn px-2.5 py-1 font-mono text-[11px] uppercase bg-[#E9E8E6] hover:bg-[#D4FF00] text-primary border border-transparent hover:border-primary transition-colors" data-domain="ai">AI / Research</button>
+          <button class="node-btn px-2.5 py-1 font-mono text-[11px] uppercase bg-[#E9E8E6] hover:bg-[#D4FF00] text-primary border border-transparent hover:border-primary transition-colors" data-domain="product">Product</button>
+          <button class="node-btn px-2.5 py-1 font-mono text-[11px] uppercase bg-[#E9E8E6] hover:bg-[#D4FF00] text-primary border border-transparent hover:border-primary transition-colors" data-domain="business">Business</button>
+        </div>
+        <div class="font-mono text-xs text-[#536600] font-semibold uppercase tracking-wider" id="constellation-readout">
+          Hover nodes or click space to route vectors
+        </div>
+      </div>
+
+    </section>
+
+    <!-- ========================================================================= -->
+    <!-- 03. 'WHERE COULD YOU GO?' HORIZONTAL DYNAMIC PANELS                     -->
+    <!-- ========================================================================= -->
+    <section id="paths" class="w-full bg-[#FFFFFF] py-20 px-5 sm:px-8 lg:px-12 border-b border-hairline">
+      <div class="max-w-7xl mx-auto">
+        
+        <!-- Section Header -->
+        <div class="flex flex-col lg:flex-row lg:items-end justify-between gap-6 mb-12">
+          <div>
+            <span class="font-mono text-xs uppercase tracking-[0.2em] text-[#444748]">[ DISPATCH 02 // SECTOR DIRECTORY ]</span>
+            <h2 class="font-display text-4xl sm:text-5xl lg:text-6xl uppercase tracking-tight text-primary leading-none mt-2">
+              WHERE<br/>COULD<br/>YOU GO?
+            </h2>
+          </div>
+          <div class="max-w-md">
+            <p class="text-sm sm:text-base text-[#444748] mb-3 leading-relaxed">
+              Five primary kinetic tracks. Expand any sector to inspect median trajectory compensations, technical primitives, and architectural roles. (Simulated benchmark dataset).
+            </p>
+            <div class="flex items-center gap-2 font-mono text-xs text-primary font-bold">
+              <span class="w-2 h-2 bg-[#536600] animate-ping"></span>
+              <span>HOVER OR TAP PANELS TO EXPAND SECTOR DOSSIER</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- 5 Horizontal Responsive Panels System -->
+        <div class="flex flex-col lg:flex-row gap-3 min-h-[580px]" id="sector-panels-container">
+          
+          <!-- Panel 01: BUILD -->
+          <div class="sector-panel flex-1 bg-[#EFEEEC] p-6 flex flex-col justify-between border border-primary/20 hover:border-primary cursor-pointer transition-all duration-300 relative group overflow-hidden" data-sector="build" tabindex="0" role="button" aria-label="Sector Build">
+            <div>
+              <div class="flex items-center justify-between mb-4">
+                <span class="font-mono text-sm uppercase tracking-wider text-[#444748] font-bold">[ 01 ]</span>
+                <span class="px-2 py-0.5 bg-primary text-white font-mono text-[10px] uppercase font-semibold">DEV / INFRA</span>
+              </div>
+              <h3 class="font-display text-3xl sm:text-4xl uppercase text-primary tracking-tighter group-hover:text-[#536600] transition-colors">
+                BUILD
+              </h3>
+              <p class="font-mono text-xs text-[#444748] uppercase tracking-wider mt-1">
+                Software // Engineering // Cloud
+              </p>
+            </div>
+
+            <!-- Visual Graphic: Stack Topology -->
+            <div class="my-6 bg-[#E9E8E6] p-4 border border-primary/10">
+              <div class="flex items-center justify-between text-[#444748] font-mono text-[10px] mb-2">
+                <span>STACK TOPOLOGY</span>
+                <span>v2.8</span>
+              </div>
+              <svg class="w-full h-16 text-primary" fill="none" viewBox="0 0 240 60" preserveAspectRatio="none">
+                <path d="M10 50 L50 20 L110 40 L170 10 L230 35" stroke="currentColor" stroke-dasharray="3 3" stroke-width="2"></path>
+                <circle cx="50" cy="20" fill="currentColor" r="4"></circle>
+                <circle cx="110" cy="40" fill="currentColor" r="4"></circle>
+                <circle cx="170" cy="10" fill="#D4FF00" stroke="#111111" stroke-width="1.5" r="5"></circle>
+                <circle cx="230" cy="35" fill="currentColor" r="4"></circle>
+              </svg>
+              <div class="text-primary font-mono text-xs flex justify-between pt-2 border-t border-primary/10">
+                <span>Rust / Distributed</span>
+                <span class="text-[#536600] font-bold">+38% YoY*</span>
+              </div>
+            </div>
+
+            <div>
+              <div class="space-y-1 pb-3 text-primary">
+                <div class="font-mono text-[10px] text-[#444748] uppercase">TARGET ROLES:</div>
+                <div class="text-sm font-medium text-primary">Systems Architect • Core Infra Eng • Kernel Hacker</div>
+              </div>
+              <div class="pt-2.5 flex items-center justify-between bg-[#E3E2E0] px-3 py-2 border-t border-primary/10">
+                <span class="font-mono text-[10px] text-[#444748] uppercase">EST. COMP BAND*</span>
+                <span class="font-mono text-xs font-bold text-primary">$138K — $245K</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Panel 02: CREATE -->
+          <div class="sector-panel flex-1 bg-[#F4F2ED] p-6 flex flex-col justify-between border border-primary/20 hover:border-primary cursor-pointer transition-all duration-300 relative group overflow-hidden" data-sector="create" tabindex="0" role="button" aria-label="Sector Create">
+            <div>
+              <div class="flex items-center justify-between mb-4">
+                <span class="font-mono text-sm uppercase tracking-wider text-[#444748] font-bold">[ 02 ]</span>
+                <span class="px-2 py-0.5 bg-[#D4FF00] text-primary font-mono text-[10px] uppercase font-bold border border-primary">AVANT-GARDE</span>
+              </div>
+              <h3 class="font-display text-3xl sm:text-4xl uppercase text-primary tracking-tighter group-hover:text-[#536600] transition-colors">
+                CREATE
+              </h3>
+              <p class="font-mono text-xs text-[#444748] uppercase tracking-wider mt-1">
+                Design // Content // Product
+              </p>
+            </div>
+
+            <!-- Visual Graphic: Design Spec Graphic -->
+            <div class="my-6 bg-[#E9E8E6] p-4 border border-primary/10">
+              <div class="flex items-center justify-between text-[#444748] font-mono text-[10px] mb-2">
+                <span>DESIGN SPEC</span>
+                <span>FIGMA / WEBGL</span>
+              </div>
+              <div class="grid grid-cols-3 gap-2 h-16 items-end">
+                <div class="h-10 bg-primary/25 group-hover:bg-[#D4FF00] transition-colors border border-primary/20"></div>
+                <div class="h-16 bg-primary border border-primary"></div>
+                <div class="h-8 bg-[#D4FF00] border border-primary"></div>
+              </div>
+              <div class="text-primary font-mono text-xs flex justify-between pt-2 border-t border-primary/10">
+                <span>Spatial UX & Motion</span>
+                <span class="text-[#536600] font-bold">High Demand</span>
+              </div>
+            </div>
+
+            <div>
+              <div class="space-y-1 pb-3 text-primary">
+                <div class="font-mono text-[10px] text-[#444748] uppercase">TARGET ROLES:</div>
+                <div class="text-sm font-medium text-primary">Creative Technologist • Design Engineer • Brand Architect</div>
+              </div>
+              <div class="pt-2.5 flex items-center justify-between bg-[#E3E2E0] px-3 py-2 border-t border-primary/10">
+                <span class="font-mono text-[10px] text-[#444748] uppercase">EST. COMP BAND*</span>
+                <span class="font-mono text-xs font-bold text-primary">$120K — $210K</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Panel 03: DISCOVER -->
+          <div class="sector-panel flex-1 bg-[#EFEEEC] p-6 flex flex-col justify-between border border-primary/20 hover:border-primary cursor-pointer transition-all duration-300 relative group overflow-hidden" data-sector="discover" tabindex="0" role="button" aria-label="Sector Discover">
+            <div>
+              <div class="flex items-center justify-between mb-4">
+                <span class="font-mono text-sm uppercase tracking-wider text-[#444748] font-bold">[ 03 ]</span>
+                <span class="px-2 py-0.5 bg-primary text-white font-mono text-[10px] uppercase font-semibold">AI / QUANT</span>
+              </div>
+              <h3 class="font-display text-3xl sm:text-4xl uppercase text-primary tracking-tighter group-hover:text-[#536600] transition-colors">
+                DISCOVER
+              </h3>
+              <p class="font-mono text-xs text-[#444748] uppercase tracking-wider mt-1">
+                Research // Data // AI Science
+              </p>
+            </div>
+
+            <!-- Visual Graphic: Quantum Tensor -->
+            <div class="my-6 bg-[#E9E8E6] p-4 border border-primary/10">
+              <div class="flex items-center justify-between text-[#444748] font-mono text-[10px] mb-2">
+                <span>QUANTUM TENSOR</span>
+                <span>99.4% F1</span>
+              </div>
+              <svg class="w-full h-16 text-primary" viewBox="0 0 200 60" preserveAspectRatio="none">
+                <line stroke="#C4C7C7" stroke-width="1" x1="0" x2="200" y1="30" y2="30"></line>
+                <path d="M0 30 Q 50 5 100 30 T 200 30" fill="none" stroke="currentColor" stroke-width="2.5"></path>
+                <circle cx="100" cy="30" fill="#D4FF00" stroke="#111111" stroke-width="1.5" r="5"></circle>
+              </svg>
+              <div class="text-primary font-mono text-xs flex justify-between pt-2 border-t border-primary/10">
+                <span>Foundation Models</span>
+                <span class="text-[#536600] font-bold">+52% YoY*</span>
+              </div>
+            </div>
+
+            <div>
+              <div class="space-y-1 pb-3 text-primary">
+                <div class="font-mono text-[10px] text-[#444748] uppercase">TARGET ROLES:</div>
+                <div class="text-sm font-medium text-primary">AI Research Fellow • Neural Evaluator • Data Cartographer</div>
+              </div>
+              <div class="pt-2.5 flex items-center justify-between bg-[#E3E2E0] px-3 py-2 border-t border-primary/10">
+                <span class="font-mono text-[10px] text-[#444748] uppercase">EST. COMP BAND*</span>
+                <span class="font-mono text-xs font-bold text-primary">$155K — $280K</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Panel 04: PROTECT -->
+          <div class="sector-panel flex-1 bg-[#F4F2ED] p-6 flex flex-col justify-between border border-primary/20 hover:border-primary cursor-pointer transition-all duration-300 relative group overflow-hidden" data-sector="protect" tabindex="0" role="button" aria-label="Sector Protect">
+            <div>
+              <div class="flex items-center justify-between mb-4">
+                <span class="font-mono text-sm uppercase tracking-wider text-[#444748] font-bold">[ 04 ]</span>
+                <span class="px-2 py-0.5 bg-primary text-white font-mono text-[10px] uppercase font-semibold">DEFENSE</span>
+              </div>
+              <h3 class="font-display text-3xl sm:text-4xl uppercase text-primary tracking-tighter group-hover:text-[#536600] transition-colors">
+                PROTECT
+              </h3>
+              <p class="font-mono text-xs text-[#444748] uppercase tracking-wider mt-1">
+                Cybersecurity // Zero Trust
+              </p>
+            </div>
+
+            <!-- Visual Graphic: Monospace Hash -->
+            <div class="my-6 bg-[#E9E8E6] p-4 border border-primary/10 font-mono text-xs">
+              <div class="flex justify-between text-[#444748] text-[10px] mb-2">
+                <span>CRYPTO PROTOCOL</span>
+                <span>SHA-512</span>
+              </div>
+              <div class="py-1 tracking-widest text-primary font-mono text-[10px] break-all leading-tight">
+                0x8F9C21..E599B23F<br/>VERIFIED_ATTESTATION
+              </div>
+              <div class="text-primary flex justify-between pt-2 border-t border-primary/10">
+                <span>AppSec & Red Team</span>
+                <span class="text-[#536600] font-bold">Critical Need</span>
+              </div>
+            </div>
+
+            <div>
+              <div class="space-y-1 pb-3 text-primary">
+                <div class="font-mono text-[10px] text-[#444748] uppercase">TARGET ROLES:</div>
+                <div class="text-sm font-medium text-primary">Offensive Security Eng • Cloud Sec Architect • Cryptographer</div>
+              </div>
+              <div class="pt-2.5 flex items-center justify-between bg-[#E3E2E0] px-3 py-2 border-t border-primary/10">
+                <span class="font-mono text-[10px] text-[#444748] uppercase">EST. COMP BAND*</span>
+                <span class="font-mono text-xs font-bold text-primary">$142K — $230K</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Panel 05: LEAD -->
+          <div class="sector-panel flex-1 bg-[#EFEEEC] p-6 flex flex-col justify-between border border-primary/20 hover:border-primary cursor-pointer transition-all duration-300 relative group overflow-hidden" data-sector="lead" tabindex="0" role="button" aria-label="Sector Lead">
+            <div>
+              <div class="flex items-center justify-between mb-4">
+                <span class="font-mono text-sm uppercase tracking-wider text-[#444748] font-bold">[ 05 ]</span>
+                <span class="px-2 py-0.5 bg-primary text-white font-mono text-[10px] uppercase font-semibold">STRATEGY</span>
+              </div>
+              <h3 class="font-display text-3xl sm:text-4xl uppercase text-primary tracking-tighter group-hover:text-[#536600] transition-colors">
+                LEAD
+              </h3>
+              <p class="font-mono text-xs text-[#444748] uppercase tracking-wider mt-1">
+                Business // Product Strategy
+              </p>
+            </div>
+
+            <!-- Visual Graphic: Market Trajectory -->
+            <div class="my-6 bg-[#E9E8E6] p-4 border border-primary/10">
+              <div class="flex items-center justify-between text-[#444748] font-mono text-[10px] mb-2">
+                <span>MARKET TRAJECTORY</span>
+                <span>SERIES A-C</span>
+              </div>
+              <div class="flex items-end gap-1.5 h-16">
+                <div class="w-1/4 h-6 bg-[#DADAD8] border border-primary/20"></div>
+                <div class="w-1/4 h-10 bg-primary/40 border border-primary/20"></div>
+                <div class="w-1/4 h-12 bg-primary border border-primary"></div>
+                <div class="w-1/4 h-16 bg-[#D4FF00] border border-primary"></div>
+              </div>
+              <div class="text-primary font-mono text-xs flex justify-between pt-2 border-t border-primary/10">
+                <span>Venture Builder</span>
+                <span class="text-[#536600] font-bold">+29% YoY*</span>
+              </div>
+            </div>
+
+            <div>
+              <div class="space-y-1 pb-3 text-primary">
+                <div class="font-mono text-[10px] text-[#444748] uppercase">TARGET ROLES:</div>
+                <div class="text-sm font-medium text-primary">Venture Operator • Technical Product Lead • Growth Principal</div>
+              </div>
+              <div class="pt-2.5 flex items-center justify-between bg-[#E3E2E0] px-3 py-2 border-t border-primary/10">
+                <span class="font-mono text-[10px] text-[#444748] uppercase">EST. COMP BAND*</span>
+                <span class="font-mono text-xs font-bold text-primary">$130K — $225K</span>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+        <div class="mt-4 text-right font-mono text-[10px] text-[#747878] uppercase">
+          *All compensation & demand figures represent simulated concept telemetry.
+        </div>
+      </div>
+    </section>
+
+    <!-- ========================================================================= -->
+    <!-- 04. 'START WITH YOU' PROFILE SYNTHESIZER                                -->
+    <!-- ========================================================================= -->
+    <section class="w-full bg-[#F4F2ED] py-24 px-5 sm:px-8 lg:px-12 border-b border-hairline">
+      <div class="max-w-7xl mx-auto">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 items-start">
+          
+          <!-- Left: Magnetic Trait & Skill Cloud -->
+          <div class="lg:col-span-7">
+            <span class="font-mono text-xs uppercase tracking-[0.25em] text-[#444748]">[ SYNTHESIZER PROTOCOL // MATRIX 03 ]</span>
+            <h2 class="font-display text-4xl sm:text-5xl uppercase text-primary tracking-tight mt-2 mb-3">
+              START WITH YOU.
+            </h2>
+            <p class="text-base sm:text-lg text-[#444748] mb-8 max-w-xl leading-relaxed">
+              Your interests. Your skills. Your curiosity. Your starting point. Tap tags to inject dynamic weights into the projection vector.
+            </p>
+
+            <div class="p-6 bg-[#FFFFFF] border border-primary space-y-4 shadow-sm">
+              <div class="flex items-center justify-between border-b border-hairline pb-3">
+                <span class="font-mono text-xs uppercase tracking-widest text-[#444748] font-semibold">INTEREST &amp; SKILL CLOUD (MAGNETIC)</span>
+                <button id="reset-traits-btn" class="font-mono text-xs text-[#444748] hover:text-primary underline cursor-pointer">
+                  Clear Selection
+                </button>
+              </div>
+
+              <!-- Interactive Trait Pills -->
+              <div class="flex flex-wrap gap-2 pt-2" id="traits-cloud">
+                <!-- Core Traits -->
+                <button class="synth-pill px-3.5 py-1.5 font-mono text-xs uppercase bg-[#EFEEEC] hover:bg-[#D4FF00] hover:text-primary text-[#111111] border border-primary/20 transition-all active:scale-95" data-val="Python" data-affinity="ai,tech">
+                  + Python
+                </button>
+                <button class="synth-pill px-3.5 py-1.5 font-mono text-xs uppercase bg-[#D4FF00] text-primary font-bold border border-primary shadow-hard-sm transition-all active:scale-95 active-pill" data-val="Visual Design" data-affinity="create,design">
+                  ✓ Visual Design
+                </button>
+                <button class="synth-pill px-3.5 py-1.5 font-mono text-xs uppercase bg-[#EFEEEC] hover:bg-[#D4FF00] hover:text-primary text-[#111111] border border-primary/20 transition-all active:scale-95" data-val="Writing" data-affinity="create,lead">
+                  + Writing
+                </button>
+                <button class="synth-pill px-3.5 py-1.5 font-mono text-xs uppercase bg-[#D4FF00] text-primary font-bold border border-primary shadow-hard-sm transition-all active:scale-95 active-pill" data-val="Problem Solving" data-affinity="build,protect">
+                  ✓ Problem Solving
+                </button>
+                <button class="synth-pill px-3.5 py-1.5 font-mono text-xs uppercase bg-[#EFEEEC] hover:bg-[#D4FF00] hover:text-primary text-[#111111] border border-primary/20 transition-all active:scale-95" data-val="Distributed Systems" data-affinity="build,protect">
+                  + Distributed Systems
+                </button>
+                <button class="synth-pill px-3.5 py-1.5 font-mono text-xs uppercase bg-[#EFEEEC] hover:bg-[#D4FF00] hover:text-primary text-[#111111] border border-primary/20 transition-all active:scale-95" data-val="Creative Direction" data-affinity="create,design">
+                  + Creative Direction
+                </button>
+                <button class="synth-pill px-3.5 py-1.5 font-mono text-xs uppercase bg-[#EFEEEC] hover:bg-[#D4FF00] hover:text-primary text-[#111111] border border-primary/20 transition-all active:scale-95" data-val="Cryptography" data-affinity="protect,tech">
+                  + Cryptography
+                </button>
+                <button class="synth-pill px-3.5 py-1.5 font-mono text-xs uppercase bg-[#EFEEEC] hover:bg-[#D4FF00] hover:text-primary text-[#111111] border border-primary/20 transition-all active:scale-95" data-val="Behavioral Economics" data-affinity="lead,discover">
+                  + Behavioral Economics
+                </button>
+                <button class="synth-pill px-3.5 py-1.5 font-mono text-xs uppercase bg-[#D4FF00] text-primary font-bold border border-primary shadow-hard-sm transition-all active:scale-95 active-pill" data-val="Curiosity" data-affinity="discover,tech">
+                  ✓ Curiosity
+                </button>
+                <button class="synth-pill px-3.5 py-1.5 font-mono text-xs uppercase bg-[#EFEEEC] hover:bg-[#D4FF00] hover:text-primary text-[#111111] border border-primary/20 transition-all active:scale-95" data-val="Product Strategy" data-affinity="lead,create">
+                  + Product Strategy
+                </button>
+                <button class="synth-pill px-3.5 py-1.5 font-mono text-xs uppercase bg-[#EFEEEC] hover:bg-[#D4FF00] hover:text-primary text-[#111111] border border-primary/20 transition-all active:scale-95" data-val="Machine Learning" data-affinity="ai,discover">
+                  + Machine Learning
+                </button>
+                <button class="synth-pill px-3.5 py-1.5 font-mono text-xs uppercase bg-[#EFEEEC] hover:bg-[#D4FF00] hover:text-primary text-[#111111] border border-primary/20 transition-all active:scale-95" data-val="Architecture" data-affinity="build,tech">
+                  + Architecture
+                </button>
+                <button class="synth-pill px-3.5 py-1.5 font-mono text-xs uppercase bg-[#EFEEEC] hover:bg-[#D4FF00] hover:text-primary text-[#111111] border border-primary/20 transition-all active:scale-95" data-val="Builder" data-affinity="build,tech">
+                  + Builder
+                </button>
+                <button class="synth-pill px-3.5 py-1.5 font-mono text-xs uppercase bg-[#EFEEEC] hover:bg-[#D4FF00] hover:text-primary text-[#111111] border border-primary/20 transition-all active:scale-95" data-val="Creative" data-affinity="create,design">
+                  + Creative
+                </button>
+                <button class="synth-pill px-3.5 py-1.5 font-mono text-xs uppercase bg-[#EFEEEC] hover:bg-[#D4FF00] hover:text-primary text-[#111111] border border-primary/20 transition-all active:scale-95" data-val="Analytical" data-affinity="discover,ai">
+                  + Analytical
+                </button>
+                <button class="synth-pill px-3.5 py-1.5 font-mono text-xs uppercase bg-[#EFEEEC] hover:bg-[#D4FF00] hover:text-primary text-[#111111] border border-primary/20 transition-all active:scale-95" data-val="Leader" data-affinity="lead,business">
+                  + Leader
+                </button>
+                <button class="synth-pill px-3.5 py-1.5 font-mono text-xs uppercase bg-[#EFEEEC] hover:bg-[#D4FF00] hover:text-primary text-[#111111] border border-primary/20 transition-all active:scale-95" data-val="Explorer" data-affinity="discover,tech">
+                  + Explorer
+                </button>
+                <button class="synth-pill px-3.5 py-1.5 font-mono text-xs uppercase bg-[#EFEEEC] hover:bg-[#D4FF00] hover:text-primary text-[#111111] border border-primary/20 transition-all active:scale-95" data-val="System Thinker" data-affinity="tech,build">
+                  + System Thinker
+                </button>
+              </div>
+
+              <!-- Trait Telemetry Bar -->
+              <div class="pt-4 flex flex-wrap items-center justify-between font-mono text-xs text-[#444748] border-t border-hairline gap-2">
+                <span id="trait-covariance-count">ACTIVE SYNTHESIS COVARIANCE: 3 NODES SELECTED</span>
+                <span class="text-[#536600] font-bold">CALC LATENCY: 0.4ms</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Right: Live Real-Time Trajectory Matrix -->
+          <div class="lg:col-span-5 bg-primary text-white p-8 border border-primary shadow-hard-lime-lg">
+            <div class="flex items-center justify-between pb-4 border-b border-white/20">
+              <span class="font-mono text-xs text-[#D4FF00] uppercase tracking-widest">[ PROJECTION RESULTS ]</span>
+              <span class="material-symbols-outlined text-[#D4FF00] text-[22px]">bolt</span>
+            </div>
+
+            <h3 class="font-display text-2xl sm:text-3xl uppercase text-white tracking-tight mt-4 mb-2">
+              TRAJECTORY MATRIX
+            </h3>
+            <p class="font-mono text-xs text-[#858383] mb-6">
+              Affinities calculated by mapping selected interest seeds to enterprise roles and creative studios:
+            </p>
+
+            <!-- Dynamic Match Bars -->
+            <div class="space-y-5" id="trajectory-matrix-bars">
+              <!-- Role 1 -->
+              <div class="space-y-1">
+                <div class="flex justify-between font-mono text-xs uppercase">
+                  <span class="text-white font-bold" id="role-title-1">01. Creative Technologist</span>
+                  <span class="text-[#D4FF00] font-bold" id="role-score-1">94% MATCH</span>
+                </div>
+                <div class="w-full h-2 bg-white/20 overflow-hidden">
+                  <div class="h-full bg-[#D4FF00] transition-all duration-500 ease-out" id="role-bar-1" style="width: 94%;"></div>
+                </div>
+                <p class="font-mono text-[11px] text-[#858383] pt-1" id="role-desc-1">
+                  Blends physical UX, creative coding, and brand installation frameworks.
+                </p>
+              </div>
+
+              <!-- Role 2 -->
+              <div class="space-y-1">
+                <div class="flex justify-between font-mono text-xs uppercase">
+                  <span class="text-white font-bold" id="role-title-2">02. Systems Design Engineer</span>
+                  <span class="text-[#D4FF00] font-bold" id="role-score-2">88% MATCH</span>
+                </div>
+                <div class="w-full h-2 bg-white/20 overflow-hidden">
+                  <div class="h-full bg-[#D4FF00] transition-all duration-500 ease-out" id="role-bar-2" style="width: 88%;"></div>
+                </div>
+                <p class="font-mono text-[11px] text-[#858383] pt-1" id="role-desc-2">
+                  Translates high-level system logic into tangible digital products.
+                </p>
+              </div>
+
+              <!-- Role 3 -->
+              <div class="space-y-1">
+                <div class="flex justify-between font-mono text-xs uppercase">
+                  <span class="text-white font-bold" id="role-title-3">03. Behavioral Product Lead</span>
+                  <span class="text-[#D4FF00] font-bold" id="role-score-3">79% MATCH</span>
+                </div>
+                <div class="w-full h-2 bg-white/20 overflow-hidden">
+                  <div class="h-full bg-[#D4FF00] transition-all duration-500 ease-out" id="role-bar-3" style="width: 79%;"></div>
+                </div>
+                <p class="font-mono text-[11px] text-[#858383] pt-1" id="role-desc-3">
+                  Applies decision architecture to high-scale user onboarding ecosystems.
+                </p>
+              </div>
+            </div>
+
+            <!-- Trajectory CTA -->
+            <div class="mt-8 pt-4 border-t border-white/20">
+              <button id="build-direction-btn" class="w-full py-3.5 bg-[#D4FF00] hover:bg-[#CAF300] text-primary font-mono text-xs uppercase tracking-wider font-bold border border-[#D4FF00] transition-transform hover:-translate-y-0.5 active:translate-y-0 flex items-center justify-center gap-2">
+                <span>Build My Direction</span>
+                <span class="material-symbols-outlined text-[18px]">arrow_forward</span>
+              </button>
+              <div class="text-center mt-2 font-mono text-[10px] text-[#858383]">
+                No account required. Synthesis generates an offline artifact immediately.
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ========================================================================= -->
+    <!-- 05. THE JOURNEY TIMELINE: 'ONE STEP BECOMES A DIRECTION'                 -->
+    <!-- ========================================================================= -->
+    <section class="w-full bg-[#FFFFFF] py-20 px-5 sm:px-8 lg:px-12 border-b border-hairline">
+      <div class="max-w-7xl mx-auto">
+        
+        <div class="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-4">
+          <div>
+            <span class="font-mono text-xs uppercase tracking-[0.25em] text-[#444748]">[ FLUID PROGRESSION // CHRONOLOGY ]</span>
+            <h2 class="font-display text-4xl sm:text-5xl lg:text-6xl uppercase tracking-tight text-primary leading-none mt-2">
+              ONE STEP<br/>BECOMES A DIRECTION.
+            </h2>
+          </div>
+          <p class="text-sm sm:text-base text-[#444748] max-w-sm leading-relaxed">
+            A non-linear blueprint for going from scattered curiosity to definitive industry credibility. Select any stage to inspect practical deliverables.
+          </p>
+        </div>
+
+        <!-- 6 Interactive Stage Cards -->
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-6 gap-3 relative" id="journey-stages-container">
+          
+          <!-- Step 01: DISCOVER -->
+          <div class="journey-node group bg-[#EFEEEC] p-4 border border-primary/20 hover:border-primary transition-all cursor-pointer" data-step="1" tabindex="0">
+            <div class="font-mono text-xs text-[#444748] font-bold mb-2">[ 01 ]</div>
+            <h3 class="font-display text-xl uppercase text-primary group-hover:text-[#536600] transition-colors">
+              DISCOVER
+            </h3>
+            <p class="text-xs text-[#444748] mt-2">
+              Understand what actually interests you without dogma or external pressure.
+            </p>
+            <div class="mt-6 p-2 bg-[#E3E2E0] border-t border-primary/10 font-mono text-[10px] text-[#444748]">
+              ARTIFACT:
+              <span class="block font-bold text-primary">Interest Topology Map</span>
+            </div>
+          </div>
+
+          <!-- Step 02: LEARN -->
+          <div class="journey-node group bg-[#EFEEEC] p-4 border border-primary/20 hover:border-primary transition-all cursor-pointer" data-step="2" tabindex="0">
+            <div class="font-mono text-xs text-[#444748] font-bold mb-2">[ 02 ]</div>
+            <h3 class="font-display text-xl uppercase text-primary group-hover:text-[#536600] transition-colors">
+              LEARN
+            </h3>
+            <p class="text-xs text-[#444748] mt-2">
+              Build the precise high-leverage skills your target role demands.
+            </p>
+            <div class="mt-6 p-2 bg-[#E3E2E0] border-t border-primary/10 font-mono text-[10px] text-[#444748]">
+              ARTIFACT:
+              <span class="block font-bold text-primary">Target Curriculum Syllabus</span>
+            </div>
+          </div>
+
+          <!-- Step 03: BUILD (Active Benchmark) -->
+          <div class="journey-node group bg-[#D4FF00] text-primary p-4 border-2 border-primary shadow-hard-sm transition-all cursor-pointer" data-step="3" tabindex="0">
+            <div class="font-mono text-xs uppercase font-bold mb-2">[ 03 CURRENT ]</div>
+            <h3 class="font-display text-xl uppercase tracking-tight">
+              BUILD
+            </h3>
+            <p class="text-xs mt-2 text-primary font-medium">
+              Turn theoretical knowledge into real, shipping open-source products.
+            </p>
+            <div class="mt-6 p-2 bg-primary text-white font-mono text-[10px]">
+              ARTIFACT:
+              <span class="block font-bold text-[#D4FF00]">Production GitHub Repos</span>
+            </div>
+          </div>
+
+          <!-- Step 04: PRACTICE -->
+          <div class="journey-node group bg-[#EFEEEC] p-4 border border-primary/20 hover:border-primary transition-all cursor-pointer" data-step="4" tabindex="0">
+            <div class="font-mono text-xs text-[#444748] font-bold mb-2">[ 04 ]</div>
+            <h3 class="font-display text-xl uppercase text-primary group-hover:text-[#536600] transition-colors">
+              PRACTICE
+            </h3>
+            <p class="text-xs text-[#444748] mt-2">
+              Prepare for interviews, real-world whiteboard runs, and dynamic drills.
+            </p>
+            <div class="mt-6 p-2 bg-[#E3E2E0] border-t border-primary/10 font-mono text-[10px] text-[#444748]">
+              ARTIFACT:
+              <span class="block font-bold text-primary">Simulated Incident Audits</span>
+            </div>
+          </div>
+
+          <!-- Step 05: APPLY -->
+          <div class="journey-node group bg-[#EFEEEC] p-4 border border-primary/20 hover:border-primary transition-all cursor-pointer" data-step="5" tabindex="0">
+            <div class="font-mono text-xs text-[#444748] font-bold mb-2">[ 05 ]</div>
+            <h3 class="font-display text-xl uppercase text-primary group-hover:text-[#536600] transition-colors">
+              APPLY
+            </h3>
+            <p class="text-xs text-[#444748] mt-2">
+              Find bespoke opportunities that match your verified direction.
+            </p>
+            <div class="mt-6 p-2 bg-[#E3E2E0] border-t border-primary/10 font-mono text-[10px] text-[#444748]">
+              ARTIFACT:
+              <span class="block font-bold text-primary">Curated Studio Rolodex</span>
+            </div>
+          </div>
+
+          <!-- Step 06: GROW -->
+          <div class="journey-node group bg-[#EFEEEC] p-4 border border-primary/20 hover:border-primary transition-all cursor-pointer" data-step="6" tabindex="0">
+            <div class="font-mono text-xs text-[#444748] font-bold mb-2">[ 06 ]</div>
+            <h3 class="font-display text-xl uppercase text-primary group-hover:text-[#536600] transition-colors">
+              GROW
+            </h3>
+            <p class="text-xs text-[#444748] mt-2">
+              Keep evolving. Expand scope, mentor upcoming fellows, architect teams.
+            </p>
+            <div class="mt-6 p-2 bg-[#E3E2E0] border-t border-primary/10 font-mono text-[10px] text-[#444748]">
+              ARTIFACT:
+              <span class="block font-bold text-primary">Long-Term Legacy Vault</span>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Live Interactive Stage Detail Inspector -->
+        <div class="mt-6 p-6 bg-[#F4F2ED] border border-primary flex flex-col md:flex-row items-start md:items-center justify-between gap-4" id="stage-inspector-box">
+          <div class="flex items-center gap-4">
+            <span class="material-symbols-outlined text-[#536600] text-[32px]">terminal</span>
+            <div>
+              <div class="font-mono text-xs uppercase text-[#444748]" id="inspector-label">[ ACTIVE INSPECTOR: STAGE 03 // BUILD ]</div>
+              <div class="text-sm sm:text-base font-bold text-primary" id="inspector-desc">Deliverable: Deploy 1 full-stack zero-dependency application with automated CI/CD pipeline.</div>
+            </div>
+          </div>
+          <div class="flex items-center gap-4 w-full md:w-auto justify-between md:justify-end">
+            <span class="font-mono text-xs text-[#444748] uppercase whitespace-nowrap" id="inspector-time">EST. TIME: 4-6 WEEKS</span>
+            <button id="view-rubric-btn" class="px-4 py-2 bg-primary text-white font-mono text-xs uppercase hover:bg-[#D4FF00] hover:text-primary transition-colors border border-primary">
+              View Rubric
+            </button>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ========================================================================= -->
+    <!-- 06. TOOLS FOR THE JOURNEY (MODULAR ARTIFACT PREVIEWS)                   -->
+    <!-- ========================================================================= -->
+    <section id="tools" class="w-full bg-[#EFEEEC] py-24 px-5 sm:px-8 lg:px-12 border-b border-hairline">
+      <div class="max-w-7xl mx-auto">
+        
+        <div class="flex flex-col md:flex-row md:items-end justify-between gap-4 mb-12">
+          <div>
+            <span class="font-mono text-xs uppercase tracking-[0.25em] text-[#444748]">[ SYSTEM TOOLS // OPERATIONAL ARTIFACTS ]</span>
+            <h2 class="font-display text-4xl sm:text-5xl uppercase tracking-tight text-primary mt-2">
+              TOOLS FOR THE JOURNEY
+            </h2>
+          </div>
+          <p class="text-sm sm:text-base text-[#444748] max-w-md leading-relaxed">
+            Tactile, high-craft instruments engineered to replace fragmented spreadsheets, resume generators, and dead-end job boards.
+          </p>
+        </div>
+
+        <!-- 6 High-Craft Digital Artifact Previews Grid -->
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          
+          <!-- Artifact 1: Resume Studio -->
+          <div class="artifact-card bg-[#FFFFFF] p-6 border border-primary/20 hover:border-primary shadow-sm hover:shadow-hard-md transition-all duration-200 flex flex-col justify-between group">
+            <div>
+              <div class="flex items-center justify-between pb-3 mb-3 border-b border-hairline">
+                <span class="font-mono text-xs text-[#444748] uppercase">[ ARTIFACT 01 ]</span>
+                <span class="px-2 py-0.5 bg-[#EFEEEC] text-primary font-mono text-[10px] uppercase font-bold">SYNTAX ENGINE</span>
+              </div>
+              <h3 class="font-display text-2xl uppercase text-primary mb-1">Resume Studio</h3>
+              <p class="text-xs sm:text-sm text-[#444748] mb-4">
+                High-typography markdown doc studio with ATS parsing heuristics and proof-of-work embedding.
+              </p>
+
+              <!-- Code Preview -->
+              <div class="bg-primary text-white p-3 font-mono text-xs space-y-1 border border-primary">
+                <div class="flex justify-between text-[#858383] text-[10px]">
+                  <span>spec_sheet.typ</span>
+                  <span class="text-[#D4FF00]">ATS Score: 98/100</span>
+                </div>
+                <p class="text-[#D4FF00] text-[11px]">#show heading: set text(font: "Syne")</p>
+                <p class="text-[#858383] text-[11px]">- Built low-latency broker in Rust (8M ops/sec)</p>
+                <p class="text-[#858383] text-[11px]">- Spearheaded zero-trust auth microservices</p>
+              </div>
+            </div>
+
+            <div class="pt-4 mt-4 flex items-center justify-between font-mono text-xs text-primary border-t border-hairline">
+              <span class="text-[#444748]">LIVE EXPORT: PDF/LATEX</span>
+              <button class="tool-demo-btn inline-flex items-center gap-1 hover:text-[#536600]" data-tool="resume">
+                <span class="material-symbols-outlined text-[18px]">arrow_outward</span>
+              </button>
+            </div>
+          </div>
+
+          <!-- Artifact 2: Interview Lab -->
+          <div class="artifact-card bg-[#FFFFFF] p-6 border border-primary/20 hover:border-primary shadow-sm hover:shadow-hard-md transition-all duration-200 flex flex-col justify-between group" id="interview-lab-card">
+            <div>
+              <div class="flex items-center justify-between pb-3 mb-3 border-b border-hairline">
+                <span class="font-mono text-xs text-[#444748] uppercase">[ ARTIFACT 02 ]</span>
+                <span class="px-2 py-0.5 bg-[#D4FF00] text-primary font-mono text-[10px] uppercase font-bold border border-primary">LIVE AUDIO</span>
+              </div>
+              <h3 class="font-display text-2xl uppercase text-primary mb-1">Interview Lab</h3>
+              <p class="text-xs sm:text-sm text-[#444748] mb-4">
+                Dynamic audio waveform dialogue simulator giving real-time feedback on architecture answers.
+              </p>
+
+              <!-- Audio Waveform Simulation -->
+              <div class="bg-[#EFEEEC] p-3 border border-primary/20">
+                <div class="flex items-center justify-between text-[#444748] font-mono text-[10px] mb-2">
+                  <span>AUDIO SPECTRUM</span>
+                  <span class="text-[#536600] font-bold">CONFIDENCE: 92%</span>
+                </div>
+                <div class="flex items-end justify-between gap-1.5 h-12 py-1">
+                  <span class="eq-bar w-1.5 bg-primary"></span>
+                  <span class="eq-bar w-1.5 bg-[#536600]"></span>
+                  <span class="eq-bar w-1.5 bg-primary"></span>
+                  <span class="eq-bar w-1.5 bg-[#D4FF00] border border-primary"></span>
+                  <span class="eq-bar w-1.5 bg-primary"></span>
+                  <span class="eq-bar w-1.5 bg-[#536600]"></span>
+                  <span class="eq-bar w-1.5 bg-primary"></span>
+                  <span class="eq-bar w-1.5 bg-[#D4FF00] border border-primary"></span>
+                </div>
+                <div class="font-mono text-[10px] text-[#444748] pt-2 truncate border-t border-primary/10">
+                  Prompt: "Explain CAP theorem trade-offs in distributed caches."
+                </div>
+              </div>
+            </div>
+
+            <div class="pt-4 mt-4 flex items-center justify-between font-mono text-xs text-primary border-t border-hairline">
+              <span class="text-[#444748]">SPEECH-TO-EVAL READY</span>
+              <button class="tool-demo-btn inline-flex items-center gap-1 hover:text-[#536600]" data-tool="interview">
+                <span class="material-symbols-outlined text-[18px]">arrow_outward</span>
+              </button>
+            </div>
+          </div>
+
+          <!-- Artifact 3: Skill Map -->
+          <div class="artifact-card bg-[#FFFFFF] p-6 border border-primary/20 hover:border-primary shadow-sm hover:shadow-hard-md transition-all duration-200 flex flex-col justify-between group">
+            <div>
+              <div class="flex items-center justify-between pb-3 mb-3 border-b border-hairline">
+                <span class="font-mono text-xs text-[#444748] uppercase">[ ARTIFACT 03 ]</span>
+                <span class="px-2 py-0.5 bg-[#EFEEEC] text-primary font-mono text-[10px] uppercase font-bold">TOPOLOGICAL</span>
+              </div>
+              <h3 class="font-display text-2xl uppercase text-primary mb-1">Skill Map</h3>
+              <p class="text-xs sm:text-sm text-[#444748] mb-4">
+                Adjacent capability clustering. Uncovers lateral steps from design into engineering.
+              </p>
+
+              <!-- Radar/Vector SVG -->
+              <div class="bg-[#F4F2ED] p-3 flex items-center justify-center relative h-28 border border-primary/20">
+                <svg class="w-24 h-24 text-primary" viewBox="0 0 100 100">
+                  <polygon fill="none" points="50,10 90,40 75,85 25,85 10,40" stroke="#747878" stroke-width="1"></polygon>
+                  <polygon fill="#D4FF00" fill-opacity="0.45" points="50,22 80,45 68,78 32,78 20,45" stroke="#536600" stroke-width="1.5"></polygon>
+                  <circle cx="50" cy="22" fill="#111111" r="3"></circle>
+                  <circle cx="80" cy="45" fill="#111111" r="3"></circle>
+                  <circle cx="68" cy="78" fill="#111111" r="3"></circle>
+                </svg>
+                <div class="absolute bottom-1 right-2 font-mono text-[10px] text-[#444748]">
+                  5 Vertices Synced
+                </div>
+              </div>
+            </div>
+
+            <div class="pt-4 mt-4 flex items-center justify-between font-mono text-xs text-primary border-t border-hairline">
+              <span class="text-[#444748]">EXPLORE CLUSTERS</span>
+              <button class="tool-demo-btn inline-flex items-center gap-1 hover:text-[#536600]" data-tool="skillmap">
+                <span class="material-symbols-outlined text-[18px]">arrow_outward</span>
+              </button>
+            </div>
+          </div>
+
+          <!-- Artifact 4: Career Explorer -->
+          <div class="artifact-card bg-[#FFFFFF] p-6 border border-primary/20 hover:border-primary shadow-sm hover:shadow-hard-md transition-all duration-200 flex flex-col justify-between group">
+            <div>
+              <div class="flex items-center justify-between pb-3 mb-3 border-b border-hairline">
+                <span class="font-mono text-xs text-[#444748] uppercase">[ ARTIFACT 04 ]</span>
+                <span class="px-2 py-0.5 bg-[#EFEEEC] text-primary font-mono text-[10px] uppercase font-bold">DATA PIPELINE</span>
+              </div>
+              <h3 class="font-display text-2xl uppercase text-primary mb-1">Career Explorer</h3>
+              <p class="text-xs sm:text-sm text-[#444748] mb-4">
+                Topological branch analyzer showing role progression, compensation, and startup velocity.
+              </p>
+
+              <!-- Branch Explorer Diagram -->
+              <div class="bg-[#EFEEEC] p-3 space-y-1.5 font-mono text-xs border border-primary/20">
+                <div class="flex items-center justify-between">
+                  <span class="font-bold text-primary">Junior Frontend</span>
+                  <span class="text-[#444748]">Year 0-1</span>
+                </div>
+                <div class="text-[#536600] pl-2 text-[11px]">↓ Branch: WebGL / Creative Eng</div>
+                <div class="flex items-center justify-between font-bold text-primary pt-1 border-t border-primary/10">
+                  <span>Principal Creative Dev</span>
+                  <span class="text-[#536600]">$195k*</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="pt-4 mt-4 flex items-center justify-between font-mono text-xs text-primary border-t border-hairline">
+              <span class="text-[#444748]">LAUNCH ATLAS</span>
+              <button class="tool-demo-btn inline-flex items-center gap-1 hover:text-[#536600]" data-tool="explorer">
+                <span class="material-symbols-outlined text-[18px]">arrow_outward</span>
+              </button>
+            </div>
+          </div>
+
+          <!-- Artifact 5: Project Builder -->
+          <div class="artifact-card bg-[#FFFFFF] p-6 border border-primary/20 hover:border-primary shadow-sm hover:shadow-hard-md transition-all duration-200 flex flex-col justify-between group">
+            <div>
+              <div class="flex items-center justify-between pb-3 mb-3 border-b border-hairline">
+                <span class="font-mono text-xs text-[#444748] uppercase">[ ARTIFACT 05 ]</span>
+                <span class="px-2 py-0.5 bg-[#EFEEEC] text-primary font-mono text-[10px] uppercase font-bold">SPRINTS</span>
+              </div>
+              <h3 class="font-display text-2xl uppercase text-primary mb-1">Project Builder</h3>
+              <p class="text-xs sm:text-sm text-[#444748] mb-4">
+                Tangible project sprint kits with production schemas, Figma tokens, and automated tests.
+              </p>
+
+              <!-- Sprint Progress Preview -->
+              <div class="bg-primary text-white p-3 space-y-1 font-mono text-xs border border-primary">
+                <div class="flex items-center justify-between text-[#D4FF00] text-[10px]">
+                  <span>SPRINT: ZERO-KNOWLEDGE VOTER</span>
+                  <span>KIT #44</span>
+                </div>
+                <div class="text-[#858383] text-[11px]">Includes: Circom circuits + Next.js UI</div>
+                <div class="w-full bg-white/20 h-1.5 mt-2">
+                  <div class="bg-[#D4FF00] h-full w-2/3"></div>
+                </div>
+              </div>
+            </div>
+
+            <div class="pt-4 mt-4 flex items-center justify-between font-mono text-xs text-primary border-t border-hairline">
+              <span class="text-[#444748]">GET OPEN BLUEPRINT</span>
+              <button class="tool-demo-btn inline-flex items-center gap-1 hover:text-[#536600]" data-tool="project">
+                <span class="material-symbols-outlined text-[18px]">arrow_outward</span>
+              </button>
+            </div>
+          </div>
+
+          <!-- Artifact 6: Opportunity Finder -->
+          <div class="artifact-card bg-[#FFFFFF] p-6 border border-primary/20 hover:border-primary shadow-sm hover:shadow-hard-md transition-all duration-200 flex flex-col justify-between group">
+            <div>
+              <div class="flex items-center justify-between pb-3 mb-3 border-b border-hairline">
+                <span class="font-mono text-xs text-[#444748] uppercase">[ ARTIFACT 06 ]</span>
+                <span class="px-2 py-0.5 bg-[#D4FF00] text-primary font-mono text-[10px] uppercase font-bold border border-primary">CURATED FEED</span>
+              </div>
+              <h3 class="font-display text-2xl uppercase text-primary mb-1">Opportunity Finder</h3>
+              <p class="text-xs sm:text-sm text-[#444748] mb-4">
+                Real-time feed of vetted residencies, early-stage apprenticeships, and grants.
+              </p>
+
+              <!-- Listing Card Preview -->
+              <div class="bg-[#EFEEEC] p-3 space-y-1 font-mono text-xs border border-primary/20">
+                <div class="flex items-center justify-between">
+                  <span class="font-bold text-primary">Spatial Computing Residency</span>
+                  <span class="text-[#536600] font-bold">$12k Grant</span>
+                </div>
+                <div class="flex items-center justify-between text-[#444748] text-[11px]">
+                  <span>San Francisco, CA</span>
+                  <span class="text-primary font-semibold">Closes in 4d</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="pt-4 mt-4 flex items-center justify-between font-mono text-xs text-primary border-t border-hairline">
+              <span class="text-[#444748]">VIEW CURATED POSITIONS</span>
+              <button class="tool-demo-btn inline-flex items-center gap-1 hover:text-[#536600]" data-tool="opportunity">
+                <span class="material-symbols-outlined text-[18px]">arrow_outward</span>
+              </button>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ========================================================================= -->
+    <!-- 07. LARGE BLACK MONUMENTAL STATEMENT SECTION                            -->
+    <!-- ========================================================================= -->
+    <section class="w-full bg-primary text-white py-28 px-5 sm:px-8 lg:px-12 relative overflow-hidden select-none border-b border-hairline">
+      <div class="max-w-7xl mx-auto relative z-10">
+        
+        <div class="font-mono text-xs uppercase tracking-[0.3em] text-[#D4FF00] mb-6">
+          [ SYSTEM DICTUM // EXHIBITION MOMENT 06 ]
+        </div>
+
+        <div class="space-y-4">
+          <h2 class="font-display text-[44px] sm:text-[68px] md:text-[104px] lg:text-[124px] leading-[0.88] tracking-[-0.04em] uppercase font-extrabold text-white/40 transition-colors duration-500 hover:text-white">
+            STOP<br/>CHASING<br/>EVERYTHING.
+          </h2>
+          <div class="pt-6">
+            <h2 class="font-display text-[44px] sm:text-[68px] md:text-[104px] lg:text-[124px] leading-[0.88] tracking-[-0.04em] uppercase font-extrabold text-[#D4FF00] flex flex-col">
+              <span>START BUILDING</span>
+              <span class="text-white underline decoration-[#D4FF00] decoration-[12px] md:decoration-[20px] underline-offset-4">
+                SOMETHING.
+              </span>
+            </h2>
+          </div>
+        </div>
+
+        <div class="mt-16 grid grid-cols-1 md:grid-cols-12 gap-8 items-center pt-8 border-t border-white/20">
+          <div class="md:col-span-8">
+            <p class="text-lg sm:text-xl text-[#858383] max-w-2xl font-light leading-relaxed">
+              Career confidence is not produced by consuming more roadmaps. It is forged through tangible reps, compiled code, finished canvases, and real deployment.
+            </p>
+          </div>
+          <div class="md:col-span-4 flex md:justify-end">
+            <div class="p-4 bg-white/5 border border-white/20 text-white font-mono text-xs uppercase tracking-wider space-y-1">
+              <div class="text-[#D4FF00] font-bold">14,280+ DEPLOYED ARTIFACTS</div>
+              <div class="text-[#858383]">Built by students worldwide in 2024-2025.*</div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ========================================================================= -->
+    <!-- 08. PEOPLE ARE FIGURING IT OUT (MAGAZINE SPREAD FIELD STORIES)          -->
+    <!-- ========================================================================= -->
+    <section id="stories" class="w-full bg-[#F4F2ED] py-24 px-5 sm:px-8 lg:px-12 border-b border-hairline">
+      <div class="max-w-7xl mx-auto">
+        
+        <div class="flex flex-col md:flex-row md:items-end justify-between gap-4 mb-12">
+          <div>
+            <span class="font-mono text-xs uppercase tracking-[0.25em] text-[#444748]">[ PROOF-OF-PROCESS // FIELD STORIES ]</span>
+            <h2 class="font-display text-4xl sm:text-5xl uppercase tracking-tight text-primary leading-none mt-2">
+              PEOPLE ARE<br/>FIGURING IT OUT.
+            </h2>
+          </div>
+          <div class="max-w-sm">
+            <p class="text-sm sm:text-base text-[#444748] leading-relaxed">
+              Unvarnished portraits of students who broke through career paralysis by creating concrete artifacts with NOVA.
+            </p>
+          </div>
+        </div>
+
+        <!-- 3 High-Impact Magazine Spread Stories -->
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+          
+          <!-- Story 1: Arjun Sharma -->
+          <div class="story-card group bg-[#FFFFFF] flex flex-col justify-between border border-primary/20 hover:border-primary shadow-sm hover:shadow-hard-md transition-all duration-300 cursor-pointer" data-story="1">
+            <div>
+              <div class="relative w-full aspect-[4/3] overflow-hidden bg-[#EFEEEC] border-b border-hairline">
+                <img alt="Arjun Sharma software engineering apprentice working at code terminal" class="w-full h-full object-cover grayscale group-hover:grayscale-0 group-hover:scale-105 transition-all duration-500" loading="lazy" onerror="this.onerror=null; this.src='data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\' width=\'600\' height=\'450\' viewBox=\'0 0 600 450\'><rect width=\'600\' height=\'450\' fill=\'%231A1C1B\'/><path d=\'M0 0 L600 450 M600 0 L0 450\' stroke=\'%232A2C2B\' stroke-width=\'1.5\'/><text x=\'50%25\' y=\'48%25\' fill=\'%23D4FF00\' font-family=\'monospace\' font-size=\'14\' text-anchor=\'middle\' letter-spacing=\'3\'>[ ARCHIVAL FIELD FOOTAGE // ARJUN ]</text><text x=\'50%25\' y=\'56%25\' fill=\'%23747878\' font-family=\'monospace\' font-size=\'11\' text-anchor=\'middle\'>DISTRIBUTED SYSTEMS REPO #01</text></svg>';" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCxr1GA_eVLMtsSPK_kjt_3d7kTBB-4yqwDQ8NCdubw4KsN6RSM8lge6TDzGPnYZ66EbDceW6Sb9dU-Wj2nPR_OlBLkU03rF34ZNQQYMQXx53psc3d14e7jLrPu0LHpbGG8mj90V5J1oPOzdI9KQ1cS9b-BFOflIjh91D0KmP03S3UgEe442wG7FokjLNScdaL63u-vmDfgtPDAugfsJIUi00_Aqj55b4kIBvQFEw2Fs9joU1LAXvpF"/>
+                <div class="absolute top-3 left-3 bg-primary text-white px-2 py-0.5 font-mono text-[10px] uppercase font-bold">
+                  01 // SOFTWARE
+                </div>
+              </div>
+              <div class="p-6">
+                <div class="flex items-center justify-between font-mono text-xs text-[#444748] mb-1">
+                  <span class="font-bold text-primary">ARJUN SHARMA</span>
+                  <span>8-WEEK SPRINT</span>
+                </div>
+                <h3 class="font-display text-2xl uppercase text-primary mb-2">
+                  Computer Science
+                </h3>
+                <p class="text-sm text-[#444748] leading-relaxed">
+                  “Started with zero clarity on what framework to learn. Followed the Systems Track and built his first production-ready full-stack database engine in 8 weeks.”
+                </p>
+              </div>
+            </div>
+
+            <div class="p-6 pt-0 flex items-center justify-between font-mono text-xs text-primary border-t border-hairline pt-3 mt-2">
+              <span class="font-bold uppercase text-[#536600]">Now: Distributed Systems Intern</span>
+              <span class="material-symbols-outlined text-[18px] group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform">north_east</span>
+            </div>
+          </div>
+
+          <!-- Story 2: Meera Patel -->
+          <div class="story-card group bg-[#FFFFFF] flex flex-col justify-between border border-primary/20 hover:border-primary shadow-sm hover:shadow-hard-md transition-all duration-300 cursor-pointer" data-story="2">
+            <div>
+              <div class="relative w-full aspect-[4/3] overflow-hidden bg-[#EFEEEC] border-b border-hairline">
+                <img alt="Meera Patel product design fellow examining prototype" class="w-full h-full object-cover grayscale group-hover:grayscale-0 group-hover:scale-105 transition-all duration-500" loading="lazy" onerror="this.onerror=null; this.src='data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\' width=\'600\' height=\'450\' viewBox=\'0 0 600 450\'><rect width=\'600\' height=\'450\' fill=\'%231A1C1B\'/><path d=\'M0 0 L600 450 M600 0 L0 450\' stroke=\'%232A2C2B\' stroke-width=\'1.5\'/><text x=\'50%25\' y=\'48%25\' fill=\'%23D4FF00\' font-family=\'monospace\' font-size=\'14\' text-anchor=\'middle\' letter-spacing=\'3\'>[ ARCHIVAL FIELD FOOTAGE // MEERA ]</text><text x=\'50%25\' y=\'56%25\' fill=\'%23747878\' font-family=\'monospace\' font-size=\'11\' text-anchor=\'middle\'>SPATIAL TYPOGRAPHY DOSSIER #02</text></svg>';" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC8p_3Upg7KM1C2_eIMD0msywddBmgtjMOsiJLYtios8RRhGJHXNv7Rk_cA2V8SNLf_fMaRWu-Wrbt3xPc3UHM5Qt9Ths97-FnNhEZ9bF1v4vutz_zevvw5YODO_2slp2-8t4Tv7RntJGG5mk0NCe8JazrCl1iJxS84by0TqPWnj_6jdl7oILX6VcuslzJXTcJFLR4NeoiGJ4okP9bOuuJ4mJ2TVPG5p7uyr5spnZSK2QmAjWr2G_fD"/>
+                <div class="absolute top-3 left-3 bg-[#D4FF00] text-primary px-2 py-0.5 font-mono text-[10px] uppercase font-bold border border-primary">
+                  02 // DESIGN
+                </div>
+              </div>
+              <div class="p-6">
+                <div class="flex items-center justify-between font-mono text-xs text-[#444748] mb-1">
+                  <span class="font-bold text-primary">MEERA PATEL</span>
+                  <span>12-WEEK SPRINT</span>
+                </div>
+                <h3 class="font-display text-2xl uppercase text-primary mb-2">
+                  Product &amp; Spatial UI
+                </h3>
+                <p class="text-sm text-[#444748] leading-relaxed">
+                  “Turned latent fascination with spatial typography into an avant-garde product design portfolio that received immediate inbound studio offers.”
+                </p>
+              </div>
+            </div>
+
+            <div class="p-6 pt-0 flex items-center justify-between font-mono text-xs text-primary border-t border-hairline pt-3 mt-2">
+              <span class="font-bold uppercase text-[#536600]">Now: Studio Design Resident</span>
+              <span class="material-symbols-outlined text-[18px] group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform">north_east</span>
+            </div>
+          </div>
+
+          <!-- Story 3: Kabir Mehta -->
+          <div class="story-card group bg-[#FFFFFF] flex flex-col justify-between border border-primary/20 hover:border-primary shadow-sm hover:shadow-hard-md transition-all duration-300 cursor-pointer" data-story="3">
+            <div>
+              <div class="relative w-full aspect-[4/3] overflow-hidden bg-[#EFEEEC] border-b border-hairline">
+                <img alt="Kabir Mehta cybersecurity researcher inspecting hardware cryptographic nodes" class="w-full h-full object-cover grayscale group-hover:grayscale-0 group-hover:scale-105 transition-all duration-500" loading="lazy" onerror="this.onerror=null; this.src='data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\' width=\'600\' height=\'450\' viewBox=\'0 0 600 450\'><rect width=\'600\' height=\'450\' fill=\'%231A1C1B\'/><path d=\'M0 0 L600 450 M600 0 L0 450\' stroke=\'%232A2C2B\' stroke-width=\'1.5\'/><text x=\'50%25\' y=\'48%25\' fill=\'%23D4FF00\' font-family=\'monospace\' font-size=\'14\' text-anchor=\'middle\' letter-spacing=\'3\'>[ ARCHIVAL FIELD FOOTAGE // KABIR ]</text><text x=\'50%25\' y=\'56%25\' fill=\'%23747878\' font-family=\'monospace\' font-size=\'11\' text-anchor=\'middle\'>OFFENSIVE SECURITY LAB #03</text></svg>';" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCgK9zDeFAGV_Zl9YEAmrkzcU8mNd8MJGLstANMCtuqdsuBXmdR-tzatqDneQODZdOHDza5OalfiDrEjAvVI4Bisq0sZuln2cQcAVZf5DjMK3zHjn8CqDHXGFE4R1zsOLO-WCZJpT-ufIZs5eGvuNMrvd1E8r0dTDFdOLqOcyrhIT1EL2ScMImgCyOFsVz0p8D9sbDlrqLqEt5AHgWesrSQNdMaHqZh_mtHYK1IL8YMXK007QOqY5U-"/>
+                <div class="absolute top-3 left-3 bg-primary text-white px-2 py-0.5 font-mono text-[10px] uppercase font-bold">
+                  03 // CYBERSECURITY
+                </div>
+              </div>
+              <div class="p-6">
+                <div class="flex items-center justify-between font-mono text-xs text-[#444748] mb-1">
+                  <span class="font-bold text-primary">KABIR MEHTA</span>
+                  <span>6-WEEK SPRINT</span>
+                </div>
+                <h3 class="font-display text-2xl uppercase text-primary mb-2">
+                  Offensive Security
+                </h3>
+                <p class="text-sm text-[#444748] leading-relaxed">
+                  “Started with basic networking fundamentals. Synthesized a simulated penetration testing sandbox that led directly to a funded research grant.”
+                </p>
+              </div>
+            </div>
+
+            <div class="p-6 pt-0 flex items-center justify-between font-mono text-xs text-primary border-t border-hairline pt-3 mt-2">
+              <span class="font-bold uppercase text-[#536600]">Now: Security Research Fellow</span>
+              <span class="material-symbols-outlined text-[18px] group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform">north_east</span>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ========================================================================= -->
+    <!-- 09. FINAL CALL TO ACTION (CINEMATIC FINALE)                             -->
+    <!-- ========================================================================= -->
+    <section class="w-full bg-[#FFFFFF] py-28 px-5 sm:px-8 lg:px-12 text-center border-b border-hairline">
+      <div class="max-w-4xl mx-auto flex flex-col items-center">
+        
+        <span class="font-mono text-xs uppercase tracking-[0.3em] text-[#444748] mb-4">
+          [ SYSTEM PROMPT // CHAPTER FINALE ]
+        </span>
+
+        <h2 class="font-display text-[46px] sm:text-[76px] md:text-[104px] lg:text-[116px] uppercase font-extrabold text-primary leading-[0.9] tracking-[-0.04em] mb-6">
+          SO…<br/>
+          WHAT ARE YOU<br/>
+          BUILDING NEXT?
+        </h2>
+
+        <p class="text-lg sm:text-xl text-[#444748] max-w-xl mb-10 leading-relaxed">
+          Your direction doesn’t need to be perfect. It just needs a beginning.
+        </p>
+
+        <!-- Magnetic Action Button -->
+        <div class="relative group">
+          <button id="final-enter-btn" class="px-10 py-5 bg-primary hover:bg-[#D4FF00] text-white hover:text-primary font-display text-xl uppercase tracking-tight shadow-hard-lime-xl hover:-translate-x-1 hover:-translate-y-1 transition-all duration-200 flex items-center gap-4 border border-primary">
+            <span>ENTER NOVA</span>
+            <span class="material-symbols-outlined text-[24px]">arrow_forward</span>
+          </button>
+        </div>
+
+        <div class="mt-10 flex flex-wrap justify-center items-center gap-4 font-mono text-xs text-[#444748] uppercase">
+          <span class="flex items-center gap-1.5">
+            <span class="w-2 h-2 bg-[#D4FF00] border border-primary"></span>
+            FREE ACCESS FOR STUDENTS
+          </span>
+          <span>•</span>
+          <span>NO CREDIT CARD</span>
+          <span>•</span>
+          <span>INSTANT ARTIFACT EXPORT</span>
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ========================================================================= -->
+  <!-- 10. EDITORIAL FOOTER & TELEMETRY                                          -->
+  <!-- ========================================================================= -->
+  <footer id="about" class="w-full bg-[#FFFFFF]">
+    <div class="max-w-7xl mx-auto px-5 sm:px-8 lg:px-12 pt-20 pb-12">
+      
+      <!-- Big Declaration -->
+      <div class="mb-16">
+        <p class="font-mono text-xs uppercase tracking-widest text-[#444748] mb-2">[ SYSTEM DECLARATION // VOL. 01 ]</p>
+        <h2 class="font-display text-3xl sm:text-5xl lg:text-6xl text-primary tracking-tighter uppercase max-w-4xl leading-none select-none">
+          Built for people figuring things out.
+        </h2>
+      </div>
+
+      <!-- 4 Editorial Index Columns + 1 Telemetry Column -->
+      <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-8 py-10 border-t border-b border-hairline">
+        
+        <!-- Col 1: Universe -->
+        <div class="flex flex-col gap-2 font-mono text-xs">
+          <span class="uppercase tracking-wider text-[#444748] font-bold pb-2">[ Index 01 ] Universe</span>
+          <a href="#discover" class="text-primary hover:text-[#536600] transition-colors">Career Atlas</a>
+          <a href="#paths" class="text-primary hover:text-[#536600] transition-colors">Dynamic Roadmaps</a>
+          <a href="#paths" class="text-primary hover:text-[#536600] transition-colors">Builder Tracks</a>
+          <a href="#discover" class="text-primary hover:text-[#536600] transition-colors">Apprenticeships</a>
+        </div>
+
+        <!-- Col 2: Artifacts -->
+        <div class="flex flex-col gap-2 font-mono text-xs">
+          <span class="uppercase tracking-wider text-[#444748] font-bold pb-2">[ Index 02 ] Artifacts</span>
+          <a href="#tools" class="text-primary hover:text-[#536600] transition-colors">Stack Decoders</a>
+          <a href="#tools" class="text-primary hover:text-[#536600] transition-colors">Trajectory Engine</a>
+          <a href="#tools" class="text-primary hover:text-[#536600] transition-colors">Proof-of-Work Logs</a>
+          <a href="#tools" class="text-primary hover:text-[#536600] transition-colors">Design Brief Vault</a>
+        </div>
+
+        <!-- Col 3: Editorial -->
+        <div class="flex flex-col gap-2 font-mono text-xs">
+          <span class="uppercase tracking-wider text-[#444748] font-bold pb-2">[ Index 03 ] Editorial</span>
+          <a href="#stories" class="text-primary hover:text-[#536600] transition-colors">Builder Monologues</a>
+          <a href="#stories" class="text-primary hover:text-[#536600] transition-colors">First Deployments</a>
+          <a href="#stories" class="text-primary hover:text-[#536600] transition-colors">Studio Dialogues</a>
+          <a href="#stories" class="text-primary hover:text-[#536600] transition-colors">Field Dispatches</a>
+        </div>
+
+        <!-- Col 4: Institution -->
+        <div class="flex flex-col gap-2 font-mono text-xs">
+          <span class="uppercase tracking-wider text-[#444748] font-bold pb-2">[ Index 04 ] Institution</span>
+          <a href="#" class="footer-modal-trigger text-primary hover:text-[#536600] transition-colors" data-modal="manifesto">Core Manifesto</a>
+          <a href="#" class="footer-modal-trigger text-primary hover:text-[#536600] transition-colors" data-modal="fellowship">Fellowship &amp; Grants</a>
+          <a href="#" class="footer-modal-trigger text-primary hover:text-[#536600] transition-colors" data-modal="collab">Institutional Collabs</a>
+          <a href="#" class="footer-modal-trigger text-primary hover:text-[#536600] transition-colors" data-modal="press">Press Archives</a>
+        </div>
+
+        <!-- Col 5: System Telemetry (Zero-Radius) -->
+        <div class="col-span-2 md:col-span-4 lg:col-span-1 flex flex-col gap-3 p-4 bg-[#EFEEEC] border border-primary">
+          <span class="font-mono text-xs uppercase text-[#444748] font-bold">System Telemetry</span>
+          <div class="flex items-center gap-2">
+            <span class="w-2 h-2 bg-[#D4FF00] border border-primary animate-ping"></span>
+            <span class="font-mono text-xs text-primary font-bold uppercase">Engine: Operational</span>
+          </div>
+          <div class="flex flex-col gap-1 font-mono text-xs text-[#444748] pt-2 border-t border-primary/10">
+            <div class="flex justify-between">
+              <span>LATENCY</span>
+              <span class="text-primary font-semibold">14ms (demo)</span>
+            </div>
+            <div class="flex justify-between">
+              <span>EST CLOCK</span>
+              <span class="text-primary font-semibold" id="est-time">--:--:-- EST</span>
+            </div>
+            <div class="flex justify-between">
+              <span>GMT CLOCK</span>
+              <span class="text-primary font-semibold" id="gmt-time">--:--:-- GMT</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Bottom Copyright & Framework Links -->
+      <div class="pt-8 flex flex-col md:flex-row items-start md:items-center justify-between gap-4 font-mono text-xs text-[#444748]">
+        <div class="flex flex-wrap items-center gap-2">
+          <span>© 2025 NOVA LABS INC. ARCHITECTED FOR NEXT-GEN BUILDERS.</span>
+          <span class="hidden md:inline text-primary">•</span>
+          <span>ALL RIGHTS RESERVED.</span>
+        </div>
+        <div class="flex items-center gap-6">
+          <a href="#" class="footer-policy-link hover:text-primary uppercase transition-colors" data-policy="privacy">Privacy Framework</a>
+          <a href="#" class="footer-policy-link hover:text-primary uppercase transition-colors" data-policy="terms">Terms of Protocol</a>
+          <a href="#" class="footer-policy-link hover:text-primary uppercase transition-colors" data-policy="security">Security Attestation</a>
+        </div>
+      </div>
+
+    </div>
+  </footer>
+
+  <!-- ========================================================================= -->
+  <!-- INTERACTIVE MODALS                                                        -->
+  <!-- ========================================================================= -->
+  
+  <!-- Modal 1: Trajectory Engine Explorer / Onboarding Wizard -->
+  <div id="trajectory-modal" class="fixed inset-0 z-50 bg-[#111111]/70 backdrop-blur-sm hidden items-center justify-center p-4" role="dialog" aria-modal="true" aria-labelledby="trajectory-modal-title">
+    <div class="bg-[#FAF9F7] border-2 border-primary w-full max-w-2xl p-6 sm:p-8 shadow-hard-lg relative max-h-[90vh] overflow-y-auto">
+      <button class="modal-close-btn absolute top-4 right-4 w-8 h-8 bg-primary text-white hover:bg-[#D4FF00] hover:text-primary flex items-center justify-center font-mono font-bold" aria-label="Close modal">
+        ✕
+      </button>
+
+      <div class="font-mono text-xs text-[#536600] uppercase font-bold mb-1">[ NOVA TRAJECTORY ENGINE // STEP 01 OF 02 ]</div>
+      <h3 id="trajectory-modal-title" class="font-display text-2xl sm:text-3xl uppercase text-primary font-extrabold mb-3">
+        Configure Your Direction
+      </h3>
+      <p class="text-sm text-[#444748] mb-6">
+        Select your primary discipline and current development phase to generate a custom proof-of-work roadmap.
+      </p>
+
+      <form id="trajectory-form" class="space-y-4" onsubmit="event.preventDefault(); window.submitTrajectoryForm();">
+        <div>
+          <label class="block font-mono text-xs uppercase text-primary font-bold mb-1">Target Discipline</label>
+          <select id="modal-discipline-select" class="w-full p-3 bg-[#EFEEEC] border border-primary font-mono text-xs text-primary focus:outline-none focus:border-primary">
+            <option value="systems">Systems Engineering & Core Infrastructure</option>
+            <option value="creative">Creative Technology & Avant-Garde Design</option>
+            <option value="ai">AI Science & Foundation Models</option>
+            <option value="security">Offensive Security & Cryptography</option>
+            <option value="venture">Product Strategy & Venture Building</option>
+          </select>
+        </div>
+
+        <div>
+          <label class="block font-mono text-xs uppercase text-primary font-bold mb-1">Current Standing</label>
+          <div class="grid grid-cols-3 gap-2">
+            <button type="button" class="standing-opt-btn p-2.5 font-mono text-xs uppercase bg-[#D4FF00] text-primary font-bold border border-primary active-standing">Student</button>
+            <button type="button" class="standing-opt-btn p-2.5 font-mono text-xs uppercase bg-[#EFEEEC] text-primary border border-primary/20 hover:border-primary">Self-Taught</button>
+            <button type="button" class="standing-opt-btn p-2.5 font-mono text-xs uppercase bg-[#EFEEEC] text-primary border border-primary/20 hover:border-primary">Career Pivot</button>
+          </div>
+        </div>
+
+        <div>
+          <label class="block font-mono text-xs uppercase text-primary font-bold mb-1">Primary Goal Deliverable</label>
+          <input type="text" id="modal-goal-input" value="Build and deploy a distributed zero-dependency engine" class="w-full p-3 bg-[#EFEEEC] border border-primary font-mono text-xs text-primary focus:outline-none focus:border-primary"/>
+        </div>
+
+        <div class="pt-4 border-t border-hairline flex items-center justify-between">
+          <span class="font-mono text-xs text-[#747878]">[ INSTANT SYNTHESIS ]</span>
+          <button type="submit" class="px-6 py-3 bg-[#D4FF00] hover:bg-[#CAF300] text-primary font-mono text-xs uppercase font-bold border border-primary shadow-hard-sm">
+            Generate Blueprint →
+          </button>
+        </div>
+      </form>
+
+      <!-- Results view inside modal -->
+      <div id="modal-result-view" class="hidden pt-6 border-t border-hairline mt-4 space-y-4">
+        <div class="p-4 bg-[#EFEEEC] border border-primary font-mono text-xs space-y-2">
+          <div class="text-[#536600] font-bold uppercase">✓ DIRECTION COMPILED: READY TO EXPORT</div>
+          <div class="text-primary font-bold text-sm" id="result-title">Systems Architecture Sprint Dossier</div>
+          <p class="text-[#444748] text-xs">Recommended 6-week milestones, test coverage criteria, and open-source repo templates tailored to your selection.</p>
+        </div>
+        <button onclick="window.closeModals()" class="w-full py-3 bg-primary text-white font-mono text-xs uppercase font-bold hover:bg-[#D4FF00] hover:text-primary transition-colors border border-primary">
+          Done &amp; Return to Workspace
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal 2: "See How It Works" Protocol Walkthrough -->
+  <div id="how-it-works-modal" class="fixed inset-0 z-50 bg-[#111111]/70 backdrop-blur-sm hidden items-center justify-center p-4" role="dialog" aria-modal="true" aria-labelledby="hiw-title">
+    <div class="bg-[#FAF9F7] border-2 border-primary w-full max-w-3xl p-6 sm:p-8 shadow-hard-lg relative max-h-[90vh] overflow-y-auto">
+      <button class="modal-close-btn absolute top-4 right-4 w-8 h-8 bg-primary text-white hover:bg-[#D4FF00] hover:text-primary flex items-center justify-center font-mono font-bold" aria-label="Close modal">
+        ✕
+      </button>
+
+      <div class="font-mono text-xs text-[#536600] uppercase font-bold mb-1">[ SYSTEM ARCHITECTURE // PROTOCOL BREAKDOWN ]</div>
+      <h3 id="hiw-title" class="font-display text-2xl sm:text-3xl uppercase text-primary font-extrabold mb-3">
+        How NOVA Operates
+      </h3>
+      <p class="text-sm text-[#444748] mb-6">
+        A 3-pillar mechanism designed to convert directionless learning into verifiable industry proof-of-work.
+      </p>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mb-6">
+        <div class="p-4 bg-[#EFEEEC] border border-primary/30 space-y-2">
+          <div class="font-mono text-xs font-bold text-[#536600]">01 // VECTOR SYNTHESIS</div>
+          <div class="font-display text-base uppercase text-primary font-bold">Uncover Latent Strengths</div>
+          <p class="text-xs text-[#444748]">Analyzes real traits, project code, and curiosity vectors rather than standardized exam scores.</p>
+        </div>
+        <div class="p-4 bg-[#EFEEEC] border border-primary/30 space-y-2">
+          <div class="font-mono text-xs font-bold text-[#536600]">02 // PROOF-OF-WORK</div>
+          <div class="font-display text-base uppercase text-primary font-bold">Build Tangible Repos</div>
+          <p class="text-xs text-[#444748]">Pre-built sprint templates with automated CI/CD and architecture rubrics replace generic courses.</p>
+        </div>
+        <div class="p-4 bg-[#EFEEEC] border border-primary/30 space-y-2">
+          <div class="font-mono text-xs font-bold text-[#536600]">03 // VERIFIED MATCH</div>
+          <div class="font-display text-base uppercase text-primary font-bold">Skip Dead Resumes</div>
+          <p class="text-xs text-[#444748]">Direct integration with boutique studios, fellowship sponsors, and innovative frontier labs.</p>
+        </div>
+      </div>
+
+      <div class="p-4 bg-primary text-white font-mono text-xs flex flex-col sm:flex-row items-center justify-between gap-3">
+        <span>RUNNING ENGINE: PROJECTION MATRIX 4.2</span>
+        <button onclick="window.closeModals(); document.getElementById('nav-cta-btn').click();" class="px-4 py-2 bg-[#D4FF00] text-primary font-bold uppercase hover:bg-[#CAF300]">
+          Try Projection Engine →
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal 3: Rubric Inspector Modal -->
+  <div id="rubric-modal" class="fixed inset-0 z-50 bg-[#111111]/70 backdrop-blur-sm hidden items-center justify-center p-4" role="dialog" aria-modal="true" aria-labelledby="rubric-title">
+    <div class="bg-[#FAF9F7] border-2 border-primary w-full max-w-xl p-6 sm:p-8 shadow-hard-lg relative">
+      <button class="modal-close-btn absolute top-4 right-4 w-8 h-8 bg-primary text-white hover:bg-[#D4FF00] hover:text-primary flex items-center justify-center font-mono font-bold" aria-label="Close modal">
+        ✕
+      </button>
+
+      <div class="font-mono text-xs text-[#536600] uppercase font-bold mb-1">[ EVALUATION RUBRIC // STAGE 03 SPEC ]</div>
+      <h3 id="rubric-title" class="font-display text-2xl uppercase text-primary font-extrabold mb-2">
+        Build Stage Verification Standard
+      </h3>
+      <div class="space-y-3 font-mono text-xs text-primary my-4">
+        <div class="p-3 bg-[#EFEEEC] border border-primary/20 flex items-start gap-2">
+          <span class="text-[#536600] font-bold">✓</span>
+          <div><strong>Deliverable:</strong> 1 full-stack repository with test coverage &gt;85%.</div>
+        </div>
+        <div class="p-3 bg-[#EFEEEC] border border-primary/20 flex items-start gap-2">
+          <span class="text-[#536600] font-bold">✓</span>
+          <div><strong>Architecture:</strong> Zero unnecessary third-party abstractions. Clean primitives.</div>
+        </div>
+        <div class="p-3 bg-[#EFEEEC] border border-primary/20 flex items-start gap-2">
+          <span class="text-[#536600] font-bold">✓</span>
+          <div><strong>Verification:</strong> Peer review by at least 2 cohort members or studio leads.</div>
+        </div>
+      </div>
+      <button onclick="window.closeModals()" class="w-full py-2.5 bg-primary text-white font-mono text-xs uppercase font-bold hover:bg-[#D4FF00] hover:text-primary">
+        Close Inspector
+      </button>
+    </div>
+  </div>
+
+  <!-- Modal 4: Generic Information / Policy Modal -->
+  <div id="info-modal" class="fixed inset-0 z-50 bg-[#111111]/70 backdrop-blur-sm hidden items-center justify-center p-4" role="dialog" aria-modal="true" aria-labelledby="info-modal-title">
+    <div class="bg-[#FAF9F7] border-2 border-primary w-full max-w-lg p-6 sm:p-8 shadow-hard-lg relative">
+      <button class="modal-close-btn absolute top-4 right-4 w-8 h-8 bg-primary text-white hover:bg-[#D4FF00] hover:text-primary flex items-center justify-center font-mono font-bold" aria-label="Close modal">
+        ✕
+      </button>
+      <div class="font-mono text-xs text-[#536600] uppercase font-bold mb-1" id="info-modal-tag">[ ARCHIVAL BRIEF ]</div>
+      <h3 id="info-modal-title" class="font-display text-2xl uppercase text-primary font-extrabold mb-3">Manifesto &amp; Framework</h3>
+      <p class="text-sm text-[#444748] leading-relaxed mb-6" id="info-modal-body">
+        NOVA is a conceptual career discovery platform designed to replace passive roadmaps with tangible building reps. All telemetry metrics, salaries, and stats are simulated demo data.
+      </p>
+      <button onclick="window.closeModals()" class="w-full py-2.5 bg-primary text-white font-mono text-xs uppercase font-bold hover:bg-[#D4FF00] hover:text-primary">
+        Acknowledge
+      </button>
+    </div>
+  </div>
+
+  <!-- ========================================================================= -->
+  <!-- JAVASCRIPT LOGIC & ENGINE                                                 -->
+  <!-- ========================================================================= -->
+  <script>
+    (function() {
+      'use strict';
+
+      // -----------------------------------------------------------------------
+      // 1. DESKTOP MINIMAL CUSTOM CURSOR
+      // -----------------------------------------------------------------------
+      const cursor = document.getElementById('custom-cursor');
+      const isTouch = window.matchMedia('(pointer: coarse)').matches;
+
+      if (cursor && !isTouch) {
+        let mouseX = window.innerWidth / 2;
+        let mouseY = window.innerHeight / 2;
+        let curX = mouseX;
+        let curY = mouseY;
+
+        window.addEventListener('mousemove', (e) => {
+          mouseX = e.clientX;
+          mouseY = e.clientY;
+        }, { passive: true });
+
+        const interactiveEls = 'a, button, [role="button"], input, select, .synth-pill, .sector-panel, .journey-node, .artifact-card, .story-card';
+        document.querySelectorAll(interactiveEls).forEach((el) => {
+          el.addEventListener('mouseenter', () => cursor.classList.add('hovering'));
+          el.addEventListener('mouseleave', () => cursor.classList.remove('hovering'));
+        });
+
+        function animateCursor() {
+          curX += (mouseX - curX) * 0.25;
+          curY += (mouseY - curY) * 0.25;
+          cursor.style.transform = `translate(${curX}px, ${curY}px)`;
+          requestAnimationFrame(animateCursor);
+        }
+        requestAnimationFrame(animateCursor);
+      }
+
+      // -----------------------------------------------------------------------
+      // 2. HERO CONSTELLATION ATLAS (WITH INTERSECTION OBSERVER PAUSE)
+      // -----------------------------------------------------------------------
+      const canvas = document.getElementById('hero-constellation-canvas');
+      const canvasContainer = document.getElementById('canvas-container');
+      const readout = document.getElementById('constellation-readout');
+
+      if (canvas && canvasContainer) {
+        const ctx = canvas.getContext('2d');
+        let width = (canvas.width = canvasContainer.offsetWidth);
+        let height = (canvas.height = canvasContainer.offsetHeight);
+        let isHeroVisible = true;
+
+        const nodes = [
+          { name: 'Technology', x: 0.18, y: 0.28, vx: 0.12, vy: 0.08, cat: 'tech', color: '#111111' },
+          { name: 'Design', x: 0.44, y: 0.20, vx: -0.10, vy: 0.11, cat: 'design', color: '#536600' },
+          { name: 'Business', x: 0.82, y: 0.32, vx: 0.07, vy: -0.09, cat: 'business', color: '#111111' },
+          { name: 'Cybersecurity', x: 0.20, y: 0.70, vx: -0.09, vy: -0.10, cat: 'cyber', color: '#254EDB' },
+          { name: 'AI Science', x: 0.38, y: 0.52, vx: 0.11, vy: -0.08, cat: 'ai', color: '#536600' },
+          { name: 'Product', x: 0.64, y: 0.46, vx: -0.12, vy: 0.07, cat: 'product', color: '#111111' },
+          { name: 'Research', x: 0.78, y: 0.66, vx: 0.10, vy: 0.10, cat: 'ai', color: '#254EDB' },
+          { name: 'Creative Code', x: 0.52, y: 0.80, vx: -0.08, vy: -0.12, cat: 'design', color: '#536600' }
+        ];
+
+        let mouse = { x: -1000, y: -1000 };
+        let activeFilterCat = null;
+
+        const handleResize = () => {
+          if (!canvasContainer) return;
+          width = canvas.width = canvasContainer.offsetWidth;
+          height = canvas.height = canvasContainer.offsetHeight;
+        };
+        window.addEventListener('resize', handleResize, { passive: true });
+
+        canvasContainer.addEventListener('mousemove', (e) => {
+          const rect = canvas.getBoundingClientRect();
+          mouse.x = e.clientX - rect.left;
+          mouse.y = e.clientY - rect.top;
+        }, { passive: true });
+
+        canvasContainer.addEventListener('mouseleave', () => {
+          mouse.x = -1000;
+          mouse.y = -1000;
+        });
+
+        // Click on canvas to add pulse
+        canvasContainer.addEventListener('click', (e) => {
+          const rect = canvas.getBoundingClientRect();
+          const clickX = e.clientX - rect.left;
+          const clickY = e.clientY - rect.top;
+          
+          let clickedNode = null;
+          nodes.forEach((n) => {
+            const px = n.x * width;
+            const py = n.y * height;
+            if (Math.hypot(clickX - px, clickY - py) < 30) {
+              clickedNode = n;
+            }
+          });
+
+          if (clickedNode && readout) {
+            readout.textContent = `TARGET LOCKED: [${clickedNode.name.toUpperCase()} // CLUSTER LINKED]`;
+            readout.style.color = '#111111';
+          }
+        });
+
+        // Pause animation when hero is offscreen
+        if ('IntersectionObserver' in window) {
+          const heroObserver = new IntersectionObserver((entries) => {
+            isHeroVisible = entries[0].isIntersecting;
+          }, { threshold: 0.05 });
+          heroObserver.observe(canvasContainer);
+        }
+
+        const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+        function renderConstellation() {
+          if (!isHeroVisible) {
+            requestAnimationFrame(renderConstellation);
+            return;
+          }
+
+          ctx.clearRect(0, 0, width, height);
+
+          // Connecting Vectors
+          for (let i = 0; i < nodes.length; i++) {
+            for (let j = i + 1; j < nodes.length; j++) {
+              const n1 = nodes[i];
+              const n2 = nodes[j];
+              const x1 = n1.x * width;
+              const y1 = n1.y * height;
+              const x2 = n2.x * width;
+              const y2 = n2.y * height;
+
+              const dist = Math.hypot(x2 - x1, y2 - y1);
+              if (dist < 340) {
+                const midX = (x1 + x2) / 2;
+                const midY = (y1 + y2) / 2;
+                const mouseDist = Math.hypot(mouse.x - midX, mouse.y - midY);
+                const isMouseNear = mouseDist < 120;
+                const isCatActive = activeFilterCat && (n1.cat === activeFilterCat || n2.cat === activeFilterCat);
+
+                ctx.beginPath();
+                ctx.moveTo(x1, y1);
+                ctx.lineTo(x2, y2);
+
+                if (isMouseNear || isCatActive) {
+                  ctx.strokeStyle = '#D4FF00';
+                  ctx.lineWidth = 2;
+                } else {
+                  ctx.strokeStyle = 'rgba(17, 17, 17, 0.08)';
+                  ctx.lineWidth = 1;
+                }
+                ctx.stroke();
+              }
+            }
+          }
+
+          // Node points
+          nodes.forEach((n) => {
+            if (!prefersReducedMotion) {
+              n.x += n.vx * 0.0008;
+              n.y += n.vy * 0.0008;
+              if (n.x < 0.08 || n.x > 0.92) n.vx *= -1;
+              if (n.y < 0.12 || n.y > 0.88) n.vy *= -1;
+            }
+
+            const px = n.x * width;
+            const py = n.y * height;
+            const mouseDist = Math.hypot(mouse.x - px, mouse.y - py);
+            const isNear = mouseDist < 90;
+            const isFiltered = activeFilterCat && n.cat === activeFilterCat;
+
+            // Halo circle
+            ctx.beginPath();
+            ctx.arc(px, py, isNear || isFiltered ? 16 : 8, 0, Math.PI * 2);
+            ctx.fillStyle = isNear || isFiltered ? 'rgba(212, 255, 0, 0.6)' : 'rgba(233, 232, 230, 0.7)';
+            ctx.fill();
+
+            // Core center
+            ctx.beginPath();
+            ctx.arc(px, py, isNear || isFiltered ? 5 : 3.5, 0, Math.PI * 2);
+            ctx.fillStyle = isNear || isFiltered ? '#111111' : n.color;
+            ctx.fill();
+
+            // Label text
+            ctx.font = isNear || isFiltered ? '600 11px "JetBrains Mono"' : '500 10px "JetBrains Mono"';
+            ctx.fillStyle = isNear || isFiltered ? '#111111' : '#747878';
+            ctx.fillText(n.name.toUpperCase(), px + 12, py + 4);
+          });
+
+          requestAnimationFrame(renderConstellation);
+        }
+        renderConstellation();
+
+        // Node filter buttons in bottom bar
+        document.querySelectorAll('.node-btn').forEach((btn) => {
+          btn.addEventListener('mouseenter', () => {
+            const domain = btn.getAttribute('data-domain');
+            activeFilterCat = domain;
+            if (readout) {
+              readout.textContent = `FOCUS VECTOR ACTIVE: [${domain.toUpperCase()} CLUSTER]`;
+              readout.style.color = '#536600';
+            }
+          });
+          btn.addEventListener('mouseleave', () => {
+            activeFilterCat = null;
+            if (readout) {
+              readout.textContent = 'Hover nodes or click space to route vectors';
+              readout.style.color = '#536600';
+            }
+          });
+          btn.addEventListener('click', () => {
+            const domain = btn.getAttribute('data-domain');
+            activeFilterCat = domain;
+            if (readout) {
+              readout.textContent = `CLUSTER LOCKED: [${domain.toUpperCase()}] • VIEWING CORRELATED PATHWAYS`;
+            }
+          });
+        });
+      }
+
+      // -----------------------------------------------------------------------
+      // 3. SECTOR CARDS EXPANSION INTERACTION
+      // -----------------------------------------------------------------------
+      const sectorPanels = document.querySelectorAll('.sector-panel');
+      sectorPanels.forEach((panel) => {
+        panel.addEventListener('mouseenter', () => {
+          if (window.innerWidth >= 1024) {
+            sectorPanels.forEach((p) => p.style.flex = (p === panel ? '2.2' : '0.8'));
+          }
+        });
+        panel.addEventListener('mouseleave', () => {
+          if (window.innerWidth >= 1024) {
+            sectorPanels.forEach((p) => p.style.flex = '1');
+          }
+        });
+        // Click action opens trajectory modal pre-selected to that sector
+        panel.addEventListener('click', () => {
+          const sec = panel.getAttribute('data-sector');
+          openTrajectoryModalWithSector(sec);
+        });
+      });
+
+      // -----------------------------------------------------------------------
+      // 4. PROFILE SYNTHESIZER & TRAJECTORY MATRIX
+      // -----------------------------------------------------------------------
+      const synthPills = document.querySelectorAll('.synth-pill');
+      const resetTraitsBtn = document.getElementById('reset-traits-btn');
+      const covarianceCount = document.getElementById('trait-covariance-count');
+
+      const roleTitle1 = document.getElementById('role-title-1');
+      const roleScore1 = document.getElementById('role-score-1');
+      const roleBar1 = document.getElementById('role-bar-1');
+      const roleDesc1 = document.getElementById('role-desc-1');
+
+      const roleTitle2 = document.getElementById('role-title-2');
+      const roleScore2 = document.getElementById('role-score-2');
+      const roleBar2 = document.getElementById('role-bar-2');
+      const roleDesc2 = document.getElementById('role-desc-2');
+
+      const roleTitle3 = document.getElementById('role-title-3');
+      const roleScore3 = document.getElementById('role-score-3');
+      const roleBar3 = document.getElementById('role-bar-3');
+      const roleDesc3 = document.getElementById('role-desc-3');
+
+      // Database of dynamic affinities
+      const matrixPresets = [
+        {
+          trigger: ['Visual Design', 'Problem Solving', 'Curiosity'],
+          r1: { title: '01. Creative Technologist', score: 94, desc: 'Blends physical UX, creative coding, and brand installation frameworks.' },
+          r2: { title: '02. Systems Design Engineer', score: 88, desc: 'Translates high-level system logic into tangible digital products.' },
+          r3: { title: '03. Behavioral Product Lead', score: 79, desc: 'Applies decision architecture to high-scale user onboarding ecosystems.' }
+        },
+        {
+          trigger: ['Builder', 'Python', 'Distributed Systems'],
+          r1: { title: '01. Core Infrastructure Architect', score: 96, desc: 'Designs high-throughput distributed engines, kernels, and fault-tolerant protocols.' },
+          r2: { title: '02. Systems Software Engineer', score: 91, desc: 'Compiles low-level microservices in Rust/Go with predictable memory benchmarks.' },
+          r3: { title: '03. Cloud Reliability Principal', score: 84, desc: 'Architects multi-region Kubernetes topologies and automated failover pipelines.' }
+        },
+        {
+          trigger: ['Creative', 'Visual Design', 'Writing'],
+          r1: { title: '01. Creative Technologist', score: 97, desc: 'Blends spatial typography, creative coding, WebGL, and installation art.' },
+          r2: { title: '02. Design Systems Engineer', score: 92, desc: 'Bridges high-fidelity Figma components with production frontend token architectures.' },
+          r3: { title: '03. Editorial Brand Strategist', score: 86, desc: 'Shapes cultural digital publication narratives and interactive editorial exhibitions.' }
+        },
+        {
+          trigger: ['Analytical', 'Machine Learning', 'Curious'],
+          r1: { title: '01. AI Research Fellow', score: 98, desc: 'Evaluates emergent transformer behaviors, synthetic training sets, and tensor topologies.' },
+          r2: { title: '02. Quantitative Data Cartographer', score: 90, desc: 'Maps multi-dimensional embeddings to uncover latent behavioral patterns.' },
+          r3: { title: '03. Applied ML Systems Engineer', score: 85, desc: 'Deploys inference engines at edge scale with strict latency constraints.' }
+        },
+        {
+          trigger: ['Problem Solver', 'Cryptography'],
+          r1: { title: '01. Offensive Security Engineer', score: 95, desc: 'Synthesizes penetration sandboxes and audits zero-day protocol exploits.' },
+          r2: { title: '02. Zero-Trust Security Architect', score: 89, desc: 'Enforces cryptographically verified attestations and hardware-level isolation.' },
+          r3: { title: '03. AppSec Vulnerability Analyst', score: 82, desc: 'Performs formal code verification across smart contracts and distributed nodes.' }
+        }
+      ];
+
+      function recalculateAffinities() {
+        const activePills = document.querySelectorAll('.synth-pill.active-pill');
+        const activeVals = Array.from(activePills).map(p => p.getAttribute('data-val'));
+        const count = activeVals.length;
+
+        if (covarianceCount) {
+          covarianceCount.textContent = `ACTIVE SYNTHESIS COVARIANCE: ${count} NODE${count === 1 ? '' : 'S'} SELECTED`;
+        }
+
+        // Match against presets or fallback calculation
+        let matchedPreset = null;
+        for (const preset of matrixPresets) {
+          const matchHits = preset.trigger.filter(t => activeVals.includes(t)).length;
+          if (matchHits >= 2) {
+            matchedPreset = preset;
+            break;
+          }
+        }
+
+        if (matchedPreset) {
+          updateRole(1, matchedPreset.r1.title, matchedPreset.r1.score, matchedPreset.r1.desc);
+          updateRole(2, matchedPreset.r2.title, matchedPreset.r2.score, matchedPreset.r2.desc);
+          updateRole(3, matchedPreset.r3.title, matchedPreset.r3.score, matchedPreset.r3.desc);
+        } else {
+          // Dynamic calculation based on selection count
+          let s1 = Math.min(98, 70 + count * 5);
+          let s2 = Math.min(93, 62 + count * 6);
+          let s3 = Math.min(88, 54 + count * 7);
+
+          if (count === 0) {
+            s1 = 45; s2 = 38; s3 = 30;
+          }
+
+          updateRole(1, '01. Creative Technologist', s1, 'Blends physical UX, creative coding, and brand installation frameworks.');
+          updateRole(2, '02. Systems Design Engineer', s2, 'Translates high-level system logic into tangible digital products.');
+          updateRole(3, '03. Behavioral Product Lead', s3, 'Applies decision architecture to high-scale user onboarding ecosystems.');
+        }
+      }
+
+      function updateRole(num, title, score, desc) {
+        const t = num === 1 ? roleTitle1 : num === 2 ? roleTitle2 : roleTitle3;
+        const s = num === 1 ? roleScore1 : num === 2 ? roleScore2 : roleScore3;
+        const b = num === 1 ? roleBar1 : num === 2 ? roleBar2 : roleBar3;
+        const d = num === 1 ? roleDesc1 : num === 2 ? roleDesc2 : roleDesc3;
+
+        if (t) t.textContent = title;
+        if (s) s.textContent = `${score}% MATCH`;
+        if (b) b.style.width = `${score}%`;
+        if (d) d.textContent = desc;
+      }
+
+      synthPills.forEach((pill) => {
+        pill.addEventListener('click', () => {
+          const isSelected = pill.classList.contains('active-pill');
+          const val = pill.getAttribute('data-val');
+
+          if (isSelected) {
+            pill.classList.remove('active-pill', 'bg-[#D4FF00]', 'text-primary', 'font-bold', 'border-primary', 'shadow-hard-sm');
+            pill.classList.add('bg-[#EFEEEC]', 'text-[#111111]', 'border-primary/20');
+            pill.textContent = `+ ${val}`;
+          } else {
+            pill.classList.add('active-pill', 'bg-[#D4FF00]', 'text-primary', 'font-bold', 'border-primary', 'shadow-hard-sm');
+            pill.classList.remove('bg-[#EFEEEC]', 'text-[#111111]', 'border-primary/20');
+            pill.textContent = `✓ ${val}`;
+          }
+          recalculateAffinities();
+        });
+      });
+
+      if (resetTraitsBtn) {
+        resetTraitsBtn.addEventListener('click', () => {
+          synthPills.forEach((pill) => {
+            const val = pill.getAttribute('data-val');
+            pill.classList.remove('active-pill', 'bg-[#D4FF00]', 'text-primary', 'font-bold', 'border-primary', 'shadow-hard-sm');
+            pill.classList.add('bg-[#EFEEEC]', 'text-[#111111]', 'border-primary/20');
+            pill.textContent = `+ ${val}`;
+          });
+          recalculateAffinities();
+        });
+      }
+
+      // -----------------------------------------------------------------------
+      // 5. TIMELINE STAGE INSPECTOR INTERACTION
+      // -----------------------------------------------------------------------
+      const stageNodes = document.querySelectorAll('.journey-node');
+      const inspectorLabel = document.getElementById('inspector-label');
+      const inspectorDesc = document.getElementById('inspector-desc');
+      const inspectorTime = document.getElementById('inspector-time');
+
+      const stageInfo = {
+        '1': {
+          label: '[ ACTIVE INSPECTOR: STAGE 01 // DISCOVER ]',
+          desc: 'Deliverable: Interest Topology Map mapping 12 latent skill curiosities into market niches.',
+          time: 'EST. TIME: 1 WEEK'
+        },
+        '2': {
+          label: '[ ACTIVE INSPECTOR: STAGE 02 // LEARN ]',
+          desc: 'Deliverable: Curated 4-part modular syllabus tailored to zero-fluff industry tools.',
+          time: 'EST. TIME: 3-4 WEEKS'
+        },
+        '3': {
+          label: '[ ACTIVE INSPECTOR: STAGE 03 // BUILD ]',
+          desc: 'Deliverable: Deploy 1 full-stack zero-dependency application with automated CI/CD pipeline.',
+          time: 'EST. TIME: 4-6 WEEKS'
+        },
+        '4': {
+          label: '[ ACTIVE INSPECTOR: STAGE 04 // PRACTICE ]',
+          desc: 'Deliverable: Run 10 system design whiteboards and live technical stress tests in Interview Lab.',
+          time: 'EST. TIME: 2 WEEKS'
+        },
+        '5': {
+          label: '[ ACTIVE INSPECTOR: STAGE 05 // APPLY ]',
+          desc: 'Deliverable: Direct application to 5 verified residency or fellowship studio openings.',
+          time: 'EST. TIME: 2-3 WEEKS'
+        },
+        '6': {
+          label: '[ ACTIVE INSPECTOR: STAGE 06 // GROW ]',
+          desc: 'Deliverable: Open-source repository architecture and mentorship of incoming NOVA cohorts.',
+          time: 'ONGOING'
+        }
+      };
+
+      stageNodes.forEach((node) => {
+        node.addEventListener('click', () => {
+          stageNodes.forEach((n) => {
+            n.classList.remove('bg-[#D4FF00]', 'border-2', 'shadow-hard-sm');
+            n.classList.add('bg-[#EFEEEC]');
+            const h = n.querySelector('h3');
+            if (h) h.classList.add('text-primary');
+          });
+
+          node.classList.remove('bg-[#EFEEEC]');
+          node.classList.add('bg-[#D4FF00]', 'border-2', 'shadow-hard-sm');
+
+          const step = node.getAttribute('data-step');
+          const data = stageInfo[step];
+          if (data && inspectorLabel && inspectorDesc && inspectorTime) {
+            inspectorLabel.textContent = data.label;
+            inspectorDesc.textContent = data.desc;
+            inspectorTime.textContent = data.time;
+          }
+        });
+      });
+
+      // -----------------------------------------------------------------------
+      // 6. MAGNETIC CTA BUTTON (DESKTOP ONLY)
+      // -----------------------------------------------------------------------
+      const magneticBtn = document.getElementById('final-enter-btn');
+      if (magneticBtn && !isTouch) {
+        magneticBtn.addEventListener('mousemove', (e) => {
+          const rect = magneticBtn.getBoundingClientRect();
+          const x = e.clientX - rect.left - rect.width / 2;
+          const y = e.clientY - rect.top - rect.height / 2;
+          magneticBtn.style.transform = `translate(${x * 0.16}px, ${y * 0.16}px)`;
+        });
+        magneticBtn.addEventListener('mouseleave', () => {
+          magneticBtn.style.transform = 'translate(0px, 0px)';
+        });
+      }
+
+      // -----------------------------------------------------------------------
+      // 7. REAL-TIME TELEMETRY CLOCKS
+      // -----------------------------------------------------------------------
+      function updateClocks() {
+        const now = new Date();
+        const estEl = document.getElementById('est-time');
+        const gmtEl = document.getElementById('gmt-time');
+        if (estEl && gmtEl) {
+          estEl.textContent = now.toLocaleTimeString('en-US', { timeZone: 'America/New_York', hour12: false }) + ' EST';
+          gmtEl.textContent = now.toLocaleTimeString('en-US', { timeZone: 'UTC', hour12: false }) + ' GMT';
+        }
+      }
+      setInterval(updateClocks, 1000);
+      updateClocks();
+
+      // -----------------------------------------------------------------------
+      // 8. MOBILE MENU DRAWER TOGGLE
+      // -----------------------------------------------------------------------
+      const menuBtn = document.getElementById('mobile-menu-btn');
+      const drawer = document.getElementById('mobile-drawer');
+      const menuIcon = document.getElementById('menu-icon');
+      let isDrawerOpen = false;
+
+      function toggleMobileDrawer(forceState) {
+        isDrawerOpen = typeof forceState === 'boolean' ? forceState : !isDrawerOpen;
+        if (drawer && menuIcon) {
+          if (isDrawerOpen) {
+            drawer.classList.remove('-translate-y-full');
+            drawer.classList.add('translate-y-0');
+            drawer.setAttribute('aria-hidden', 'false');
+            menuIcon.textContent = 'close';
+            document.body.style.overflow = 'hidden';
+          } else {
+            drawer.classList.add('-translate-y-full');
+            drawer.classList.remove('translate-y-0');
+            drawer.setAttribute('aria-hidden', 'true');
+            menuIcon.textContent = 'menu';
+            document.body.style.overflow = '';
+          }
+        }
+      }
+
+      if (menuBtn) {
+        menuBtn.addEventListener('click', () => toggleMobileDrawer());
+      }
+      document.querySelectorAll('.mobile-nav-link').forEach((link) => {
+        link.addEventListener('click', () => toggleMobileDrawer(false));
+      });
+      document.querySelectorAll('.mobile-launch-btn').forEach((btn) => {
+        btn.addEventListener('click', () => {
+          toggleMobileDrawer(false);
+          openModal('trajectory-modal');
+        });
+      });
+
+      // -----------------------------------------------------------------------
+      // 9. MODAL HANDLERS & ACCESSIBILITY
+      // -----------------------------------------------------------------------
+      window.openModal = function(modalId) {
+        const modal = document.getElementById(modalId);
+        if (modal) {
+          modal.classList.remove('hidden');
+          modal.classList.add('flex');
+          document.body.style.overflow = 'hidden';
+          const firstFocusable = modal.querySelector('button, input, select, textarea');
+          if (firstFocusable) firstFocusable.focus();
+        }
+      };
+
+      window.closeModals = function() {
+        document.querySelectorAll('[role="dialog"]').forEach((m) => {
+          m.classList.add('hidden');
+          m.classList.remove('flex');
+        });
+        document.body.style.overflow = '';
+      };
+
+      document.querySelectorAll('.modal-close-btn').forEach((btn) => {
+        btn.addEventListener('click', window.closeModals);
+      });
+
+      // Close modal on backdrop click
+      document.querySelectorAll('[role="dialog"]').forEach((modal) => {
+        modal.addEventListener('click', (e) => {
+          if (e.target === modal) window.closeModals();
+        });
+      });
+
+      // Close on Escape key
+      window.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape') {
+          window.closeModals();
+          toggleMobileDrawer(false);
+        }
+      });
+
+      // CTA Buttons trigger modals
+      document.getElementById('nav-cta-btn')?.addEventListener('click', () => openModal('trajectory-modal'));
+      document.getElementById('hero-start-btn')?.addEventListener('click', () => openModal('trajectory-modal'));
+      document.getElementById('build-direction-btn')?.addEventListener('click', () => openModal('trajectory-modal'));
+      document.getElementById('final-enter-btn')?.addEventListener('click', () => openModal('trajectory-modal'));
+      document.getElementById('profile-indicator-btn')?.addEventListener('click', () => openModal('trajectory-modal'));
+
+      document.getElementById('hero-how-it-works-btn')?.addEventListener('click', () => openModal('how-it-works-modal'));
+      document.getElementById('view-rubric-btn')?.addEventListener('click', () => openModal('rubric-modal'));
+
+      // Tool demo buttons
+      document.querySelectorAll('.tool-demo-btn').forEach((btn) => {
+        btn.addEventListener('click', (e) => {
+          e.stopPropagation();
+          const tool = btn.getAttribute('data-tool');
+          openToolModal(tool);
+        });
+      });
+
+      // Story cards click
+      document.querySelectorAll('.story-card').forEach((card) => {
+        card.addEventListener('click', () => {
+          const num = card.getAttribute('data-story');
+          openStoryModal(num);
+        });
+      });
+
+      // Footer links
+      document.querySelectorAll('.footer-modal-trigger').forEach((link) => {
+        link.addEventListener('click', (e) => {
+          e.preventDefault();
+          const type = link.getAttribute('data-modal');
+          openManifestoModal(type);
+        });
+      });
+
+      document.querySelectorAll('.footer-policy-link').forEach((link) => {
+        link.addEventListener('click', (e) => {
+          e.preventDefault();
+          const policy = link.getAttribute('data-policy');
+          openPolicyModal(policy);
+        });
+      });
+
+      function openTrajectoryModalWithSector(sec) {
+        const select = document.getElementById('modal-discipline-select');
+        if (select && sec) {
+          if (sec === 'build') select.value = 'systems';
+          else if (sec === 'create') select.value = 'creative';
+          else if (sec === 'discover') select.value = 'ai';
+          else if (sec === 'protect') select.value = 'security';
+          else if (sec === 'lead') select.value = 'venture';
+        }
+        openModal('trajectory-modal');
+      }
+
+      window.submitTrajectoryForm = function() {
+        const resultView = document.getElementById('modal-result-view');
+        const select = document.getElementById('modal-discipline-select');
+        const resTitle = document.getElementById('result-title');
+
+        if (resultView && select && resTitle) {
+          const val = select.options[select.selectedIndex].text;
+          resTitle.textContent = `${val} — Proof-of-Work Syllabus`;
+          resultView.classList.remove('hidden');
+        }
+      };
+
+      // Standing option buttons inside modal
+      document.querySelectorAll('.standing-opt-btn').forEach((btn) => {
+        btn.addEventListener('click', () => {
+          document.querySelectorAll('.standing-opt-btn').forEach((b) => {
+            b.classList.remove('bg-[#D4FF00]', 'font-bold', 'border-primary');
+            b.classList.add('bg-[#EFEEEC]', 'border-primary/20');
+          });
+          btn.classList.add('bg-[#D4FF00]', 'font-bold', 'border-primary');
+          btn.classList.remove('bg-[#EFEEEC]', 'border-primary/20');
+        });
+      });
+
+      function openToolModal(tool) {
+        const titles = {
+          resume: 'Resume Studio — ATS Typst Engine',
+          interview: 'Interview Lab — Live Speech Audio Simulator',
+          skillmap: 'Skill Map — Topological Vector Analysis',
+          explorer: 'Career Explorer — Branching Topology Atlas',
+          project: 'Project Builder — Zero-Knowledge Sprint Kit',
+          opportunity: 'Opportunity Finder — Verified Fellowship Stream'
+        };
+        const bodies = {
+          resume: 'This syntax engine converts raw Markdown and Typst into high-density editorial spec sheets guaranteed to parse at 98%+ on enterprise screening engines while maintaining avant-garde design aesthetics.',
+          interview: 'Real-time audio dialogue evaluator measuring latency, structural clarity, and architectural soundness for technical defense and design presentations.',
+          skillmap: 'Visualizes the latent adjacency between your current competencies and aspirational roles, revealing the fastest 2-hop skill bridges.',
+          explorer: 'Interactive career cartography demonstrating compensation trajectories and startup velocity across 5 global creative tech hubs.',
+          project: 'Complete downloadable production kits containing Figma design tokens, CI/CD automated test suites, and containerized dev environments.',
+          opportunity: 'Curated feed of vetted residencies, venture apprenticeships, and frontier laboratory grants accepting candidates right now.'
+        };
+
+        const tag = document.getElementById('info-modal-tag');
+        const title = document.getElementById('info-modal-title');
+        const body = document.getElementById('info-modal-body');
+
+        if (tag && title && body) {
+          tag.textContent = `[ OPERATIONAL TOOL ARTIFACT // ${tool.toUpperCase()} ]`;
+          title.textContent = titles[tool] || 'System Tool';
+          body.textContent = bodies[tool] || 'Operational instrument artifact preview.';
+        }
+        openModal('info-modal');
+      }
+
+      function openStoryModal(num) {
+        const stories = {
+          '1': {
+            name: 'ARJUN SHARMA // COMPUTER SCIENCE',
+            text: 'Arjun shifted from passive course-watching to shipping a custom key-value database engine in Rust. Within 8 weeks, his GitHub repository caught the attention of distributed systems founders, leading to a funded fellowship.'
+          },
+          '2': {
+            name: 'MEERA PATEL // PRODUCT & SPATIAL UI',
+            text: 'Meera mapped her visual interests into interactive Three.js and WebGL experiments. Her proof-of-work portfolio eliminated generic template mocks, landing her a resident designer role in San Francisco.'
+          },
+          '3': {
+            name: 'KABIR MEHTA // OFFENSIVE SECURITY',
+            text: 'Kabir combined CTF challenge writeups with automated fuzzing sandboxes. By publishing reproducible exploit analysis, he proved real-world threat defense competence without needing traditional certifications.'
+          }
+        };
+
+        const story = stories[num] || stories['1'];
+        const tag = document.getElementById('info-modal-tag');
+        const title = document.getElementById('info-modal-title');
+        const body = document.getElementById('info-modal-body');
+
+        if (tag && title && body) {
+          tag.textContent = `[ FIELD DOSSIER // DISPATCH ${num} ]`;
+          title.textContent = story.name;
+          body.textContent = story.text;
+        }
+        openModal('info-modal');
+      }
+
+      function openManifestoModal(type) {
+        const tag = document.getElementById('info-modal-tag');
+        const title = document.getElementById('info-modal-title');
+        const body = document.getElementById('info-modal-body');
+
+        if (tag && title && body) {
+          tag.textContent = `[ INSTITUTIONAL ARCHIVE // ${type.toUpperCase()} ]`;
+          title.textContent = `${type.toUpperCase()} — NOVA ARCHIVAL CHARTER`;
+          body.textContent = 'NOVA operates on the fundamental principle that ambition without artifact is friction. We are building the open infrastructure for students and emerging creators to forge definitive proof-of-work.';
+        }
+        openModal('info-modal');
+      }
+
+      function openPolicyModal(policy) {
+        const tag = document.getElementById('info-modal-tag');
+        const title = document.getElementById('info-modal-title');
+        const body = document.getElementById('info-modal-body');
+
+        if (tag && title && body) {
+          tag.textContent = `[ PROTOCOL SPEC // ${policy.toUpperCase()} ]`;
+          title.textContent = `${policy.toUpperCase()} STANDARD`;
+          body.textContent = 'NOVA is built as an open exploratory platform. All telemetry data is simulated demo data. User telemetry is processed in-memory offline and never harvested or sold.';
+        }
+        openModal('info-modal');
+      }
+
+      // -----------------------------------------------------------------------
+      // 10. SCROLLSPY FOR NAVIGATION
+      // -----------------------------------------------------------------------
+      const sections = document.querySelectorAll('section[id], footer[id]');
+      const navLinks = document.querySelectorAll('#desktop-nav .nav-item');
+
+      window.addEventListener('scroll', () => {
+        let currentSectionId = '';
+        const scrollPosition = window.scrollY + 140;
+
+        sections.forEach((sec) => {
+          const top = sec.offsetTop;
+          const height = sec.offsetHeight;
+          if (scrollPosition >= top && scrollPosition < top + height) {
+            currentSectionId = sec.getAttribute('id');
+          }
+        });
+
+        navLinks.forEach((link) => {
+          const target = link.getAttribute('data-target');
+          if (target === currentSectionId) {
+            link.classList.add('text-primary', 'font-bold');
+            link.classList.remove('text-[#444748]');
+            link.querySelector && link.classList.add('after:scale-x-100');
+          } else {
+            link.classList.remove('text-primary', 'font-bold');
+            link.classList.add('text-[#444748]');
+          }
+        });
+      }, { passive: true });
+
+    })();
+  </script>
+</body>
+</html>
